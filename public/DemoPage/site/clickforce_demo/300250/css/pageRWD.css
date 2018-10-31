@@ -1,0 +1,141 @@
+﻿/*.addNetworkTb img,p img{
+width:100%;
+}*/
+/*客製css*/
+.addNetworkTopTb img{
+max-width:100%;
+min-width:50px;
+ min-height:40px;
+ max-height:60px;
+}
+.addNetworkSystem img,.addNetworkSystem p img{
+max-width:100%;
+min-width:50px;
+ min-height:40px;
+ max-height:60px;
+}
+ .addNetworkSystem table,th,td{
+   /*  border: 5px solid white;*/
+}
+.addNetworkDiv{
+	margin-right: auto;
+	margin-left: auto;
+}
+.addNetworkDiv img,.addNetworkDiv p img{
+	width:100%;
+}
+/**/
+#page-main{
+	width: 965px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	padding-top: 15px;
+/*	padding-right: 30px;
+	padding-left: 30px;*/
+	position: relative;
+}
+#page-banner{
+    width: 100%;
+    height: 444px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.page-title{
+	height: 60px;
+	line-height: 60px;
+}
+#breadcrumbs{
+	background-color: #EEEEEE;
+	width: 100%;
+	height: 26px;
+	line-height: 26px;
+	color: #818181;
+	margin-top: 25px;
+	padding-left: 10px;
+}
+#breadcrumbs a{
+	color: #818181;
+	text-decoration: none;
+}
+.like-btn{
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+.page-center-header{
+	font-size: 27px;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	line-height: 35px;
+	height: 35px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+.qa-title{
+	height: 40px;
+	line-height: 40px;
+	border-bottom: dotted 1px #D6D6D6;
+	cursor: pointer;
+	padding-left: 45px;
+	white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.qa-content{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+	border-bottom: dotted 1px #D6D6D6;
+	display: none;
+	background-color: #F6F6F6;
+	padding-left: 45px;
+	position: relative;
+}
+@media only screen and (min-width: 650px) and (max-width: 965px) {
+
+#page-main{
+	width: 650px;
+	}
+#breadcrumbs{
+	overflow: hidden;
+	}
+}
+@media screen and (max-width:650px) {
+/*客製css*/
+.addNetworkDiv{
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+/**/
+	#page-main{
+		width: 100%;
+		padding-top: 0px;
+		margin-bottom: 5px;
+	}
+	.page-center-header{
+	background: url(../images/titleBg.png);
+	font-size: 27px;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	line-height: 55px;
+	height: 55px;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	position: absolute;
+	top: 0px;
+	}
+	#breadcrumbs{
+		margin-top: 0px;
+		position: relative;
+		top: 65px;
+		background-color: transparent;
+	}
+	.page-header{
+		margin-top: 120px;
+	}
+}

@@ -1,0 +1,752 @@
+
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#contactUsIcon{
+		position: fixed;
+		bottom: 155px;
+		right: 20px;
+		width: 80px;
+		height: 80px;
+		z-index: 9999999;
+	}
+	#main{
+		height: auto;
+	}
+	#mainContent{
+		width: 100%;
+		box-sizing: border-box;
+	}
+	#mainContent div,#mainContent img{
+		box-sizing: border-box;
+		/*outline: 1px solid;*/
+	}
+	.section{
+    	margin: 50px auto 35px auto;		
+		text-align: center;
+		width: 947px;		
+    }
+    .ssection{
+        margin: 50px auto 35px auto;		
+		text-align: center;
+		width: 947px;	
+    }
+	#sectionCharacter{
+    	margin: 50px auto 50px auto;		
+		text-align: center;
+		width: 947px;
+	}
+	#sectionCharacter img{
+		max-width: 100%;
+	}
+	#advertiser, #publisher{
+		border:#e5e5e5 solid;
+	}
+	#advertiser{
+		border-width:0 2px 0 0;
+	}
+	#publisher{
+		border-width:0 0 0 2px;
+	}
+	.character{
+		display: inline-block;	
+		width: 50%;
+	}
+	.character img, .character .characterContent{
+		display: inline-block;
+		vertical-align: middle;		
+	}
+	.character img{
+		width: 35%;
+	}
+	 .character .characterContent{
+	 	width: 60%;
+	 }
+	 .characterText{
+	 	color: #ec0c0c;
+	 	font-weight: 700;
+	 	font-size: 35px;
+	 }
+	 .characterButton{
+	 	color: #ec0c0c;
+	 	font-size: 25px;
+	 	line-height: 25px;
+	 	padding: 7px;
+	 	border-radius: 40px;
+	 	border: 1.5px solid #ec0c0c;
+	 	width: 70%;
+	 	margin: 10px auto;
+	 }
+	 /*sectionTech*/
+	.sectionTechWrap{
+		padding-top: 20px;
+		padding-bottom: 15px;
+		background: #f5f5f5;
+	}
+ 
+	.sectionTitle{
+		color: #7b6d64;
+		font-size: 31px;
+		font-weight: 600;
+	}
+	.techContent{
+		color: #7b6d64;
+		font-size: 20px;
+		width: 77%;	
+		margin: 15px auto 0 auto;	
+	}
+	.techPic img{
+		max-width: 100%;
+	}
+	.techButton{
+	 	color: #ec0c0c;
+	 	font-size: 25px;
+	 	line-height: 25px;
+	 	padding: 7px;
+	 	border-radius: 40px;
+	 	border: 1.5px solid #ec0c0c;
+	 	width: 200px;
+	 	margin: 10px auto;		
+	}
+	/*sectionAdvantage*/
+	#sectionAdvantage{
+    	color: #7b6d64;		
+	}
+	.advantageContent{
+		font-size: 20px;
+	}
+	.advantageImageContent{
+		margin-top: 25px;
+	}
+	.advantageImgeUnit{
+		display: inline-block;
+		width: 33.3%;
+		height: 160px;
+		vertical-align: middle;
+	}
+	.advantageImg img{
+		max-width: 100%;
+	}
+	.advantageText{
+		font-size: 13px;
+		margin:0 5% ;
+	}
+	/*sectionService*/
+	.serviceWrap{
+		padding-top: 20px;
+		padding-bottom: 15px;		
+		background: #f5f5f5;
+	}
+	#sectionService img{
+		max-width: 85%; 
+	}
+	.serviceContent{
+		font-size: 20px;
+	}
+	.serviceImageContent{
+		margin: 15px 0 0 0;
+	}
+	.serviceImgeUnit{
+		display: inline-block;
+		width: 25%;
+		/*height: 293px;*/
+		vertical-align: middle;
+		padding: 15px;
+	}
+	.serviceTitle{
+		font-size: 18px;
+		font-weight: 900;
+	}
+	.serviceText{
+		font-size: 13px;
+		height: 60px;
+		color: #666666;
+	}
+	.serviceButton{
+	 	color: #ec0c0c;
+	 	font-size: 22px;
+	 	line-height: 22px;
+	 	padding: 7px;
+	 	border-radius: 40px;
+	 	border: 1.5px solid #ec0c0c;
+	 	width: 90%;
+	 	margin: 10px auto;				
+	}
+	.serviceTitle{
+		margin: 8px 0 8px 0;
+	}
+	.serviceText{
+		margin: 8px 0 10px 0;
+	}
+	/*sectionClient*/
+	#sectionClient{
+		margin: 50px auto 20px auto
+	}
+	.clientImageContent{
+		margin: 15px 0 0 0;
+	}
+	.clientImgeUnit{
+		display: inline-block;
+		width: 20%;
+		margin-bottom: 36px;
+	}
+	.clientImg img{
+		max-width: 76%;
+	}
+	.clientButton{
+		text-align: center;
+	 	color: #ec0c0c;
+	 	font-size: 25px;
+	 	line-height: 25px;
+	 	padding: 7px;
+	 	border-radius: 40px;
+	 	border: 1.5px solid #ec0c0c;
+	 	width: 200px;
+	 	margin: 10px auto;		
+	}
+	/*sectionthirdParty*/
+	.thirdPartyTitle{
+		color: #7b6d64;
+	    font-size: 31px;
+	    line-height: 31px;
+	    font-weight: 600;
+	    width: 36%;	
+    }
+    .thirdPartyTitleS{
+        display: inline-block;
+        color: #7b6d64;
+	    font-size: 23px;
+	    line-height: 31px;
+	    font-weight: 600;
+	    width: 40%;	
+    }
+	.thirdPartyContent{
+		margin: auto;
+		display: table;
+	}
+	.thirdPartyTitle, .thirdPartyImg{
+		display: table-cell;
+		vertical-align: middle;
+		margin: auto;
+	}
+	.thirdPartyImg{
+		width: 64%;
+    }
+    .thirdPartyImgS{
+        text-align: left;
+        display: inline-block;
+        width: 60%;
+
+    }
+	.thirdPartyImgUnit{
+		display: inline-block;
+		width: 50%;
+	}	
+	.thirdPartyImgUnit img{
+		max-width: 75%;
+    }
+    .thirdPartyImgUnitS{
+        display: inline-block;
+		width: 50%;
+    }
+    .thirdPartyImgUnitS img{
+		max-width: 49%;
+    }
+	/*newsletterWrap*/
+	.newsletterWrap{
+		padding-top: 5px;
+		padding-bottom: 15px;
+		background: #f5f5f5;		
+	}
+	#sectionNewsletter div{
+		display: inline-block;
+	}
+	.newsletterTitle{
+		font-size: 31px;
+		font-weight: 900;
+	}
+	.newsletterContent{
+		font-size: 23px;
+		font-weight: 700;
+	 	margin-left: 6px;		
+	}	
+	.newsletterButton{
+	    width: 113px;
+	    font-size: 19px;
+	    line-height: 19px;
+	    padding: 8px 6px;
+	    margin: 5px 0px 10px 12px;
+	    border-radius: 40px;
+	    border: 1.5px solid #000000;
+	    font-weight: 700;	
+	    color: #000000;
+	    text-decoration: none;
+	}	
+	/*footer*/
+	.footerWrap{
+		position: relative;
+		background: #ed2123;
+		color: #fff;
+		padding-top: 5px;
+		padding-bottom: 15px;
+	}
+	.footerWrap,.footerWrap div{
+		/*outline: 1px solid;*/
+	}
+	#sectionFooter{
+		display: table;
+		text-align: left;
+	}
+	.footerUnit{
+		display: table-cell;
+		width: 14.2%;
+		padding-right: 20px;
+		margin: auto;
+	}
+	.footerTitle{
+		margin-bottom: 6px;
+		border: solid #fff;
+		border-width:0 0 1.5px 0;
+	}
+	.footerText{
+		font-size: 15px;
+		font-weight: 700;
+	}
+	.footerContent{
+		display: block;
+	}		
+	.footerContent .link{
+		margin: 3px 0;
+		font-size: 12px;
+		text-decoration: none;
+		color: #fff;
+	}
+	.footerGlyphicon{
+		float: right; 
+		display: none;
+	}
+	.footerUnit.active .footerContent{
+		display: block;
+	}
+	#sectionlastFooter{
+		margin: 0 auto;
+	}
+	.lastFooterImg, .lastFooterText{
+		display: inline-block;
+	}
+	.lastFooterImg{
+		width: 30%;
+	}
+	.lastFooterText{
+		width: 70%;
+		text-align: right;
+	}
+	.lastFooterImg img{
+		max-width: 80%;
+	}
+	.lastFooterWrap{
+		background: #000000;
+		color: #fff;
+	}
+	.goTopIcon{
+		cursor: pointer;
+	    text-align: center;
+	    position: absolute;
+	    right: 38px;
+	    bottom: 0px;
+	    font-size: 20px;
+	    font-weight: 900;
+	    width: 33px;
+	    height: 36px;
+	    line-height: 25px;
+	    color: #fff;
+	    background: rgba(0,0,0,0.7);
+	}
+	/*gdpr*/
+	.gdprWrap{
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0,0.6);
+		color: #fff;
+		font-size: 15px;
+		font-weight: 900;
+		z-index: 99999;
+		display: none;
+	}
+	.gdprSection{
+		width: 947px;
+		padding: 20px 0;
+		margin: auto;
+	}
+	.gdprContent{
+		display: inline-block;
+		text-align: left;
+		width: 77%;			
+	}
+	.gdprBtn{
+		display: inline-block;
+		text-align: right;
+		width: 23%;
+	}
+	.gdprWrap a{
+		color: #fff;
+		text-decoration: underline !important;
+	}
+	.gdprBtn div{
+		display: inline-block;
+		border:2px solid #fff;
+		border-radius: 15px;
+		line-height: 20px;
+		cursor: pointer;
+	}
+	.gdprAgree{
+		margin-right: 10px;
+		padding: 3px 30px;
+	}
+	.gdprDisagree{
+
+		padding: 3px 20px;
+	}
+/*tablet*/
+@media only screen and (min-width: 650px) and (max-width: 965px) {
+    .thirdPartyImgS{
+        width: 60%;
+    }
+    .thirdPartyTitleS{
+        width: 40%;
+    }
+    .ssection{
+        width: 90%;
+    }
+	#sectionCharacter{
+		width: 90%;
+	}
+	.characterText{
+		font-size: 27px;
+
+	}
+	.characterButton{
+		font-size: 25px;
+	}
+	.characterButton img{
+		width: 40%;
+	}
+	#advertiser,#publisher{
+		border-width:0 0 0 0;
+	}
+	 /*sectionTech*/	
+	#sectionTech{
+		width: 90%;
+	}
+	.techTitle{
+		font-size: 30px;
+	}
+	/*sectionAdvantage*/
+	#sectionAdvantage{
+		width: 90%;
+	}
+	.advantageImgeUnit{
+		height: 175px;
+	}
+	/*sectionService*/
+	#sectionService{
+		width: 90%;
+	}
+	.serviceText{
+		height: 90px;	
+		margin: 8px 15px 10px 15px;			
+	}
+	
+	#sectionService img{
+		max-width: 100%; 
+	}
+	.serviceImgeUnit{
+		padding: 1px;
+	}
+	/*sectionClient*/
+	#sectionClient{
+		width: 90%;
+	}
+	.clientImg img{
+		max-width: 100%;
+	}
+	/*sectionthirdParty*/
+	#sectionthirdParty{
+		width: 90%;
+	}
+	.thirdPartyContent{
+		margin: auto;
+		display: block;
+	}
+	.thirdPartyTitle, .thirdPartyImg{
+		display: block;
+		width: 100%;
+	}
+	.thirdPartyTitle{
+	    font-weight: 700;		
+		margin: 10px auto;
+	}
+	.thirdPartyImgUnit{
+		display: block;
+		width: 100%;
+	}
+	/*newsletterWrap*/
+	#sectionNewsletter{
+		width: 100%;
+	}
+	.newsletterTitle{
+		font-size: 24px;
+	}
+	.newsletterContent{
+		font-size: 19px;
+	}
+
+	/*footer*/
+	#sectionFooter{
+		width: 90%;
+		display: block;
+	}
+	.footerUnit{
+		display: block;
+		width: 90%;
+		padding-right: 0;
+	}	
+
+	.footerGlyphicon{
+		display: inline-block;
+		margin-right: 40px;
+	}
+	.footerText{
+		display: inline-block;		
+	}
+	.footerUnit{
+		display: block;
+	}
+	.footerTitle{
+		border-width:0 0 0 0;
+	}
+	#sectionlastFooter{
+		width: 90%;
+	}	
+	.footerContent{
+		display: none;
+	}
+	/*gdpr*/	
+	.gdprWrap{
+		font-size: 14px;
+	}
+
+	.gdprBtn{
+		display: block;
+		text-align: right;
+		margin-top: 10px;
+		width: 100%;
+	}
+	.gdprContent{
+		display: block;
+		width: 100%;			
+	}
+	.gdprSection{
+		width: 100%;
+		padding: 20px 40px;		
+	}
+	.gdprAgree{
+		padding: 1px 20px;
+	}
+	.gdprDisagree{
+		padding: 1px 15px;
+	}	
+
+}
+/*mobile*/
+@media only screen and (max-width: 650px){
+    .thirdPartyImgS{
+        width: 60%;
+        text-align: center;
+    }
+    .thirdPartyTitleS{
+        width: 40%;
+        font-size: 19px;
+    }
+    .ssection{
+        width: 90%;
+    }
+	#sectionCharacter{
+		width: 90%;
+	}
+	.characterText{
+		font-size: 24px;
+
+	}
+	.characterButton{
+		font-size: 25px;
+	}	
+	.characterButton img{
+		width: 40%;
+	}
+	#advertiser,#publisher{
+		border-width:0 0 0 0;
+	}	
+	.character{
+		display: block;
+		width: 100%;
+	}
+	 /*sectionTech*/	
+	#sectionTech{
+		width: 90%;
+	}		
+	.techTitle{
+		font-size: 30px;
+	}
+
+	/*sectionAdvantage*/
+	#sectionAdvantage{
+		width: 90%;
+	}
+	.advantageImgeUnit{
+		width: 50%;
+		height: 175px;
+		margin: 10px 0 10px 0;
+	}
+	.advantageText{
+		
+		margin:0 10px;
+	}
+	/*sectionService*/
+	#sectionService{
+		width: 90%;
+	}
+	.serviceText{
+		height: 90px;
+		margin: 8px 3px 0 3px;		
+	}
+	.serviceImgeUnit{
+		width: 50%;
+	}
+	.serviceImgeUnit{
+		margin: 10px 0 10px 0;
+	}
+	/*sectionClient*/
+	.clientImgeUnit{
+		width: 50%;
+	}
+	#sectionClient{
+		width: 90%;
+	}
+	.clientImg img{
+		max-width: 100%;
+	}	
+	.serviceImgeUnit{
+		padding: 0;
+	}
+	/*sectionthirdParty*/
+	#sectionthirdParty{
+		width: 90%;
+	}
+	.thirdPartyContent{
+		margin: auto;
+		display: block;
+	}
+	.thirdPartyTitle, .thirdPartyImg{
+		display: block;
+		width: 100%;
+	}
+	.thirdPartyTitle{
+		font-size: 32px;
+		line-height: 32px;
+		margin: 10px auto;
+	}
+	.thirdPartyImgUnit{
+		display: block;
+		width: 100%;
+	}
+	/*newsletterWrap*/
+	#sectionNewsletter{
+		width: 100%;
+		margin: 10px auto 10px auto;
+	}
+	#sectionNewsletter div{
+		display: block;
+	}
+	.newsletterTitle{
+		font-size: 22px;
+	}
+	.newsletterContent{
+		font-weight: 900;
+		font-size: 17px;
+	}
+	.newsletterButton{
+		margin: 5px auto 10px auto;
+	}	
+	/*footer*/
+	#sectionFooter{
+		width: 90%;
+		display: block;
+	}	
+	.footerUnit{
+		display: block;
+		width: 90%;
+		padding-right: 0;
+	}		
+	.footerGlyphicon{
+		display: inline-block;
+		margin-right: 40px;
+	}
+	.footerText{
+		display: inline-block;		
+	}
+	.footerUnit{
+		display: block;
+	}
+	.footerTitle{
+		border-width:0 0 0 0;
+	}
+	.footerContent{
+		display: none;
+	}
+	#sectionlastFooter{
+		width: 90%;
+	}
+	.lastFooterImg, .lastFooterText{
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	.lastFooterImg img{
+		max-width: 50%;
+	}
+	#contactUsIcon{
+		width: 60px;
+		height: 60px;
+		right: 5px;
+	}
+	/*gdpr*/
+	.gdprWrap{
+		font-size: 14px;
+	}
+	.gdprBtn{
+		display: block;
+		text-align: right;
+		margin-top: 10px;
+		width: 100%;
+	}
+	.gdprContent{
+		display: block;
+		width: 100%;			
+	}
+
+	.gdprSection{
+		width: 100%;
+		padding: 15px 10px;			
+	}
+	.gdprAgree{
+		padding: 1px 20px;
+	}
+	.gdprDisagree{
+		padding: 1px 15px;
+	}	
+
+}
