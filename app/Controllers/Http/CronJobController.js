@@ -29,9 +29,9 @@ class CronJobController {
       //如果該目錄已經存在，先將此目錄刪除
       if (phone == true) {
         //手機板
-        if (fs.existsSync(path_prefix + dir + '/phone/' + zonesize)) {
+        if (fs.existsSync(path_prefix + '/phone/' + zonesize + '/' + dir )) {
           console.log(dir + " 刪除");
-          rimraf(path_prefix + dir + '/phone/' + zonesize, function (err) {
+          rimraf(path_prefix + '/phone/' + zonesize + '/' +dir , function (err) {
             if (err) {
               console.log(err);
             }
@@ -39,9 +39,9 @@ class CronJobController {
         }
       } else {
         //PC版
-        if (fs.existsSync(path_prefix + dir + '/' + zonesize)) {
+        if (fs.existsSync(path_prefix + '/PC/' +  zonesize+ '/' + dir)) {
           console.log(dir + " 刪除");
-          rimraf(path_prefix + dir + '/' + zonesize, function (err) {
+          rimraf(path_prefix + '/PC/' +  zonesize+ '/'+ dir, function (err) {
             if (err) console.log(err);
           });
         }
@@ -50,7 +50,7 @@ class CronJobController {
       if (phone == true) {
         var a = {
           urls: [url],
-          directory: path_prefix + dir + '/phone/' + zonesize,
+          directory: path_prefix + '/phone/' +  zonesize+ '/'+ dir,
           request: {
             headers: {
               'content-type': 'charset=UTF-8',
@@ -62,7 +62,7 @@ class CronJobController {
       } else {
         var a = {
           urls: [url],
-          directory: path_prefix + dir + '/' + zonesize,
+          directory: path_prefix + '/PC/' +  zonesize+ '/'+ dir,
           request: {
             headers: {
               'content-type': 'charset=UTF-8',
@@ -71,10 +71,11 @@ class CronJobController {
         };
       }
       setTimeout(() => {
+        process.setMaxListeners(0);
         console.log(dir + "  開始下載!");
 
         scrape(a).then((result) => {
-          console.log(dir + "/" + zonesize + "下載完成!!");
+          console.log( zonesize+ "/" + dir + "下載完成!!");
         }).catch(console.log);
       }, 500);
     }
