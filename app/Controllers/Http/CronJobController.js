@@ -21,6 +21,8 @@ class CronJobController {
     await set_option("https://www.thenewslens.com/", 'thenewslens', '300250', true);
     await set_option("https://www.tagsis.com/", 'tagsis2', '320480', false);
     await set_option("http://www.clickforce.com.tw/news/index?category=5&lid=28", 'clickforce_demo', '300250', false);
+    await set_option("http://play.nownews.com/", '旅食樂', '300250', true);
+    
     // });
 
     async function set_option(url, dir, zonesize, phone) {

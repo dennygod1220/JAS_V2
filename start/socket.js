@@ -9,13 +9,27 @@ var dir = use('node-dir');
 io.on('connection', function (socket) {
   console.log("ID: " + socket.id + " 連線");
 
-  socket.on('CtoS which device', function (device) {
-    console.log(device);
-    //取得 裝置 底下所有的目錄
 
-    var path = './public/DemoPage/site/' + device.device + '/';
-    display_subdir(path,'StoC device dir');
+  //Client 選擇裝置後 ， 告訴Server -> Server 告訴裝置 可用版位大小目錄
+    socket.on('CtoS which device', function (device) {
+      console.log(" Client選擇 : ");
+      console.log(device);
+      console.log("==========");
+  
+      //取得 裝置 底下所有的目錄
+  
+      var path = './public/DemoPage/site/' + device.device + '/';
+      display_subdir(path,'StoC device dir');
+    })
 
+
+  //Client 選擇版位大小目錄後 告訴server -> Server 告訴Client可用 網站
+  socket.on('CtoS which ZoneSize', function (ZoneSize) {
+    console.log(ZoneSize);
+    //取得 裝置/版位大小 底下所有的目錄
+
+    var path = './public/DemoPage/site/' + ZoneSize.Device+ '/' + ZoneSize.ZoneSize + '/';
+    display_subdir(path,'StoC site dir');
   })
 
 
@@ -62,6 +76,7 @@ io.on('connection', function (socket) {
     console.log("Leave");
   });
 
+  //==================MY Function=================
   function display_subdir(path,con_name) {
     fs.readdir(path, function (err, files) {
       //声明一个数组存储目录下的所有文件夹
@@ -70,7 +85,10 @@ io.on('connection', function (socket) {
       (function iterator(i) {
         //遍历数组files结束
         if (i == files.length) {
+          console.log("SERVER 目錄==========");
           console.log(floder);
+          console.log("====================");
+
           io.sockets.connected[socket.id].emit(con_name, {
             dir: floder,
           })
@@ -88,5 +106,6 @@ io.on('connection', function (socket) {
       })(0)
     })
   }
+
 
 })
