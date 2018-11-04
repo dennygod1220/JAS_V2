@@ -37,8 +37,12 @@
         })
       },
       ch_site: function (site) {
-        console.log(site)
         this.site = site;
+        socket.emit('CtoS which Site',{
+          Device:this.device,
+          ZoneSize:this.zonesize,
+          site:site
+        });
       }
     },
     computed: {

@@ -12,9 +12,6 @@ io.on('connection', function (socket) {
 
   //Client 選擇裝置後 ， 告訴Server -> Server 告訴裝置 可用版位大小目錄
     socket.on('CtoS which device', function (device) {
-      console.log(" Client選擇 : ");
-      console.log(device);
-      console.log("==========");
   
       //取得 裝置 底下所有的目錄
   
@@ -25,12 +22,21 @@ io.on('connection', function (socket) {
 
   //Client 選擇版位大小目錄後 告訴server -> Server 告訴Client可用 網站
   socket.on('CtoS which ZoneSize', function (ZoneSize) {
-    console.log(ZoneSize);
     //取得 裝置/版位大小 底下所有的目錄
 
     var path = './public/DemoPage/site/' + ZoneSize.Device+ '/' + ZoneSize.ZoneSize + '/';
     display_subdir(path,'StoC site dir');
   })
+
+
+  socket.on('CtoS which Site', function (Site) {
+    console.log(Site);
+
+
+    // var path = './public/DemoPage/site/' + ZoneSize.Device+ '/' + ZoneSize.ZoneSize + '/';
+    // display_subdir(path,'StoC site dir');
+  })
+
 
 
   socket.on('CtoS which site', function (Cdata) {
