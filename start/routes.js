@@ -5,7 +5,7 @@ const Route = use('Route')
 Route.on('/').render('welcome');
 Route.on('/test').render('test')
 
-Route.on('/Business').render('business.index')
+Route.on('/Business').render('business/index')
 //=======啟動 Crontab==========
 Route.get('Cron','CronJobController.index')
 Route.get('CronStart','CronJobController.start')
