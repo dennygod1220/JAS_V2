@@ -62,7 +62,11 @@
 
       <div class="row" style="display:none" id="zone_size_block">
         <div class="col" style="text-align:center">
-          <h3>版位大小?<span class="badge badge-pill badge-info">$$zonesize$$</span></h3>
+          <h3 data-toggle="tooltip" data-placement="top" title="請選擇您想呈現的版位大小">
+            版位大小
+          <i class="far fa-question-circle"></i>
+          </h3>
+          <span class="badge badge-pill badge-info">$$zonesize$$</span>
           <div class="list-group" id="zone_size_list">
             $$display_zone_size$$
             <div class="list-group-item list-group-item-action zone_size" v-for="item in zone_size_arr" v-on:click="ch_zone_size(item)">
@@ -75,7 +79,11 @@
       <div class="row" style="display:none" id="site_block">
         $$display_site_block$$
         <div class="col" style="text-align:center">
-          <h3>可使用網站:<span class="badge badge-pill badge-info">$$site$$</span></h3>
+          <h3  data-toggle="tooltip" data-placement="top" title="請選擇想呈現廣告的網站">
+            可使用網站:
+            <i class="far fa-question-circle"></i>
+          </h3>
+          <span class="badge badge-pill badge-info">$$site$$</span>
           <div class="list-group" id="site_block_list">
             $$display_can_use_site$$
             <div class="list-group-item list-group-item-action zone_size" v-for="item in site_arr" v-on:click="ch_site(item)">
@@ -88,13 +96,16 @@
       <div class="row" style="display:none" id="zone_ch_block">
         $$display_df_zone_block$$
         <div class="col" style="text-align:center">
-          <h3>選擇預設版位 或是 自訂版位</h3>
+          <h3>
+            選擇預設版位 或是 自訂版位
+          </h3>
           <div id="accordion">
             <div class="card">
               <div class="card-header" id="headingOne" style="padding: 0px;">
                 <button class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse"
                   data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  預設版位
+                <i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="無須指定訂單，只需要輸入適合大小的素材ID即可呈現廣告"></i>
+                  預設版位 
                 </button>
               </div>
 
@@ -116,6 +127,7 @@
               <div class="card-header" id="headingTwo" style="padding: 0px;">
                 <button class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse"
                   data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="透過特定版位顯示該版位指定之訂單下的素材，需給予版位Code，需注意版位大小是否與上面選擇一致"></i>
                   自訂版位
                 </button>
               </div>
