@@ -18,7 +18,7 @@ function setDefaultZone(html, path) {
   var $ = cheerio.load(html);
   $(".etad").children().remove();
   $(".etad").append('<div style="text-align: center;"><ins class="clickforceads" style="display:inline-block;width:300px;height:250px;" data-ad-zone="8707"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>');
-  fs.writeFile(path+'/index.html', $.html(), function () {
+  fs.writeFile(path+'/DefaultZone.html', $.html(), function () {
     console.log('旅食樂 300250 手機板 預設版位 OK')
   });
 

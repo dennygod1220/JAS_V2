@@ -2,8 +2,10 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
-Route.on('/Business').render('business')
+Route.on('/').render('welcome');
+Route.on('/test').render('test')
+
+Route.on('/Business').render('Business.index')
 //=======啟動 Crontab==========
 Route.get('Cron','CronJobController.index')
 Route.get('CronStart','CronJobController.start')

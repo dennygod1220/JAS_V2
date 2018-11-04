@@ -10,9 +10,11 @@
     data: {
       device: '',
       zone_size_arr: zone_size_arr,
-      zonesize:'',
-      site_arr:site_arr,
-      site:'',
+      zonesize: '',
+      site_arr: site_arr,
+      site: '',
+      df_zone: '',
+      matiral_id: ''
     },
     methods: {
       ch_device: function (device) {
@@ -21,28 +23,50 @@
         this.site = '';
         zone_size_arr.length = 0;
         this.zonesize = '';
+        this.df_zone = '';
         //=================
         this.device = device;
         socket.emit('CtoS which device', {
           device: device
         });
       },
+      //點了 版位大小 後 觸發事件
       ch_zone_size: function (size) {
         site_arr.length = 0;
         this.site = '';
         this.zonesize = size;
-        socket.emit('CtoS which ZoneSize',{
-          Device:this.device,
-          ZoneSize:size
+        this.df_zone = '';
+
+        socket.emit('CtoS which ZoneSize', {
+          Device: this.device,
+          ZoneSize: size
         })
       },
+      //點了 網站 後 觸發事件
       ch_site: function (site) {
         this.site = site;
-        socket.emit('CtoS which Site',{
-          Device:this.device,
-          ZoneSize:this.zonesize,
-          site:site
-        });
+        this.df_zone = '';
+      },
+      //選擇 預設版位 或是 自訂版未
+      ch_zone_df: function (zone_cus) {
+        if (zone_cus == 'default') {
+          //用版位大小 給定 預設cfadc 版位ID
+          switch (this.zonesize) {
+            case '300250':
+              var url = '/DemoPage/site/' + this.device + '/' + this.zonesize + '/' + this.site + '/DefaultZone.html?cfadc=8707:' + this.matiral_id;
+              var win = window.open(url, '_blank');
+              win.focus();
+              break;
+          }
+        } else {
+          this.df_zone = zone_cus;
+          socket.emit('CtoS which Site', {
+            Device: this.device,
+            ZoneSize: this.zonesize,
+            site: this.site,
+            df_zone: zone_cus
+          });
+        }
       }
     },
     computed: {
@@ -66,6 +90,22 @@
             site_arr.push(ele);
           });
         })
+      },
+      //是否顯示 可選網站
+      display_site_block: function () {
+        if (this.device == '' || this.zonesize == '') {
+          $("#site_block").css('display', 'none');
+        } else {
+          $("#site_block").css('display', 'block');
+        }
+      },
+      //是否顯示 自訂版位或預設版位
+      display_df_zone_block: function () {
+        if (this.device == '' || this.zonesize == '' || this.site == '') {
+          $("#zone_ch_block").css('display', 'none');
+        } else {
+          $("#zone_ch_block").css('display', 'block');
+        }
       },
     }
   })

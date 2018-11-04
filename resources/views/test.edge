@@ -1,0 +1,143 @@
+@layout('layout/main')
+@section('content')
+
+<div class="container-fluid" id="demopage_choise">
+  <div class="row">
+    <div class="col" style="text-align:center">
+      <h1>DemoPage製作</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <hr>
+  </div>
+
+
+
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+        aria-selected="true">一般廣告形式</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+        aria-selected="false">Preroll</a>
+    </li>
+
+  </ul>
+
+  {{-- ==================一般廣告====================== --}}
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="row" style="text-align:center">
+        <div class="col"></div>
+        <div class="col">
+          <span class="badge badge-pill badge-info">$$device$$</span>
+          <span class="badge badge-pill badge-info">$$zonesize$$</span>
+          <span class="badge badge-pill badge-info">$$site$$</span>
+        </div>
+        <div class="col"></div>
+      </div>
+
+      <div class="row">
+        <div class="col" style="text-align:center">
+          <h3>手機還是電腦版位?</h3>
+
+          <div class="list-group" id='lst_device'>
+            <button type="button" class="list-group-item list-group-item-action list-group-item-light PCorMobile"
+              v-on:click="ch_device('phone')" device="Phone">手機</div>
+          <button type="button" class="list-group-item list-group-item-action list-group-item-light PCorMobile"
+            v-on:click="ch_device('PC')" device="PC">電腦</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="display:none" id="zone_size_block">
+      <div class="col" style="text-align:center">
+        <h3>版位大小?</h3>
+        <div class="list-group" id="zone_size_list">
+          $$display_zone_size$$
+          <div class="list-group-item list-group-item-action zone_size" v-for="item in zone_size_arr" v-on:click="ch_zone_size(item)">
+            $$item$$
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="display:none" id="site_block">
+      $$display_site_block$$
+      <div class="col" style="text-align:center">
+        <h3>可使用網站:</h3>
+        <div class="list-group" id="site_block_list">
+          $$display_can_use_site$$
+          <div class="list-group-item list-group-item-action zone_size" v-for="item in site_arr" v-on:click="ch_site(item)">
+            $$item$$
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="row" style="display:none" id="zone_ch_block">
+      $$display_df_zone_block$$
+      <div class="col" style="text-align:center">
+        <h3>選擇預設版位 或是 自訂版位</h3>
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne" style="padding: 0px;">
+              <button class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse"
+                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                預設版位
+              </button>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <h4>請輸入素材ID:</h4>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-success" type="button">確認</button>
+                  </div>
+                  <input type="text" class="form-control" id="in_matiral_id">
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="card-header" id="headingTwo" style="padding: 0px;">
+              <button class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse"
+                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                自訂版位
+              </button>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                  <h4>請輸入版位資訊:</h4>
+                    <textarea type="text" class="form-control" id="in_matiral_id"></textarea>
+                    <button class="btn btn-outline-success" type="button">確認</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+{{-- ======================PREROLL======================= --}}
+<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Preroll</div>
+</div>
+
+</div>
+
+<script src="{{ assetsUrl('JS/business_demopage_socket.js') }}"></script>
+
+@endsection

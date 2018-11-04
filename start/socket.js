@@ -91,9 +91,9 @@ io.on('connection', function (socket) {
       (function iterator(i) {
         //遍历数组files结束
         if (i == files.length) {
-          console.log("SERVER 目錄==========");
-          console.log(floder);
-          console.log("====================");
+          // console.log("SERVER 目錄==========");
+          // console.log(floder);
+          // console.log("====================");
 
           io.sockets.connected[socket.id].emit(con_name, {
             dir: floder,
