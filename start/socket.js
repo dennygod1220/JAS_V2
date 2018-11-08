@@ -11,29 +11,54 @@ io.on('connection', function (socket) {
 
 
   //Client 選擇裝置後 ， 告訴Server -> Server 告訴裝置 可用版位大小目錄
-    socket.on('CtoS which device', function (device) {
-  
-      //取得 裝置 底下所有的目錄
-  
-      var path = './public/DemoPage/site/' + device.device + '/';
-      display_subdir(path,'StoC device dir');
-    })
+  socket.on('CtoS which device', function (device) {
+
+    //取得 裝置 底下所有的目錄
+
+    var path = './public/DemoPage/site/' + device.device + '/';
+    try{
+      display_subdir(path, 'StoC device dir');
+    }catch(e){
+      console.log(e);
+    }
+  })
 
 
   //Client 選擇版位大小目錄後 告訴server -> Server 告訴Client可用 網站
   socket.on('CtoS which ZoneSize', function (ZoneSize) {
     //取得 裝置/版位大小 底下所有的目錄
 
-    var path = './public/DemoPage/site/' + ZoneSize.Device+ '/' + ZoneSize.ZoneSize + '/';
-    display_subdir(path,'StoC site dir');
+    var path = './public/DemoPage/site/' + ZoneSize.Device + '/' + ZoneSize.ZoneSize + '/';
+    display_subdir(path, 'StoC site dir');
   })
 
 
+  //Client 選擇自訂版位
   socket.on('CtoS which Site', function (Site) {
     console.log(Site);
 
 
-    // var path = './public/DemoPage/site/' + ZoneSize.Device+ '/' + ZoneSize.ZoneSize + '/';
+    var src = './public/DemoPage/site/' + Site.Device + '/' + Site.ZoneSize + '/' + Site.site + '/index.html';
+    console.log(src);
+    var dist = './public/DemoPage/site/' + Site.Device + '/' + Site.ZoneSize + '/' + Site.site + '/CusZone_' + socket.id + '.html';
+    //複製檔案
+    copyFile(src, dist);
+
+    var getFunName = './public/DemoPage/site/' + Site.Device + '/' + Site.ZoneSize + '/' + Site.site + '/JAS_FuncName.txt';
+    //讀取 此網站所使用的function Name 將他require進來
+    fs.readFile(getFunName, 'utf8', function (err, funcName) {
+      if (err) throw err;
+      var df = require('../public/JS/DemoPage_Zone_set/' + funcName);
+      fs.readFile(dist, 'utf8', function (err, html) {
+        df.SetCusZone(html, dist, Site.zone_info);
+      })
+
+      //告訴 Client 自訂版位OK
+      io.sockets.connected[socket.id].emit('StoC cus zone ok', {
+        CusZoneUrl: '/DemoPage/site/' + Site.Device + '/' + Site.ZoneSize + '/' + Site.site + '/CusZone_' + socket.id + '.html',
+      });
+    })
+
     // display_subdir(path,'StoC site dir');
   })
 
@@ -82,35 +107,63 @@ io.on('connection', function (socket) {
     console.log("Leave");
   });
 
-  //==================MY Function=================
-  function display_subdir(path,con_name) {
-    fs.readdir(path, function (err, files) {
-      //声明一个数组存储目录下的所有文件夹
-      var floder = [];
-      //从数组的第一个元素开始遍历数组
-      (function iterator(i) {
-        //遍历数组files结束
-        if (i == files.length) {
-          // console.log("SERVER 目錄==========");
-          // console.log(floder);
-          // console.log("====================");
+  //======================================================
+  //======================================================
+  //======================================================
+  //=====================MY Function======================
+  //======================================================
+  //======================================================
+  //======================================================
 
-          io.sockets.connected[socket.id].emit(con_name, {
-            dir: floder,
-          })
-          return;
-        }
-        //遍历查看目录下所有东西
-        fs.stat(path + files[i], function (err, stats) {
-          //如果是文件夹，就放入存放文件夹的数组中
-          if (stats.isDirectory()) {
-            floder.push(files[i]);
+  //==========複製檔案
+  function copyFile(src, dist) {
+    console.log("COPY " + dist);
+
+    fs.writeFileSync(dist, fs.readFileSync(src));
+  }
+
+  //=======顯示目錄
+  function display_subdir(path, con_name) {
+    try {
+      fs.readdir(path, function (err, files) {
+        //声明一个数组存储目录下的所有文件夹
+        var floder = [];
+        //从数组的第一个元素开始遍历数组
+        (function iterator(i) {
+          //遍历数组files结束
+          if(files != undefined){
+            try{
+              if (i == files.length) {  
+                io.sockets.connected[socket.id].emit(con_name, {
+                  dir: floder,
+                })
+                return;
+              }
+            }catch(e){
+              io.sockets.connected[socket.id].emit(con_name, {
+                dir: ["錯誤! 沒有檔案"],
+              })
+            }
           }
-          iterator(i + 1);
-        })
-
-      })(0)
-    })
+          //遍历查看目录下所有东西
+          try{
+            fs.stat(path + files[i], function (err, stats) {
+              //如果是文件夹，就放入存放文件夹的数组中
+              if (stats.isDirectory()) {
+                floder.push(files[i]);
+              }
+              iterator(i + 1);
+            })
+          }catch(e){
+            io.sockets.connected[socket.id].emit(con_name, {
+              dir: ["錯誤! 沒有檔案"],
+            })
+          }
+        })(0)
+      })
+    } catch (e) {
+      console.track(e);
+    }
   }
 
 

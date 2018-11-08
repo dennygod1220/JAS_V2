@@ -2,9 +2,13 @@ var cheerio = require('cheerio');
 var fs = require('fs');
 
 
-function getPlayers() {
-
-
+function SetCusZone(html,path,zone) {
+  var $ = cheerio.load(html);
+  $("#div-gpt-ad-1516246245198-3").children().remove();
+  $("#div-gpt-ad-1516246245198-3").append('<div style="text-align: center;">'+zone+'</div>');
+  fs.writeFile(path, $.html(), function () {
+      console.log('關鍵評論網 300250 手機板 自訂版位 OK')
+  });
 }
 
 function setDefaultZone(html,path) {
@@ -20,5 +24,5 @@ function setDefaultZone(html,path) {
 
 module.exports = {
   setDefaultZone: setDefaultZone,
-  getPlayers: getPlayers
+  SetCusZone: SetCusZone
 };

@@ -1,0 +1,55 @@
+@layout('layout/main')
+@section('content')
+
+
+
+<div class="container-fluid" style="margin-top: 50px;">
+  <div class="row" style="height:50px">
+    <div class="col-2"></div>
+
+    <div class="col-8">
+      <div class="card">
+        <div class="card-header" style="text-align:center">
+          登入
+        </div>
+        <div class="card-body">
+          @if(flashMessage('loginError'))
+          <span>{{ flashMessage('loginError') }}</span>
+          @endif
+
+          <form action="{{ route('UserController.login') }}" method="POST">
+            {{ csrfField() }}
+
+            <div class="form-group">
+              <label for="email">請輸入Email:</label>
+              <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="請輸入Email">
+            </div>
+
+            @if(hasErrorFor('email'))
+            <small id="emailHelp" class="form-text text-muted">{{ getErrorFor('email') }}</small>
+            @endif
+
+
+            <div class="form-group">
+              <label for="password">請輸入密碼:</label>
+              <input type="password" name="password" class="form-control" placeholder="請輸入密碼">
+            </div>
+            @if(hasErrorFor('password'))
+            <span>
+              {{ getErrorFor('password') }}
+            </span>
+            @endif
+            <div class="form-group" style="text-align:center">
+              <button class="btn btn-outline-success" type="submit">登入</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+</div>
+
+@endsection

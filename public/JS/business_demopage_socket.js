@@ -14,7 +14,8 @@
       site_arr: site_arr,
       site: '',
       df_zone: '',
-      matiral_id: ''
+      matiral_id: '',
+      zone_info: ''
     },
     methods: {
       ch_device: function (device) {
@@ -57,6 +58,11 @@
               var win = window.open(url, '_blank');
               win.focus();
               break;
+            case '300600':
+              var url = '/DemoPage/site/' + this.device + '/' + this.zonesize + '/' + this.site + '/DefaultZone.html?cfadc=8708:' + this.matiral_id;
+              var win = window.open(url, '_blank');
+              win.focus();
+              break;
           }
         } else {
           this.df_zone = zone_cus;
@@ -64,9 +70,13 @@
             Device: this.device,
             ZoneSize: this.zonesize,
             site: this.site,
-            df_zone: zone_cus
+            df_zone: zone_cus,
+            zone_info: this.zone_info
           });
         }
+      },
+      trimarea: function (e) {
+        this.zone_info = e.target.value.trim();
       }
     },
     computed: {
@@ -110,7 +120,10 @@
     }
   })
 
-
+  //接收 Server 傳來的 自訂版位 建立完成事件
+  socket.on('StoC cus zone ok', function (CusZoneUrl) {
+    window.open(CusZoneUrl.CusZoneUrl, '_blank');
+  })
 
   socket.on('StoC no index html', function () {
     console.log("檔案不存在");

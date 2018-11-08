@@ -7,8 +7,11 @@ var cron = use('node-cron');
 var rimraf = use('rimraf');
 var cheerio = use('cheerio');
 var basic_zone = require('../../../public/JS/DemoPage_Zone_set/basic_zone');
+var st = require('../../../public/JS/Scrape/StartDownLoadPage');
+
 
 class CronJobController {
+
   async index({
     view
   }) {
@@ -19,11 +22,11 @@ class CronJobController {
     console.log("啟動Cron Job");
     // cron.schedule('* 59 * * * *', async () => {
     //新增網站時 格式為
-    //   set_option( url, '網站名稱', '廣告大小', 手機=true PC = false , 呼應js名稱);
+    //   set_option( url, '網站名稱', '廣告大小', 手機=true PC=false , 呼應js名稱);
     await set_option("https://www.thenewslens.com/", '關鍵評論往', '300250', true, "thenewslens_m_300250");
-    await set_option("https://www.tagsis.com/", '女生集合', '320480', false);
+    await set_option("https://www.tagsis.com/cat/1", '女生集合', '300600', false, "tagsis_pc_300600");
     await set_option("http://www.clickforce.com.tw/news/index?category=5&lid=28", 'clickforce_demo', '300250', false);
-    await set_option("http://play.nownews.com/", '旅食樂', '300250', true , "nownews_m_300250");
+    await set_option("http://play.nownews.com/", '旅食樂', '300250', true, "nownews_m_300250");
 
     // });
 
@@ -87,8 +90,9 @@ class CronJobController {
 
   }
 
-
-
+  async start2() {
+    st.StartDownLoadPage();
+  }
 }
 
 module.exports = CronJobController

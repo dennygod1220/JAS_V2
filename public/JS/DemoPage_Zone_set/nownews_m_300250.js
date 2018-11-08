@@ -2,8 +2,13 @@ var cheerio = require('cheerio');
 var fs = require('fs');
 
 
-function getPlayers() {
-
+function SetCusZone(html,path,zone) {
+  var $ = cheerio.load(html);
+  $(".etad").children().remove();
+  $(".etad").append('<div style="text-align: center;">'+zone+'</div>');
+  fs.writeFile(path+'/DefaultZone.html', $.html(), function () {
+    console.log('旅食樂 300250 手機板 自訂版位 OK')
+  });
 
 }
 
@@ -26,5 +31,5 @@ function setDefaultZone(html, path) {
 
 module.exports = {
   setDefaultZone: setDefaultZone,
-  getPlayers: getPlayers
+  SetCusZone: SetCusZone
 };

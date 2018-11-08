@@ -2,19 +2,23 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome');
-Route.on('/test').render('test');
+//==========auth===========================
+Route.on('/signup').render('auth.signup');
+Route.post('/signup', 'UserController.create').validator('CreateUser');
+Route.get('/logout', 'UserController.logout');
+Route.on('/login').render('auth.login');
+Route.post('/login', 'UserController.login').validator('LoginUser');
 
-Route.get('/Business', ({ view }) => view.render('business/index'));
-//=======啟動 Crontab==========
-Route.get('Cron','CronJobController.index')
-Route.get('CronStart','CronJobController.start')
+//=====================================
+Route.group(() => {
+  Route.get('/', ({view}) => view.render('welcome'));
+  Route.get('/test','CronJobController.start2');
 
+  Route.get('/Business', ({view}) => view.render('business/index'));
+  //======管理頁面===============
 
-//===============default_zone===================
-Route.group(()=>{
-    Route.get('/:size/:site',( {view,params}) => {
-        const path = "DemoPage.page.default_zone."+params.size+"."+params.site;
-        return view.render(path);
-    })
-}).prefix('DemoPage/page/default_zone')
+  //=======啟動 Crontab==========
+  Route.get('Cron', 'CronJobController.index')
+  Route.get('CronStart', 'CronJobController.start')
+}).middleware(['auth']);
+

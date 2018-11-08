@@ -2,7 +2,7 @@
   <a href="/">
     <img src="{{ assetsUrl('img/CF.png') }}" alt="葛闢" style="width:40vmin">
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"  aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,5 +21,28 @@
         <a class="nav-link disabled" href="#">Chrome擴充</a>
       </li>
     </ul>
+    <ul class="navbar-nav ml-auto">
+        @loggedIn
+        <li class="nav-item">
+          <a href="" class="nav-link"> {{ auth.user.username }}</a>
+        </li>
+        <li class="nav-item">
+          <a href="/logout" class="nav-link">登出</a>
+        </li>
+        @else
+        <li class="nav-item">
+          <a href="/logout" class="nav-link">登入</a>
+        </li>
+        <li class="nav-item">
+          <a href="/signup" class="nav-link">註冊</a>
+        </li>
+        @endloggedIn
+    </ul>
+
+
   </div>
+
+
+
+
 </nav>

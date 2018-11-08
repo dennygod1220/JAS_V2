@@ -133,9 +133,9 @@
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body">
-                  <h4>請輸入版位資訊:</h4>
-                  <textarea type="text" class="form-control" id="in_mati"></textarea>
-                  <button class="btn btn-outline-success" type="button">確認</button>
+                  <h4>請放入版位Code:</h4>
+                  <textarea type="text" rows="10" class="form-control" id="in_mati" v-on:change='trimarea'></textarea>
+                  <button class="btn btn-outline-success" type="button" v-on:click="ch_zone_df('custom')">確認</button>
                 </div>
               </div>
             </div>
