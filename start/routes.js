@@ -12,13 +12,20 @@ Route.post('/login', 'UserController.login').validator('LoginUser');
 //=====================================
 Route.group(() => {
   Route.get('/', ({view}) => view.render('welcome'));
-  Route.get('/test','CronJobController.start2');
 
   Route.get('/Business', ({view}) => view.render('business/index'));
-  //======管理頁面===============
 
   //=======啟動 Crontab==========
   Route.get('Cron', 'CronJobController.index')
-  Route.get('CronStart', 'CronJobController.start')
+  // Route.get('CronStart', 'CronJobController.start')
+  Route.get('CronStart','CronJobController.start2')
+
 }).middleware(['auth']);
 
+Route.group(()=>{
+  //======管理頁面===============
+  Route.get('/','AdminController.index') 
+  Route.get('/business/demopage','AdminController.demopage')
+  Route.get('/business/demopage/add','AdminController.demopage_add')
+  Route.get('/download_site','AdminController.download_site')
+}).prefix('/admin');

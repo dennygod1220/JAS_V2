@@ -1,0 +1,3847 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta id="viewport" name="viewport" content="width=device-width, minimal-ui, initial-scale=1.0, maximum-scale=1.01, user-scalable=1">
+  <title>糖煮榲桲 @ Rita的部落格 :: 痞客邦 ::</title>
+  <style>
+    @charset "UTF-8";
+
+    blockquote,
+    body,
+    button,
+    code,
+    dd,
+    div,
+    dl,
+    dt,
+    fieldset,
+    form,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    input,
+    legend,
+    li,
+    ol,
+    p,
+    pre,
+    td,
+    textarea,
+    th,
+    ul {
+      margin: 0;
+      padding: 0
+    }
+
+    body,
+    html {
+      height: 100%;
+      background: #fff
+    }
+
+    a,
+    ins {
+      text-decoration: none
+    }
+
+    html {
+      color: #000;
+      -webkit-text-size-adjust: none
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0
+    }
+
+    fieldset,
+    img {
+      border: 0
+    }
+
+    li {
+      list-style: none
+    }
+
+    caption,
+    th {
+      text-align: left
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 100%;
+      font-weight: 400
+    }
+
+    button,
+    input,
+    optgroup,
+    option,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: inherit;
+      font-style: inherit;
+      font-weight: inherit
+    }
+
+    body {
+      position: relative;
+      width: 100%;
+      min-height: 100%;
+      font-family: NotoSansCJKtc-Regular, 'Helvetica Neue', Helvetica, Verdana;
+      letter-spacing: .05em
+    }
+
+    a {
+      color: #006bb3
+    }
+
+    .subscribe-bar-container {
+      padding-bottom: 42px
+    }
+
+    .subscribe-btn,
+    .subscribe-btn__sm {
+      padding: 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      outline: 0
+    }
+
+    .subscribe-bar-container>.subscribe-bar {
+      position: fixed;
+      top: 40px;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      width: 100vw;
+      height: 42px;
+      background-color: #fff;
+      box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .3);
+      transition: top .3s ease
+    }
+
+    .subscribe-bar-container>.subscribe-bar.shrinking {
+      top: 25px
+    }
+
+    .subscribe-bar-container>.subscribe-bar .go-back-btn {
+      display: none;
+      margin-left: 10px;
+      width: 10px;
+      height: 15px;
+      vertical-align: middle;
+      background: url(fonts/arrow_left.svg) 0 center no-repeat;
+      background-size: 10px 15px
+    }
+
+    .subscribe-bar-container>.subscribe-bar .go-back-btn.show {
+      display: inline-block
+    }
+
+    .subscribe-bar-container>.subscribe-bar .blog-name {
+      display: inline-block;
+      width: calc(100% - 60px);
+      margin-left: 15px;
+      margin-right: 20px;
+      font-size: 13px;
+      letter-spacing: .7px;
+      vertical-align: middle;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap
+    }
+
+    .subscribe-bar-container>.subscribe-bar .blog-name-link {
+      color: #006ac6
+    }
+
+    .subscribe-bar-container>.subscribe-bar .blog-name-text {
+      color: #4a4a4a
+    }
+
+    .subscribe-bar-container>.subscribe-bar .subscribe-btn {
+      flex-shrink: 0;
+      margin-right: 10px
+    }
+
+    .subscribe-btn__sm {
+      position: relative;
+      display: block;
+      border: none;
+      width: 25px;
+      height: 25px;
+      background: url(fonts/add_btn.svg) center center no-repeat
+    }
+
+    .subscribe-btn__sm.following {
+      background-image: url(fonts/check_btn.svg)
+    }
+
+    .subscribe-btn__sm.pending {
+      border: 1px solid #498fe2;
+      border-radius: 6px;
+      background-image: url(fonts/pending_icon.svg)
+    }
+
+    .hoverable>.subscribe-btn__sm:hover {
+      background-image: url(fonts/add_btn_hover.svg)
+    }
+
+    .hoverable>.subscribe-btn__sm.following:hover {
+      background-image: url(fonts/check_btn_hover.svg)
+    }
+
+    .hoverable>.subscribe-btn__sm.pending:hover {
+      border-color: #000;
+      background-image: url(fonts/pending_icon_hover.svg)
+    }
+
+    .hoverable>.subscribe-btn__sm:hover::after {
+      content: "關注";
+      position: absolute;
+      right: -10px;
+      bottom: 30px;
+      width: 46px;
+      height: 23px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 23px;
+      letter-spacing: 1.1px;
+      color: #fff !important;
+      text-align: center;
+      background-color: #323232;
+      border-radius: 12px
+    }
+
+    .hoverable>.subscribe-btn__sm.following:hover::after,
+    .hoverable>.subscribe-btn__sm.pending:hover::after {
+      content: "取消關注";
+      right: -30px;
+      width: 82px
+    }
+
+    .subscribe-btn {
+      position: relative;
+      display: block;
+      border: 1px solid #4a90e2;
+      border-radius: 6px;
+      margin: 0;
+      width: 76px;
+      height: 26px;
+      font-size: 14px;
+      letter-spacing: .9px;
+      color: #fff !important;
+      text-decoration: none !important;
+      font-weight: initial !important;
+      text-align: center;
+      background-color: #4a90e2;
+      line-height: 24px
+    }
+
+    .subscribe-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 12px;
+      width: 20px;
+      height: 26px;
+      background: url(fonts/add_icon.svg) center 2px no-repeat
+    }
+
+    .subscribe-btn::after {
+      content: attr(data-follow-state);
+      display: block;
+      position: relative;
+      top: 0;
+      left: 9px
+    }
+
+    .subscribe-btn.following,
+    .subscribe-btn.pending {
+      color: #4a90e2 !important;
+      background-color: #fff !important
+    }
+
+    .subscribe-btn.following::before,
+    .subscribe-btn.pending::before {
+      left: 4px
+    }
+
+    .subscribe-btn.following::after,
+    .subscribe-btn.pending::after {
+      left: 11px
+    }
+
+    .subscribe-btn.following::before {
+      background-image: url(fonts/check_icon.svg)
+    }
+
+    .subscribe-btn.pending::before {
+      background-image: url(fonts/pending_icon.svg)
+    }
+
+    .hoverable>.subscribe-btn:hover {
+      border-color: #6eacf5;
+      background-color: #6eacf5
+    }
+
+    .hoverable>.subscribe-btn.following:hover,
+    .hoverable>.subscribe-btn.pending:hover {
+      border-color: #000;
+      color: #000 !important;
+      background-color: #fff
+    }
+
+    .hoverable>.subscribe-btn.following:hover::before {
+      background-image: url(fonts/check_icon_hover.svg)
+    }
+
+    .hoverable>.subscribe-btn.pending:hover::before {
+      background-image: url(fonts/pending_icon_hover.svg)
+    }
+
+    #main-content>#header {
+      position: relative;
+      z-index: 100000;
+      top: 0;
+      will-change: top;
+      transform: translate3d(0, 0, 0)
+    }
+
+    #main-content>#header .header-bar {
+      position: relative;
+      height: 50px
+    }
+
+    #main-content>#header .header-bar .bar {
+      position: absolute;
+      z-index: 20;
+      width: 100vw;
+      height: 50px;
+      background: #fff;
+      box-shadow: 0 1px 3px 0 rgba(190, 190, 190, .8)
+    }
+
+    .pop-ad-cover .close.arc,
+    .pop-ad-cover .close.square.square--shadow {
+      box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, .5)
+    }
+
+    #header h1 {
+      position: absolute;
+      top: 0;
+      left: 100px;
+      right: 70px;
+      height: 50px;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden
+    }
+
+    #header h1 a {
+      color: #fff;
+      font: 18px Helvetica;
+      font-weight: 100;
+      line-height: 50px;
+      text-decoration: none
+    }
+
+    .header-prompt {
+      position: fixed;
+      top: -40px;
+      right: 0;
+      left: 0;
+      z-index: 100001;
+      width: 280px;
+      height: 36px;
+      border-radius: 15px;
+      margin: auto;
+      line-height: 36px;
+      color: #fff;
+      text-align: center;
+      background-color: rgba(81, 205, 213, .94)
+    }
+
+    .header-prompt.prompt-success {
+      will-change: transform;
+      animation: showNotify 2s both
+    }
+
+    @keyframes showNotify {
+
+      30%,
+      80% {
+        transform: translate(0, 115px)
+      }
+
+      100% {
+        transform: translate(0, -40px)
+      }
+    }
+
+    .menu-opitions .opition-panel-inner.open::before,
+    .opition-items-group.open-child>li.open::before {
+      transform: rotate(90deg)
+    }
+
+    #header .header-title {
+      position: absolute;
+      top: 87px;
+      left: 0;
+      right: 0;
+      height: 47px;
+      background: #fff;
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(.5, #fff), color-stop(.5, #eee), color-stop(1, #eee))
+    }
+
+    #header .header-title h2 {
+      height: 47px;
+      margin: 0;
+      font: 700 17px Helvetica;
+      line-height: 47px;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden
+    }
+
+    .article-content-inner.zoom-lg * h5,
+    .article-content-inner.zoom-lg * h6,
+    .article-content-inner.zoom-lg h5,
+    .article-content-inner.zoom-lg h6,
+    .article-content-inner.zoom-md * h5,
+    .article-content-inner.zoom-md * h6,
+    .article-content-inner.zoom-md h5,
+    .article-content-inner.zoom-md h6,
+    .article-content-inner.zoom-sm * h5,
+    .article-content-inner.zoom-sm * h6,
+    .article-content-inner.zoom-sm h5,
+    .article-content-inner.zoom-sm h6 {
+      font-weight: bolder
+    }
+
+    #header .header-title h2 a {
+      color: #555;
+      text-decoration: none
+    }
+
+    #header .left-nav-button,
+    #header .right-nav-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 36px;
+      background: url(images/btn-menubar%402x.png) center no-repeat;
+      background-size: 50%
+    }
+
+    #header .left-list-button {
+      border-bottom: 1px solid #fff;
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+      margin: 9px 7px 0;
+      text-decoration: none;
+      background: #eee;
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(.8, #e1e1e1));
+      border-radius: 5px
+    }
+
+    #header .left-list-button,
+    #header .left-nav-button {
+      float: left
+    }
+
+    body.no-scroll {
+      position: fixed;
+      overflow: hidden
+    }
+
+    .snap-drawer,
+    .snap-drawer-bg,
+    .snap-drawers {
+      position: absolute;
+      top: 0
+    }
+
+    .snap-drawers {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+      overflow: hidden
+    }
+
+    .snap-drawers.show {
+      z-index: 3
+    }
+
+    .snap-drawer-bg {
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0;
+      -webkit-overflow-scrolling: touch;
+      transition: opacity .3s ease
+    }
+
+    .snap-drawer-bg.show {
+      opacity: .6
+    }
+
+    .snap-drawer {
+      right: -260px;
+      bottom: 0;
+      left: auto;
+      width: 260px;
+      height: auto;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      transition: right .3s ease
+    }
+
+    #side-menu,
+    .side-menu__heading {
+      position: relative;
+      background-color: #fff;
+      color: #4a4a4a
+    }
+
+    .snap-drawer-right {
+      right: 0
+    }
+
+    .side-menu__heading {
+      display: block;
+      overflow: visible;
+      box-sizing: border-box;
+      width: 100%;
+      height: 40px;
+      padding: 8px 0;
+      border-bottom: #eaeaea solid 1px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-align: center;
+      background-size: 14px 61px
+    }
+
+    .snap-drawer-close-btn {
+      position: absolute;
+      top: 10px;
+      left: 13px;
+      width: 20px;
+      height: 20px;
+      background: url(fonts/close_btn.svg) no-repeat;
+      background-size: 20px
+    }
+
+    .menu-title {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 45px;
+      border-bottom: 1px solid #eaeaea;
+      margin-bottom: -2px;
+      font-size: 15px;
+      color: #4a4a4a;
+      text-indent: 15px;
+      line-height: 43px;
+      background-color: #fff
+    }
+
+    .menu-title::before {
+      position: absolute;
+      top: 15px;
+      right: 13px;
+      width: 14px;
+      height: 14px;
+      background: url(fonts/arrow-dark.svg) no-repeat;
+      background-size: 10px;
+      content: ''
+    }
+
+    #side-menu a {
+      box-sizing: border-box;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden
+    }
+
+    .menu-opitions .opition-panel-inner {
+      position: relative;
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      height: 45px;
+      border-bottom: #eaeaea solid 1px;
+      color: #4a4a4a;
+      font-size: 15px;
+      text-indent: 10px;
+      letter-spacing: 1px;
+      overflow: visible;
+      background-color: #fff
+    }
+
+    .menu-opitions .opition-panel-inner.open {
+      background-color: #f5f5f5
+    }
+
+    .menu-opitions .opition-panel-inner::before {
+      position: absolute;
+      top: 15px;
+      right: 13px;
+      width: 14px;
+      height: 14px;
+      background: url(fonts/arrow-dark.svg) no-repeat;
+      background-size: 10px;
+      content: ''
+    }
+
+    .opition-panel-inner a {
+      display: block;
+      padding: 11px 10px 13px 5px;
+      color: #4a4a4a;
+      text-decoration: none
+    }
+
+    .opition-panel-inner.open {
+      background-position: 5% 255%
+    }
+
+    .opition-items-group {
+      position: relative;
+      color: #006ac6;
+      background-color: #f5f5f5
+    }
+
+    .opition-items-group li {
+      position: relative;
+      border-bottom: 1px solid #eaeaea;
+      font-size: 14px;
+      text-indent: 5px;
+      list-style: none;
+      background-color: #f5f5f5
+    }
+
+    .opition-items-group li::before,
+    .opition-items-group.open-child>li::before {
+      position: absolute;
+      top: 15px;
+      right: 13px;
+      width: 14px;
+      height: 14px;
+      content: ''
+    }
+
+    .opition-items-group li::before {
+      background: url(fonts/arrow-blue.svg) no-repeat;
+      background-size: 10px
+    }
+
+    .opition-items-group.open-child>li::before {
+      background: url(fonts/arrow-dark.svg) no-repeat;
+      background-size: 10px
+    }
+
+    .opition-items-group.open-child>li>a {
+      color: #4a4a4a
+    }
+
+    .opition-items-group.open-child .open {
+      border-bottom: none
+    }
+
+    .opition-items-group.open-child .open>a {
+      border-bottom: #eaeaea solid 1px
+    }
+
+    .opition-items-group:last-child li:last-child {
+      border: 0
+    }
+
+    .opition-items-group ul a {
+      padding-left: 45px
+    }
+
+    .opition-items-group a {
+      position: relative;
+      display: block;
+      padding: 14px 40px 14px 30px
+    }
+
+    .ad-320x250,
+    .ad-320x50 {
+      display: inline-block;
+      width: 320px;
+      vertical-align: bottom
+    }
+
+    #header-menu {
+      height: 100%;
+      background: #fff
+    }
+
+    #main-content {
+      position: relative;
+      z-index: 2;
+      box-sizing: border-box;
+      min-height: inherit;
+      background: #fff
+    }
+
+    #main-content>.navbar {
+      padding-bottom: 40px;
+      background-color: #006ac6
+    }
+
+    .ad-320x50 {
+      height: 50px
+    }
+
+    .ad-320x250 {
+      height: 250px
+    }
+
+    .article-author__name,
+    .header-num__view>* {
+      vertical-align: middle
+    }
+
+    .ad-fixed {
+      position: fixed;
+      top: -95px;
+      width: 100%;
+      z-index: 9999
+    }
+
+    @media screen and (min-height:400px) {
+      #main-content>#header {
+        position: fixed;
+        width: 100vw
+      }
+    }
+
+    #side-menu .menu-text {
+      padding-right: 0;
+      background-color: #202020
+    }
+
+    #side-menu .menu-text .read-msg {
+      color: #f6ec6c
+    }
+
+    #side-menu .menu-text:before {
+      background: 0 0
+    }
+
+    .article-author {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 25px 20px 0;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #f3f4f5;
+      line-height: 1
+    }
+
+    .article-author__wrap-row {
+      display: flex;
+      width: 100%
+    }
+
+    .article-author__wrap-row:nth-child(2) {
+      margin-top: 4px
+    }
+
+    .article-author__avatar {
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      margin: 0 10px 0 0;
+      -o-object-fit: cover;
+      object-fit: cover;
+      border-radius: 50%
+    }
+
+    .article-author__content {
+      flex: 1;
+      margin-top: -7px;
+      min-width: 0
+    }
+
+    .article-author__content.no-bottom {
+      margin-top: 0
+    }
+
+    .article-author__name {
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #006ac6
+    }
+
+    .article-author__info {
+      overflow: hidden;
+      margin-top: 5px;
+      margin-bottom: 7px;
+      color: #6e7071;
+      font-size: 12px;
+      line-height: 17px;
+      white-space: nowrap;
+      text-overflow: ellipsis
+    }
+
+    .article-author__social-links {
+      flex: 1;
+      font-size: 0;
+      padding-top: 5px
+    }
+
+    .header-num,
+    .im__modal-number {
+      justify-content: space-between
+    }
+
+    .article-author__social-links a {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-right: 15px
+    }
+
+    .article-author__social-links a:last-child {
+      margin-right: 0
+    }
+
+    .article-author__social-link__icon {
+      width: 18px
+    }
+
+    .article-author__subscribe {
+      margin-right: 15px
+    }
+
+    .article-info {
+      padding: 15px 20px 0
+    }
+
+    .article-info h3 {
+      margin: 10px 0 0;
+      font-size: 24px;
+      font-family: NotoSansCJKtc-Regular, "Helvetica Neue", Helvetica, Verdana;
+      line-height: 42px;
+      letter-spacing: 1px;
+      color: #161717
+    }
+
+    .header-date {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: .1em;
+      color: #7d7d7d
+    }
+
+    .article-content-inner.zoom-lg * h1,
+    .article-content-inner.zoom-lg * h2,
+    .article-content-inner.zoom-lg * h3,
+    .article-content-inner.zoom-lg * h4,
+    .article-content-inner.zoom-lg * h5,
+    .article-content-inner.zoom-lg * h6,
+    .article-content-inner.zoom-lg h1,
+    .article-content-inner.zoom-lg h2,
+    .article-content-inner.zoom-lg h3,
+    .article-content-inner.zoom-lg h4,
+    .article-content-inner.zoom-lg h5,
+    .article-content-inner.zoom-lg h6,
+    .article-content-inner.zoom-md * h1,
+    .article-content-inner.zoom-md * h2,
+    .article-content-inner.zoom-md * h3,
+    .article-content-inner.zoom-md * h4,
+    .article-content-inner.zoom-md * h5,
+    .article-content-inner.zoom-md * h6,
+    .article-content-inner.zoom-md h1,
+    .article-content-inner.zoom-md h2,
+    .article-content-inner.zoom-md h3,
+    .article-content-inner.zoom-md h4,
+    .article-content-inner.zoom-md h5,
+    .article-content-inner.zoom-md h6,
+    .article-content-inner.zoom-sm * h1,
+    .article-content-inner.zoom-sm * h2,
+    .article-content-inner.zoom-sm * h3,
+    .article-content-inner.zoom-sm * h4,
+    .article-content-inner.zoom-sm * h5,
+    .article-content-inner.zoom-sm * h6,
+    .article-content-inner.zoom-sm h1,
+    .article-content-inner.zoom-sm h2,
+    .article-content-inner.zoom-sm h3,
+    .article-content-inner.zoom-sm h4,
+    .article-content-inner.zoom-sm h5,
+    .article-content-inner.zoom-sm h6 {
+      margin: .25em 0;
+      line-height: 1.5
+    }
+
+    .header-num {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      height: 60px;
+      color: #adb1b2;
+      font-size: 13px
+    }
+
+    .header-num__fb-like {
+      overflow: hidden;
+      width: 150px;
+      height: 20px;
+      border: 0
+    }
+
+    .article-content-inner {
+      line-height: 1.5
+    }
+
+    .article-content-inner.zoom-sm,
+    .article-content-inner.zoom-sm * {
+      font-size: 14px !important
+    }
+
+    .article-content-inner.zoom-sm * h1,
+    .article-content-inner.zoom-sm h1 {
+      font-size: 2em !important
+    }
+
+    .article-content-inner.zoom-sm * h2,
+    .article-content-inner.zoom-sm h2 {
+      font-size: 1.8em !important
+    }
+
+    .article-content-inner.zoom-sm * h3,
+    .article-content-inner.zoom-sm h3 {
+      font-size: 1.6em !important
+    }
+
+    .article-content-inner.zoom-sm * h4,
+    .article-content-inner.zoom-sm h4 {
+      font-size: 1.4em !important
+    }
+
+    .article-content-inner.zoom-sm * h5,
+    .article-content-inner.zoom-sm h5 {
+      font-size: 1.25em !important
+    }
+
+    .article-content-inner.zoom-sm * h6,
+    .article-content-inner.zoom-sm h6 {
+      font-size: 1.1em !important
+    }
+
+    .article-content-inner.zoom-md,
+    .article-content-inner.zoom-md * {
+      font-size: 16px !important
+    }
+
+    .article-content-inner.zoom-md * h1,
+    .article-content-inner.zoom-md h1 {
+      font-size: 2em !important
+    }
+
+    .article-content-inner.zoom-md * h2,
+    .article-content-inner.zoom-md h2 {
+      font-size: 1.8em !important
+    }
+
+    .article-content-inner.zoom-md * h3,
+    .article-content-inner.zoom-md h3 {
+      font-size: 1.6em !important
+    }
+
+    .article-content-inner.zoom-md * h4,
+    .article-content-inner.zoom-md h4 {
+      font-size: 1.4em !important
+    }
+
+    .article-content-inner.zoom-md * h5,
+    .article-content-inner.zoom-md h5 {
+      font-size: 1.25em !important
+    }
+
+    .article-content-inner.zoom-md * h6,
+    .article-content-inner.zoom-md h6 {
+      font-size: 1.1em !important
+    }
+
+    .article-content-inner.zoom-lg,
+    .article-content-inner.zoom-lg * {
+      font-size: 18px !important
+    }
+
+    .article-content-inner.zoom-lg * h1,
+    .article-content-inner.zoom-lg h1 {
+      font-size: 2em !important
+    }
+
+    .article-content-inner.zoom-lg * h2,
+    .article-content-inner.zoom-lg h2 {
+      font-size: 1.8em !important
+    }
+
+    .article-content-inner.zoom-lg * h3,
+    .article-content-inner.zoom-lg h3 {
+      font-size: 1.6em !important
+    }
+
+    .article-content-inner.zoom-lg * h4,
+    .article-content-inner.zoom-lg h4 {
+      font-size: 1.4em !important
+    }
+
+    .article-content-inner.zoom-lg * h5,
+    .article-content-inner.zoom-lg h5 {
+      font-size: 1.25em !important
+    }
+
+    .article-content-inner.zoom-lg * h6,
+    .article-content-inner.zoom-lg h6 {
+      font-size: 1.1em !important
+    }
+
+    .zoom-btn-containter {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px
+    }
+
+    .zoom-btn {
+      box-sizing: border-box;
+      width: 40px;
+      height: 25px;
+      outline: 0;
+      border: 1px solid #adb1b2;
+      margin: 0;
+      padding: 0;
+      color: #adb1b3;
+      background-color: transparent
+    }
+
+    .zoom-btn:not(:first-child) {
+      border-left: 0
+    }
+
+    .zoom-btn.active {
+      color: #fff;
+      background-color: #adb1b3
+    }
+
+    .zoom-btn svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin: 2px auto
+    }
+
+    #main .article-upper-layered {
+      position: relative;
+      z-index: 2
+    }
+
+    #main .header-fixed-area {
+      min-height: 280px
+    }
+
+    #main .header-author-info {
+      padding-top: 10px;
+      background-color: #fff;
+      min-height: 100px
+    }
+
+    #main .article-category {
+      padding: 18px 15px 15px;
+      font-family: PingFangTC;
+      font-size: 14px;
+      text-align: right;
+      letter-spacing: 1px;
+      color: #006ac6;
+      background: #fff;
+      border-bottom: 1px solid #ccc
+    }
+
+    #main .article-category h5 {
+      position: relative;
+      display: inline;
+      padding-right: 25px
+    }
+
+    #main .article-category h5::before {
+      position: absolute;
+      top: 1px;
+      right: 0;
+      width: 16px;
+      height: 16px;
+      background: url(fonts/btn-menubar.svg) center no-repeat;
+      background-size: 80%;
+      content: ''
+    }
+
+    .article-list li {
+      position: relative;
+      border-bottom: 1px solid #ccc;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .article-list li::before {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 18px;
+      height: 13px;
+      background: url(images/sprite.png) -150px -4px no-repeat;
+      transform: translateY(-50%);
+      content: ''
+    }
+
+    .article-list .list-ad {
+      min-height: 50px;
+      text-align: center;
+      background: #fff
+    }
+
+    .article-list .list-ad::before {
+      background: 0 0
+    }
+
+    .article-list .list-ad a {
+      padding: 0
+    }
+
+    .article-list a {
+      position: relative;
+      height: 35px;
+      display: block;
+      padding: 10px 25px 10px 65px;
+      text-decoration: none;
+      z-index: 100
+    }
+
+    .article-list li .article-thumb {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 55px;
+      height: 55px
+    }
+
+    .article-list li .article-status {
+      vertical-align: -2px;
+      margin-right: 3px
+    }
+
+    .article-list li .article-title {
+      display: block;
+      font: 700 15px Helvetica;
+      line-height: 25px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #000
+    }
+
+    .article-list li .article-date {
+      position: absolute;
+      top: 35px;
+      display: block;
+      font: 700 10px Helvetica;
+      color: #aaa
+    }
+
+    .article-list li .article-comments {
+      color: #fff;
+      background: #999;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 5px;
+      margin-top: 9px;
+      border-radius: 10px;
+      float: right
+    }
+
+    .header-ad_placeholder,
+    .page-next,
+    .page-prev {
+      font-size: 12px;
+      display: block;
+      text-align: center
+    }
+
+    .page-select {
+      display: block;
+      background: #fff;
+      overflow: hidden
+    }
+
+    .page-next,
+    .page-prev {
+      text-decoration: none;
+      padding: 15px 0;
+      color: #006bb3;
+      font-weight: 700
+    }
+
+    .page-prev {
+      float: left;
+      width: 50%
+    }
+
+    .page-next {
+      float: right;
+      width: 49%;
+      border-left: 1px solid #ccc
+    }
+
+    .header-ad_placeholder {
+      letter-spacing: 3px;
+      line-height: 18px;
+      color: #6a6a6a
+    }
+
+    .header-ad {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      min-height: 100px;
+      text-align: center;
+      background: #eee;
+      overflow: hidden
+    }
+
+    .article-body,
+    .article-body img {
+      background: #fff;
+      box-sizing: border-box
+    }
+
+    .header-ad>.header-ad__ins {
+      display: block;
+      height: 280px;
+      width: 336px;
+      margin: 0 auto
+    }
+
+    @media only screen and (min-device-width:321px) and (max-device-width:568px) and (-webkit-min-device-pixel-ratio:2) {
+      .header-ad {
+        min-height: 100px
+      }
+    }
+
+    .header-ad ins {
+      vertical-align: bottom
+    }
+
+    .article-body {
+      padding: 20px 20px 40px;
+      width: 100%;
+      overflow-y: hidden;
+      line-height: 20px
+    }
+
+    .article-body .horizontal-padding-cleaner {
+      margin: 0 -20px
+    }
+
+    .article-body p:not([class]) {
+      margin-bottom: 1em;
+      letter-spacing: 2.6px;
+      line-height: 30px
+    }
+
+    #main .article-body font[color] {
+      color: #000
+    }
+
+    .article-body img {
+      padding: 1px;
+      border: 1px solid #ccc;
+      margin: 5px 0;
+      max-width: 100%;
+      width: auto !important;
+      height: auto !important
+    }
+
+    .article-body ol,
+    .article-body ul {
+      margin-bottom: 1em;
+      padding-left: 2em
+    }
+
+    .article-body ul li {
+      list-style: disc
+    }
+
+    .article-body ol li {
+      list-style: decimal
+    }
+
+    #main .article-content-inner .page a,
+    #main .article-content-inner .page span {
+      font-size: 22px !important
+    }
+
+    .article-ad,
+    .article-ad1732,
+    .in-read-ad {
+      text-align: center
+    }
+
+    .in-read-ad {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center
+    }
+
+    .in-read-ad .adsbyfalcon {
+      padding-bottom: 0
+    }
+
+    .cf:after,
+    .cf:before {
+      content: '.';
+      display: block;
+      height: 0;
+      overflow: hidden
+    }
+
+    .cf:after {
+      clear: both
+    }
+
+    .cf {
+      display: block;
+      zoom: 1
+    }
+
+    .ad-img {
+      width: 320px;
+      text-align: center
+    }
+
+    .page a,
+    .page span {
+      color: #999;
+      border-radius: 3px;
+      margin: 0 3px 0 0;
+      padding: 1px 5px;
+      font-size: 22px
+    }
+
+    .page {
+      text-align: center
+    }
+
+    .pop-ad-cover {
+      width: 100vw;
+      z-index: 110002;
+      background: rgba(0, 0, 0, .3);
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      text-align: center
+    }
+
+    .pop-ad-cover.pop-ad-cover--deep {
+      padding-top: 140px;
+      background: rgba(0, 0, 0, .8)
+    }
+
+    .pop-ad-cover .hide {
+      display: none
+    }
+
+    .pop-ad-cover .content {
+      display: inline-block;
+      position: relative
+    }
+
+    .article-content-inner [id^=pixad]:empty::before,
+    .header-ad .pixnet-ad::before,
+    .pixnet-ad .pixnet-ad::before,
+    .pixnet-ad [id^=pixad]::before,
+    .stream__item .pixnet-ad::before,
+    div.pixnet-ad:empty::before,
+    ins.pixnet-ad:empty::before {
+      display: none
+    }
+
+    .pop-ad-cover .content .iframe a img {
+      width: 100%;
+      max-height: 100%;
+      display: none
+    }
+
+    #card__address span,
+    #card__website span {
+      max-height: 45px;
+      word-break: break-all;
+      overflow: hidden
+    }
+
+    .pop-ad-cover .close {
+      position: absolute;
+      z-index: 110003;
+      width: 40px;
+      height: 40px;
+      font-size: 40px;
+      line-height: 35px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, .4);
+      border-radius: 50%
+    }
+
+    .pop-ad-cover .close.left {
+      left: 0
+    }
+
+    .pop-ad-cover .close.right {
+      right: 0
+    }
+
+    .pop-ad-cover .close.text {
+      width: 88px;
+      height: 28px;
+      font-family: STHeitiTC-Medium;
+      font-size: 14px;
+      line-height: 28px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, .6);
+      border: 1px solid #fff;
+      border-radius: 6px;
+      top: -30px;
+      right: 8px
+    }
+
+    .pop-ad-cover .close.square {
+      width: 43px;
+      height: 43px;
+      font-size: 45px;
+      line-height: 40px;
+      color: #fff;
+      background-color: #5e5e5e;
+      border-radius: 0;
+      top: 0;
+      right: 0
+    }
+
+    .pop-ad-cover .close.square.square--big {
+      width: 60px;
+      height: 60px;
+      line-height: 30px
+    }
+
+    .pop-ad-cover .close.square.square--big p {
+      font-size: 14px
+    }
+
+    .pop-ad-cover .close.circle {
+      width: 43px;
+      height: 43px;
+      font-size: 45px;
+      line-height: 35px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, .6);
+      border: 1px solid #fff;
+      border-radius: 50%;
+      top: -45px;
+      right: 10px
+    }
+
+    .pop-ad-cover .close.arc {
+      width: 118px;
+      height: 118px;
+      font-size: 45px;
+      line-height: 40px;
+      color: #fff;
+      background-color: #5e5e5e;
+      border-radius: 50%;
+      top: -60px;
+      right: -60px
+    }
+
+    .pop-ad-cover .close.arc span {
+      position: relative;
+      top: 60px;
+      left: -25px
+    }
+
+    .pop-ad-cover .loading-icon {
+      width: 8px;
+      height: 8px;
+      margin: 10% auto;
+      opacity: .5;
+      border-radius: 50%;
+      transform-origin: 50%;
+      animation: load .5s steps(8, end) infinite;
+      box-shadow: 0 -14px 0 rgba(255, 255, 255, .8), 10px -10px 0 rgba(255, 255, 255, .7), 14px 0 1px rgba(255, 255, 255, .6), 10px 10px 1px rgba(255, 255, 255, .5), 0 14px 2px rgba(255, 255, 255, .4), -10px 10px 2px rgba(255, 255, 255, .3), -14px 0 3px rgba(255, 255, 255, .2), -10px -10px 3px rgba(255, 255, 255, .1)
+    }
+
+    .pop-ad-cover .iframe {
+      padding-top: 10px
+    }
+
+    @keyframes load {
+      0% {
+        transform: rotate(0)
+      }
+
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+
+    .article-content-inner [id^=pixad],
+    .pixnet-ad {
+      padding-bottom: 40px;
+      text-align: center
+    }
+
+    .header-ad .pixnet-ad,
+    .pixnet-ad .pixnet-ad,
+    .pixnet-ad [id^=pixad],
+    .stream__item .pixnet-ad {
+      padding-bottom: 0;
+      box-shadow: none
+    }
+
+    .article-content-inner [id^=pixad]:empty,
+    div.pixnet-ad:empty,
+    ins.pixnet-ad:empty {
+      padding: 0
+    }
+
+    .sticky-box {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      width: 100%;
+      height: 100px;
+      max-width: 100vw;
+      border-top: 1px solid #fff;
+      color: #000;
+      background: rgba(255, 255, 255, .95);
+      box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+      will-change: transform;
+      transform: translateY(100%);
+      transition: transform .5s
+    }
+
+    #structure-card {
+      position: relative;
+      color: #000
+    }
+
+    #structure-card a {
+      color: #000
+    }
+
+    .card__container {
+      box-sizing: border-box;
+      margin: 35px 10px 22px;
+      padding: 15px 15px 7px;
+      border: 1px solid #cacbd6;
+      border-radius: 5px;
+      background: #fafafa
+    }
+
+    #structure-card img {
+      margin: 0;
+      padding: 0;
+      float: left;
+      border: 0;
+      background: #fafafa
+    }
+
+    .card__avatar>img {
+      width: 92px !important;
+      height: 92px !important
+    }
+
+    .card__header {
+      margin-left: 100px
+    }
+
+    .card__icon {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      vertical-align: middle
+    }
+
+    .card__rating {
+      height: 20px
+    }
+
+    .card__rating>img {
+      width: 20px;
+      height: 20px
+    }
+
+    .card__opening-hours {
+      margin-left: 24px
+    }
+
+    .card__opening-hours p,
+    .card__opening-hours p:first-child {
+      margin-bottom: 5px
+    }
+
+    .card__body {
+      margin-top: 15px;
+      font-size: 13px
+    }
+
+    .card__body img {
+      margin-right: 6px !important
+    }
+
+    .into--rating__description {
+      margin-top: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 11px
+    }
+
+    #structure-card>.card__ribbon {
+      position: absolute;
+      width: 75px;
+      height: 22px;
+      top: -15px;
+      left: 3px;
+      padding: 0 0 0 7px;
+      background-color: #006ac6;
+      color: #fff;
+      font-size: 13px !important;
+      letter-spacing: 4px
+    }
+
+    .card__ribbon:before {
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      content: "";
+      border-color: #263746 #263746 transparent transparent;
+      border-style: solid;
+      border-width: 4px
+    }
+
+    .im__animated .article::after,
+    .im__modal-res-name:before,
+    .im__modal-text:before,
+    .im__modal-title:before {
+      content: ''
+    }
+
+    #structure-card .card__name {
+      display: inline-block;
+      width: 174px;
+      height: 48px;
+      margin-top: -5px;
+      overflow: hidden;
+      text-align: left;
+      text-overflow: ellipsis;
+      letter-spacing: .5px;
+      font-size: 17px !important;
+      font-weight: 500
+    }
+
+    #structure-card .into--rating__description {
+      font-size: 11px !important
+    }
+
+    .u-hidden {
+      display: none
+    }
+
+    #structure-card .card__icon--mark {
+      display: inline-block;
+      margin-top: 5px;
+      float: left
+    }
+
+    #structure-card #card__address .card__icon.icon-arrow {
+      display: inline-block;
+      margin-top: 10px;
+      float: right
+    }
+
+    #card__website span {
+      display: inline-block;
+      width: 85%
+    }
+
+    #structure-card hr {
+      color: #eee;
+      border: 1px solid
+    }
+
+    .expand-btn {
+      margin: 10px auto;
+      width: 101px
+    }
+
+    .collapse-btn {
+      margin: 7px auto 0;
+      width: 40px;
+      height: 15px
+    }
+
+    #card__address>a,
+    #card__telephone>a {
+      display: block
+    }
+
+    #card__address span,
+    #card__address>a>img {
+      display: inline-block;
+      vertical-align: middle
+    }
+
+    #card__address span {
+      width: 84%
+    }
+
+    #card__address>a>img {
+      margin-top: 8px;
+      float: right
+    }
+
+    .im-highlight,
+    .im-highlight__keyword {
+      vertical-align: baseline
+    }
+
+    #card__address .icon-arrow,
+    #card__telephone .icon-arrow {
+      float: right;
+      margin-top: 5px
+    }
+
+    .im__animated {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-name: placeHolderShimmer;
+      background: linear-gradient(to right, #eee 10%, #ddd 20%, #eee 30%);
+      background-size: 800px 100px
+    }
+
+    .im__animated.im__animated--hero {
+      height: 160px;
+      margin-bottom: 10px
+    }
+
+    .im__animated .bg-masker {
+      position: absolute;
+      background: #fff
+    }
+
+    .im__animated .header-top {
+      top: 150px;
+      width: 100%;
+      height: 10px
+    }
+
+    .im__animated .header-bottom {
+      top: 190px;
+      width: 100%;
+      height: 15px
+    }
+
+    .im__animated .article {
+      position: relative;
+      width: 100%;
+      height: 100px
+    }
+
+    .im__animated .article::after {
+      display: block;
+      bottom: 0;
+      width: 100%;
+      height: 5px;
+      background: #fff
+    }
+
+    .im__animated .img--left {
+      top: 0;
+      left: 100px;
+      width: 5px;
+      height: 100px
+    }
+
+    .im__animated .article--top {
+      top: 15px;
+      right: 0;
+      width: calc(100% - 100px);
+      height: 15px
+    }
+
+    .im__animated .article--top-right {
+      top: 5px;
+      right: 0;
+      width: 50px;
+      height: 20px
+    }
+
+    .im__animated .article--middle {
+      top: 40px;
+      right: 0;
+      width: calc(100% - 100px);
+      height: 15px
+    }
+
+    .im__animated .article--bottom {
+      right: 0;
+      bottom: 0;
+      width: calc(100% - 100px);
+      height: 35px
+    }
+
+    .im__animated .article--bottom-right {
+      right: 0;
+      bottom: 20px;
+      width: 30px;
+      height: 25px
+    }
+
+    #im__modal-mask,
+    .im__expand-modal {
+      position: fixed;
+      z-index: 2;
+      width: 100vw
+    }
+
+    @keyframes placeHolderShimmer {
+      0% {
+        background-position: -500px 0
+      }
+
+      100% {
+        background-position: 500px 0
+      }
+    }
+
+    .im-highlight {
+      display: inline-flex;
+      margin-right: .2em;
+      line-height: 16px;
+      color: #2969c0;
+      align-items: center;
+      justify-content: center
+    }
+
+    .im-highlight.im-highlight__btn--more {
+      border: 1px solid #e2e2e2;
+      border-radius: 5px;
+      padding: 5px;
+      font-size: 13px !important;
+      line-height: 13px
+    }
+
+    #im__modal-mask {
+      top: 0;
+      height: 100vh;
+      background: #000;
+      opacity: 0;
+      transition: opacity .3s ease;
+      pointer-events: none
+    }
+
+    #im__modal-mask.show {
+      opacity: .6;
+      pointer-events: auto
+    }
+
+    .im__expand-modal {
+      bottom: 0;
+      box-sizing: border-box;
+      height: 74vh;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 1px 4px rgba(110, 112, 113, .4);
+      opacity: 0;
+      -webkit-overflow-scrolling: touch;
+      transition: .3s ease;
+      transition-property: transform, opacity
+    }
+
+    .im__expand-modal.type-A {
+      height: 448px
+    }
+
+    .im__expand-modal--show {
+      opacity: 1;
+      pointer-events: auto
+    }
+
+    .im__expand-modal--hide {
+      transform: translateY(100%);
+      pointer-events: none
+    }
+
+    .im__modal-content {
+      height: 100%
+    }
+
+    .im__scroll-area {
+      position: relative;
+      height: calc(100% - 30px);
+      padding: 20px;
+      box-sizing: border-box;
+      overflow: auto
+    }
+
+    .im__heading {
+      position: relative;
+      text-align: center;
+      line-height: 43px;
+      font-size: 15px;
+      color: #4a4a4a;
+      letter-spacing: 1.1px;
+      box-shadow: 0 0 4px rgba(0, 0, 0, .2)
+    }
+
+    .im__modal-name,
+    .im__more-name {
+      line-height: 20px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      -webkit-line-clamp: 3;
+      word-wrap: break-word;
+      overflow: hidden
+    }
+
+    .im__closeBtn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      width: 50px;
+      height: 43px;
+      justify-content: center;
+      align-items: center
+    }
+
+    .im__modal-section {
+      margin-bottom: 30px
+    }
+
+    .im__modal-section a {
+      display: block;
+      position: relative;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eaeaea
+    }
+
+    .im__modal-section a:last-child {
+      border-bottom: none
+    }
+
+    .im__modal-section--more {
+      display: none;
+      padding: 0 15px
+    }
+
+    .im__modal-section--more a {
+      display: block;
+      position: relative
+    }
+
+    .im__modal-img {
+      font-size: 0
+    }
+
+    .im__modal-img img {
+      border-radius: 3px;
+      pointer-events: none;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center
+    }
+
+    .im__more-article {
+      margin-bottom: 20px;
+      border: 1px solid #F2F2F2;
+      border-radius: 3px;
+      overflow: hidden
+    }
+
+    .im__more-article:last-child {
+      margin-bottom: 40px
+    }
+
+    .im__more-img {
+      position: relative;
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+      pointer-events: none
+    }
+
+    .im__more-img img {
+      width: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center
+    }
+
+    .im__more-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      color: #fff;
+      box-sizing: border-box;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden
+    }
+
+    .im__more-text {
+      padding: 5px 10px 10px
+    }
+
+    .im__more-name {
+      display: -webkit-box;
+      margin-bottom: 15px;
+      max-height: 60px;
+      font-size: 16px;
+      color: #4a4a4a
+    }
+
+    .im__more-tag {
+      display: flex;
+      font-size: 0
+    }
+
+    .im__more-tag a {
+      display: inline-block;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      padding: 2px 7px;
+      font-size: 12px;
+      color: #6f6f6f;
+      border: 1px solid #e6e6e6;
+      border-radius: 5px;
+      box-sizing: border-box;
+      vertical-align: middle;
+      white-space: nowrap
+    }
+
+    .im__more-tag a:last-child {
+      max-width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden
+    }
+
+    .im__modal-title {
+      position: relative;
+      padding: 0 0 15px 8px;
+      width: 100%;
+      font-size: 14px;
+      color: #4A4A4A
+    }
+
+    .im__modal-title:before {
+      position: absolute;
+      top: 1px;
+      left: -5px;
+      width: 3px;
+      height: 18px;
+      border-radius: 1.5px;
+      background-color: #c49487
+    }
+
+    .im__closebutton {
+      position: absolute;
+      z-index: 3;
+      top: 1px;
+      left: 2px;
+      padding: 9px
+    }
+
+    .im__more-info {
+      display: flex
+    }
+
+    .im__modal-name {
+      display: -webkit-box;
+      height: 60px;
+      margin-bottom: 5px;
+      color: #4A4A4A
+    }
+
+    .im__modal-text {
+      position: relative;
+      margin-left: 8px;
+      padding-right: 22px
+    }
+
+    .im__modal-text:before {
+      position: absolute;
+      top: 47px;
+      right: 0;
+      width: 10px;
+      height: 15px;
+      background-image: url(images/left-to-right-arrow.png);
+      background-size: contain;
+      background-repeat: no-repeat
+    }
+
+    .im__modal-info {
+      display: flex;
+      margin-bottom: 10px
+    }
+
+    .im__modal-info img {
+      display: block
+    }
+
+    .im__modal-footer,
+    .im__more-number {
+      display: flex;
+      font-size: 12px
+    }
+
+    .im__modal-number {
+      display: flex;
+      width: 100%;
+      font-size: 11px;
+      color: #9b9b9b;
+      line-height: 1.5em
+    }
+
+    .im__modal-number--bottom {
+      position: absolute;
+      bottom: 0;
+      width: calc(100% - 22px)
+    }
+
+    .im__more-number {
+      margin-bottom: 6px;
+      color: #9b9b9b;
+      line-height: 17px;
+      justify-content: space-between
+    }
+
+    .im__more-number div {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden
+    }
+
+    .im__modal-res-name {
+      position: absolute;
+      bottom: 0;
+      max-width: calc(100% - 22px);
+      padding-left: 22px;
+      font-size: 12px;
+      color: #686868;
+      line-height: 20px;
+      box-sizing: border-box;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden
+    }
+
+    .im__modal-res-name:before {
+      position: absolute;
+      top: -1px;
+      left: -2px;
+      width: 22px;
+      height: 22px;
+      background-image: url(fonts/icon-food.svg)
+    }
+
+    .im__more-number__info {
+      color: #81828E
+    }
+
+    .im_modal-category {
+      width: 36px;
+      height: 18px;
+      margin-right: 5px;
+      color: #fff;
+      background-color: #e07654;
+      border-radius: 3px;
+      text-align-last: center
+    }
+
+    #im__empty-model {
+      position: relative;
+      z-index: 3;
+      padding: 10px 0 0;
+      background-color: #fff
+    }
+
+  </style>
+  <link rel="prev" href="https://ritachin0918.pixnet.net/blog/post/349120885">
+  <link rel="next" href="https://ritachin0918.pixnet.net/blog/post/349183573">
+
+
+
+  <script>
+    !function(e){"use strict";e.loadCSS=function(t,n,r){var i,l=e.document,o=l.createElement("link");if(n)i=n;else{var a=(l.body||l.getElementsByTagName("head")[0]).childNodes;i=a[a.length-1]}var s=l.styleSheets;o.rel="stylesheet",o.href=t,o.media="only x",i.parentNode.insertBefore(o,n?i:i.nextSibling);var f=function(e){for(var t=o.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){f(e)})};return o.onloadcssdefined=f,f(function(){o.media=r||"all"}),o}}(this);
+
+loadCSS("https://front.pixfs.net/css/mobile/styles/mobile-base-defer.min.css?v=762ebd8b?v=25c44eb8ce71fc591071667a84c66621");
+</script>
+
+  <noscript>
+    <link rel="stylesheet" href="css/mobile-base-defer.min.css" type="text/css"></noscript>
+
+  <link rel="canonical" href="https://ritachin0918.pixnet.net/blog/post/349171300">
+
+  <meta name="author" content="ritachin0918 (ritachin0918)">
+  <meta name="author-avatar-20" content="https://s1.pimg.tw/avatar/ritachin0918/0/0/zoomcrop/20x20.png?v=1519554392">
+  <meta name="static-version" content="25c44eb8ce71fc591071667a84c66621">
+  <meta name="keywords" content=",食譜分享,松露玫瑰在我家,糖煮榲桲">
+  <meta name="description" content="糖煮榲桲  馬卡龍聚會當天帶了新鮮榲桲給大家試吃，生食的評價很兩極，十幾個人才吃了我原先就切開剩下的2/3顆，所以另一個最後還是跟著我回家 得來不易的水果，就算只有一個，也要好好運用，拿出最小的醬鍋，">
+  <meta name="title" content="Rita的部落格">
+  <meta name="robots" content="INDEX,FOLLOW">
+
+
+  <script>
+    window.size = function () {
+      var w = 0,
+        h = 0;
+
+      w = Math.max(window.innerWidth, document.body.clientWidth, document.documentElement.clientWidth);
+      h = Math.max(window.innerHeight, document.body.clientHeight, document.documentElement.clientHeight);
+
+      return {
+        width: w,
+        height: h
+      };
+    };
+
+  </script>
+  <script type="text/javascript">
+    <!--
+    var pix = pix || {};
+    pix.js_error_type = 'mobile';
+    dataLayer = window.dataLayer || [];
+    //-->
+
+  </script>
+
+
+  <meta property="falcon:blogcategory" content="28">
+  <meta property="falcon:articlecategory" content="27">
+  <script async src="js/adsbyfalcon.min.js"></script>
+  <script async src="js/adsbygoogle.js"></script>
+</head>
+
+<body data-adsense-state="" data-adsense-classification="" data-blog-site-category-id="28" data-mobile-mode="yep"
+  data-ab-testing-seed="2648148486" data-article-id="349171300" data-comments-count="0" data-business-list=""
+  data-is-from-fb="0" data-article-site-category-id="27" data-match-testing-interaction-model=""
+  data-match-testing-interaction-model-keywords="[]" data-uniqid="">
+  <script type="text/javascript">
+    _atrk_opts = {
+      atrk_acct: "H00Mh1aIE700wg",
+      domain: "pixnet.net",
+      dynamic: true
+    };
+    (function () {
+      var as = document.createElement('script');
+      as.type = 'text/javascript';
+      as.async = true;
+      as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js";
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(as, s);
+    })();
+
+  </script>
+  <div class="pop-ad-cover" style="height: 18291px; padding-top: 113.5px;">
+    <div class="loading-icon hide"></div>
+    <div class="content"><a class="close hide" style="right: 0px; top: 30px; display: inline;" href="javascript:;">×</a>
+      <div class="iframe" style="padding-top: 10px;" id="JAS_Frame"> 
+        <ins class="clickforceads" style="display: inline-block;" data-ad-zone="8725"></ins>
+        <script async="" type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script>
+        <script>jQuery(document).ready(function () {        var height = 440;    var isFullSize = true;        pix.mobile.popAd.onLoad(height, isFullSize);});</script>
+      </div><span class="mib--ad-box__icon" style="right: unset; left: 0px; top: 10px;"><a href="#">痞客邦廣告聯播網</a></span>
+    </div>
+  </div>
+  <noscript><img src="images/atrk.gif" style="display:none" height="1" width="1" alt=""></noscript>
+  <div class="snap-drawers">
+    <div class="snap-drawer-bg"></div>
+    <div class="snap-drawer">
+      <div id="header-menu" style="">
+        <div id="side-menu">
+          <div id="side-menu-blog">
+            <h2 class="side-menu__heading">
+              <div class="snap-drawer-close-btn"></div>
+              <span>所有分類</span>
+            </h2>
+            <div class="menu-opitions menu-opitions-control" id="article-list-with-category">
+            </div>
+          </div>
+          <div id="side-menu-photo">
+            <a class="menu-title" id="mixpanel-menu-photo-title" href="/album" data-ga-click="blog,select-category,click-album"
+              data-pa-click="select-category,click-album">
+              相簿 </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script id="article-list-with-category-tpl" type="text/x-jsrender">
+    <h2 class="opition-panel-inner" id="mixpanel-menu-blog-category">文章分類</h2>
+    <ul class="opition-items-group" style="display:none;">
+        {{if custom_cate_dirs && custom_cate_dirs.length}}
+        {{for custom_cate_dirs}}
+        <li>
+            <a class="opition-items" href="#" data-type="blog-cateogy-folder" data-id="{{:id}}">{{:title}}</a>
+            <ul style="display:none;" id="{{:id}}">
+                {{for children}}
+                <li>
+                    <a
+                        href="{{:link}}"
+                        data-ga-click="blog,select-category,click-category-name"
+                        data-pa-click="select-category,click-category-name">
+                        {{:name}}
+                    </a>
+                </li>
+                {{/for}}
+            </ul>
+        </li>
+        {{/for}}
+        {{/if}}
+        {{if site_cates && site_cates.length}}
+        {{for site_cates}}
+            <li>
+                <a
+                    class="opition-items"
+                    href="{{:link}}"
+                    data-ga-click="blog,select-category,click-category-name"
+                    data-pa-click="select-category,click-category-name">
+                    {{:name}}
+                </a>
+            </li>
+        {{/for}}
+        {{/if}}
+    </ul>
+    <h2 class="opition-panel-inner" id="mixpanel-menu-blog-new">最新文章</h2>
+    <ul class="opition-items-group" style="display:none;">
+        {{if latest_articles && latest_articles.length}}
+        {{for latest_articles}}
+        <li>
+        <a
+            class="opition-items"
+            href="{{:link}}"
+            data-ga-click="blog,select-category,click-new-article-name"
+            data-pa-click="select-category,click-new-article-name">
+            {{:title}}
+        </a>
+        </li>
+        {{/for}}
+        {{/if}}
+    </ul>
+    <h2 class="opition-panel-inner" id="mixpanel-menu-blog-hot">熱門文章</h2>
+    <ul class="opition-items-group" style="display:none;">
+        {{if hot_articles && hot_articles.length}}
+        {{for hot_articles}}
+        <li>
+        <a
+            class="opition-items"
+            href="{{:link}}"
+            data-ga-click="blog,select-category,click-hot-article-name"
+            data-pa-click="select-category,click-hot-article-name">
+            {{:title}}
+        </a>
+        </li>
+        {{/for}}
+        {{/if}}
+    </ul>
+</script>
+  <script>
+    // ga code
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-408650-10', 'auto', 'mobileMenuTracker');
+    ga('mobileMenuTracker.set', 'page', '/blog/');
+
+  </script>
+
+
+  <style>
+    .mib--pop-ad-cover {
+    /* 避免沒有 MIB 時，空容器顯示 */
+    display: none;
+}
+
+.mib--ad-box__icon {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    background: transparent url("images/ad-icon.png") no-repeat;
+}
+
+.mib--ad-box__icon a {
+    display: none !important;
+    padding: 0 7px;
+    line-height: 18px;
+    font-size: 12px;
+    color: #fff;
+    background: #1472b9;
+    border-radius: 2px;
+}
+</style>
+
+  <div id="ad-mib">
+    <script>
+      pix.MIB = pix.MIB || {};
+      pix.MIB.config = {
+        hosthash: 'add665aecdc1685168e93d979faeb576',
+        dr: {
+          source: 'ritachin0918'
+        },
+        goldAds: document.querySelectorAll('.ueae440-sitemAjidr-ueae440'),
+        uniq: 'fe488763e842c389c2eb35c76ea8657f4761276d93891',
+        percentSite: '//falcon.pixanalytics.com/mib/vap',
+        falconSite: '//falcon.pixanalytics.com',
+        cate: '',
+        hasMIB: 1,
+        canPutVideo: false,
+        article_cate_id: '',
+        demo: {
+          hash: '',
+          demoOption: 0
+        },
+        availablePositions: [{
+          id: 1,
+          name: 'sidebar-1',
+          enable: 1
+        }, {
+          id: 1,
+          name: 'sidebar-2',
+          enable: false
+        }, {
+          id: 3,
+          name: 'video',
+          enable: false
+        }, {
+          id: 8,
+          name: 'unfold',
+          enable: false
+        }, {
+          id: 10,
+          name: 'fly-desktop-image',
+          enable: true
+        }, {
+          id: 11,
+          name: 'fly-mobile-image',
+          enable: true
+        }, {
+          id: 12,
+          name: 'fly-mobile-video',
+          enable: true
+        }, {
+          id: 14,
+          name: 'desktop_article_ad',
+          enable: true
+        }],
+        ref: ''
+      };
+      (function () {
+        var goldAds = pix.MIB.config.goldAds;
+        var isMobile = "1";
+        if (goldAds[0] && !isMobile) {
+          pix.MIB.build.generate();
+          pix.MIB.build.detectPageScrollPlayback();
+        }
+      })();
+
+    </script>
+  </div>
+
+
+  <div class="header-prompt" id="header-prompt"></div>
+  <div id="main-content">
+    <header class="navbar">
+      <div class="navbar-container"></div>
+      <script>
+        var projectName = "blog";
+        var deviceType = "mobile";
+
+      </script>
+      <script src="js/pixnavbar-ui-module--bundle.min.js" defer></script>
+    </header>
+    <div class="subscribe-bar-container">
+
+      <div class="subscribe-bar post-blog">
+        <a class="blog-name blog-name-link" href="https://ritachin0918.pixnet.net/blog">Rita的部落格</a>
+
+        <a class="subscribe-btn" href="https://panel.pixnet.cc/login/openid?done=http%3A%2F%2Fritachin0918.pixnet.net%2Fblog%2Fpost%2F349171300%3Futm_source%3DPIXNET%26utm_medium%3DIndex%26utm_content%3D&openid=https%3A%2F%2Fmember.pixnet.cc%2Flogin&easy_login=1"
+          data-follow-state="關注"></a>
+      </div>
+    </div>
+    <div id="header">
+      <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="3033" data-embed="false" style="display:inline-block;"></ins>
+      <meta itemprop="name" content="糖煮榲桲 @ Rita的部落格 :: 痞客邦 ::">
+      <meta itemprop="description" content="糖煮榲桲  馬卡龍聚會當天帶了新鮮榲桲給大家試吃，生食的評價很兩極，十幾個人才吃了我原先就切開剩下的2/3顆，所以另一個最後還是跟著我回家 得來不易的水果，就算只有一個，也要好好運用，拿出最小的醬鍋，">
+
+      <meta property="og:locale" content="zh_TW">
+      <meta property="og:url" content="https://ritachin0918.pixnet.net/blog/post/349171300">
+      <meta property="og:type" content="article">
+      <meta property="og:title" content="糖煮榲桲 @ Rita的部落格 :: 痞客邦 ::">
+      <meta property="og:description" content="糖煮榲桲  馬卡龍聚會當天帶了新鮮榲桲給大家試吃，生食的評價很兩極，十幾個人才吃了我原先就切開剩下的2/3顆，所以另一個最後還是跟著我回家 得來不易的水果，就算只有一個，也要好好運用，拿出最小的醬鍋，">
+
+      <script type="text/javascript">
+        <!--
+        var pix = pix || {};
+        pix.js_error_type = pix.js_error_type || 'frontblog';
+        pix.documentReadyTime = new Date().getTime();
+        //-->
+
+      </script>
+      <script type="text/javascript">
+        <!--
+        (function () {
+          if (window.size().height > 10 && window.size().width > 10) {
+            var i = new Image(1, 1);
+            i.src =
+              '//counter.pixplug.in/count.php?timestamp=1542093891&random=3876698212&check=4201827455&data[blog]=%7B%22blogid%22%3A%224563191%22%7D&data[blogarticle]=%7B%22blogid%22%3A%224563191%22%2C%22articleid%22%3A%22349171300%22%7D&height=' +
+              window.size().height + '&width=' + window.size().width + '&referer=' + encodeURI(document.referrer);
+            i.onload = function () {
+              return;
+            }
+          }
+        })();
+        //-->
+
+      </script>
+      <script type="text/javascript">
+        <!--
+        var pix = pix || {};
+        pix.visitor_url = "https://ritachin0918.pixnet.net/blog";
+        pix.visitor_timestamp = "1542093891";
+        pix.visitor_nonce = "26304172";
+        pix.visitor_public = "LumrRMVHhADdttHSeUhMM8S3";
+        pix.visitor_sig = "9af250af9ec2e541aac6c8902312231f";
+        pix.user_name = null;
+        pix.avatar_version = 0;
+        (function () {
+          var js = document.createElement('script');
+          js.src = "\/\/s.pixfs.net\/visitor.pixplug.in\/checklogin.min.js?v=25c44eb8ce71fc591071667a84c66621";
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(js, s);
+        })();
+        //-->
+
+      </script>
+    </div>
+
+    <div id="main" class="articles">
+
+
+
+      <div style="display: none;"><ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="891" data-embed="false"
+          style="display:inline-block;"></ins></div>
+
+
+      <div class="article-header article-info article-title">
+        <time class="header-date">Nov 09. 2018 23:12</time>
+        <h3 class="header-title" id="article-349171300" data-hot-link="//www.pixnet.net/blog/articles/category/0"
+          data-site-category="食譜分享" data-site-category-id="27">糖煮榲桲</h3>
+      </div>
+
+
+      <div class="article-header article-info">
+        <div class="header-num">
+          <div>
+            <iframe class="header-num__fb-like" src="like.php" scrolling="no" frameborder="0" allowtransparency="true">
+            </iframe>
+          </div>
+          <div class="header-num__view">
+            <img src="fonts/view.svg">
+            <span>85</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-fixed-area">
+        <div id="header-ad-fixed">
+
+          <div class="header-ad" id="pixad1101">
+            <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="2199" data-embed="false" style="display:inline-block;"></ins>
+          </div>
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var $domToBeChecked = jQuery('#main .article-body'),
+                $domToBeUpperLayered = jQuery('#main .article-body'),
+                $domToBeFixed = jQuery('#header-ad-fixed'),
+                isCTADisplayed = function () {
+                  return jQuery('div.sticky-box.show').length > 0;
+                },
+                checkCTA = function () {
+                  if (isCTADisplayed()) {
+                    jQuery(window).off('scroll', adScrollHandler);
+                    $domToBeFixed.removeClass('ad-fixed');
+                  } else if ($domToBeFixed.hasClass('ad-fixed')) {
+                    setTimeout(checkCTA, 100);
+                  }
+                },
+                adScrollHandler = function (e) {
+                  if (isCTADisplayed()) {
+                    jQuery(window).off('scroll', adScrollHandler);
+                    return;
+                  }
+
+                  if ($domToBeChecked[0].getBoundingClientRect().top <= 590) {
+                    $domToBeFixed.addClass('ad-fixed');
+                    setTimeout(function () {
+                      jQuery(window).off('scroll', adScrollHandler);
+                      $domToBeFixed.removeClass('ad-fixed');
+                    }, 2500);
+
+                    setTimeout(checkCTA, 100);
+                  } else {
+                    $domToBeFixed.removeClass('ad-fixed');
+                  }
+                };
+
+              if (!isCTADisplayed() && window.screen.height > 568 && $domToBeChecked[0].getBoundingClientRect().top >
+                590) {
+                jQuery(window).on('scroll', adScrollHandler);
+              }
+            });
+
+          </script>
+
+        </div>
+      </div>
+
+      <div class="header-author-info">
+
+        <div class="article-author" id="mixpanel-author-box">
+          <div class="article-author__wrap-row">
+            <a href="http://www.pixnet.net/pcard/ritachin0918">
+              <img class="article-author__avatar" src="images/50x0.png" alt="創作者 ritachin0918 的頭像" data-ga-click="blog-author,author-Intro,click-author-Intro,author image"
+                data-pa-click="author-Intro,click-author-Intro,author image">
+            </a>
+            <div class="article-author__content ">
+              <a class="article-author__name" href="http://www.pixnet.net/pcard/ritachin0918" data-ga-click="blog-author,author-Intro,click-author-Intro,author name"
+                data-pa-click="author-Intro,click-author-Intro,author name">
+                ritachin0918 </a>
+              <p class="article-author__info">Rita的部落格</p>
+              <div class="article-author__wrap-row">
+                <div class="article-author__subscribe">
+
+                  <a class="subscribe-btn" href="https://panel.pixnet.cc/login/openid?done=http%3A%2F%2Fritachin0918.pixnet.net%2Fblog%2Fpost%2F349171300%3Futm_source%3DPIXNET%26utm_medium%3DIndex%26utm_content%3D&openid=https%3A%2F%2Fmember.pixnet.cc%2Flogin&easy_login=1"
+                    data-follow-state="關注"></a>
+                </div>
+
+                <div class="article-author__social-links">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="article-body">
+        <div class="article-content-inner zoom-md">
+
+          <div class="zoom-btn-containter">
+            <button class="zoom-btn" id="mixpanel-zoom-sm" data-fontsize="sm" data-ga-click="generel,mobileClick,click-zoom,zoom-out">
+              <svg>
+                <use xlink:href="#zoom-sm" /></svg>
+            </button>
+            <button class="zoom-btn active" id="mixpanel-zoom-md" data-fontsize="md" data-ga-click="generel,mobileClick,click-zoom,zoom-default">
+              <svg>
+                <use xlink:href="#zoom-md" /></svg>
+            </button>
+            <button class="zoom-btn" id="mixpanel-zoom-lg" data-fontsize="lg" data-ga-click="generel,mobileClick,click-zoom,zoom-in">
+              <svg>
+                <use xlink:href="#zoom-lg" /></svg>
+            </button>
+          </div>
+
+          <p style="text-align: center;"><strong><span style="font-size: 12pt; color: #800080;">糖煮榲桲</span></strong></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><a href="https://ritachin0918.pixnet.net/album/photo/720568172"><span
+                  style="color: #800080;"><img title="糖煮榲桲" src="images/grey.gif" data-original="https://pic.pimg.tw/ritachin0918/1541687988-2638351121_wn.jpg"
+                    alt="糖煮榲桲" border="0"><noscript><img title="糖煮榲桲" src="images/1541687988-2638351121_n.jpg" alt="糖煮榲桲"
+                      border="0"></noscript></span></a></span></p>
+          <p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt; color: #800080;">馬卡龍聚會當天帶了新鮮榲桲給大家試吃，生食的評價很兩極，十幾個人才吃了我原先就切開剩下的2/3顆，所以另一個最後還是跟著我回家</span></p>
+          <p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt; color: #800080;"><span
+                style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">得來不易的水果，</span><span
+                style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">就算只有一個，也<span>要好好運用，</span></span><span
+                style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;"><span>拿出最小的醬鍋，</span></span><span
+                style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">來熬糖漬</span><span
+                style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">榲桲</span></span></p>
+          <p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt; color: #800080;"><span
+                style="font-family: arial, helvetica, sans-serif; text-align: center;"><span style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">我只熬了50分鐘左右(量太少無法熬太久)，成品已呈橘紅色，口感是Q<span
+                    style="font-family: arial, helvetica, sans-serif; font-size: 13.3333px;"><span style="font-family: 新細明體; font-size: 12pt;">韌的，芷羚說很像硬一點的蜜地瓜XD，橙酒的味道不太明顯，不過有股淡淡花香與蜂蜜的<span
+                        style="color: #800080; font-family: 新細明體; font-size: 16px; text-align: center;">香氣，真的很特別，</span>女兒單吃時說有點怪，但拿來配羊起司與薩拉米又誇超極好吃，看來食物一樣要跟對人才能顯出它的價值XD
+                      <!-- more --></span></span></span></span></span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><a href="https://ritachin0918.pixnet.net/album/photo/720568073"><span
+                  style="color: #800080;"><img title="糖煮榲桲" src="images/grey.gif" data-original="https://pic.pimg.tw/ritachin0918/1541687924-3189208392_wn.jpg"
+                    alt="糖煮榲桲" border="0"><noscript><img title="糖煮榲桲" src="images/1541687924-3189208392_n.jpg" alt="糖煮榲桲"
+                      border="0"></noscript></span></a></span></p>
+          <p style="text-align: center;"> <span style="font-size: 12pt; color: #800080;"><span style="font-family: arial, helvetica, sans-serif;">材料：榲桲、</span><span
+                style="font-family: arial, helvetica, sans-serif;">無鹽奶油、</span><span style="font-family: arial, helvetica, sans-serif;">糖、</span><span
+                style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: transparent; font-family: arial, helvetica, sans-serif; line-height: 15.3333px;">橙酒、</span><span
+                style="font-family: arial, helvetica, sans-serif;">檸檬汁</span></span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><a href="https://ritachin0918.pixnet.net/album/photo/720568091"><span
+                  style="color: #800080;"><img title="糖煮榲桲" src="images/grey.gif" data-original="https://pic.pimg.tw/ritachin0918/1541687941-846317316_wn.jpg"
+                    alt="糖煮榲桲" border="0"><noscript><img title="糖煮榲桲" src="images/1541687941-846317316_n.jpg" alt="糖煮榲桲"
+                      border="0"></noscript></span></a></span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><span style="font-family: arial, helvetica, sans-serif; text-align: center;">榲桲去皮去核，切細丁</span> </span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><a href="https://ritachin0918.pixnet.net/album/photo/720568085"><span
+                  style="color: #800080;"><img title="糖煮榲桲" src="images/grey.gif" data-original="https://pic.pimg.tw/ritachin0918/1541687933-3204666869_wn.jpg"
+                    alt="糖煮榲桲" border="0"><noscript><img title="糖煮榲桲" src="images/1541687933-3204666869_n.jpg" alt="糖煮榲桲"
+                      border="0"></noscript></span></a></span></p>
+          <p style="text-align: center;"> <span style="font-size: 12pt; color: #800080;">取一個只醬鍋，先融化奶油再放入榲桲丁</span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><a href="https://ritachin0918.pixnet.net/album/photo/720568106"><span
+                  style="color: #800080;"><img title="糖煮榲桲" src="images/grey.gif" data-original="https://pic.pimg.tw/ritachin0918/1541687950-3084893015_wn.jpg"
+                    alt="糖煮榲桲" border="0"><noscript><img title="糖煮榲桲" src="images/1541687950-3084893015_n.jpg" alt="糖煮榲桲"
+                      border="0"></noscript></span></a> </span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;">加入砂糖</span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><a href="https://ritachin0918.pixnet.net/album/photo/720568124"><span
+                  style="color: #800080;"><img title="糖煮榲桲" src="images/grey.gif" data-original="https://pic.pimg.tw/ritachin0918/1541687966-3782052253_wn.jpg"
+                    alt="糖煮榲桲" border="0"><noscript><img title="糖煮榲桲" src="images/1541687966-3782052253_n.jpg" alt="糖煮榲桲"
+                      border="0"></noscript></span></a></span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;">將糖煮融化    </span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><a href="https://ritachin0918.pixnet.net/album/photo/720568112"><span
+                  style="color: #800080;"><img title="糖煮榲桲" src="images/grey.gif" data-original="https://pic.pimg.tw/ritachin0918/1541687957-186409815_wn.jpg"
+                    alt="糖煮榲桲" border="0"><noscript><img title="糖煮榲桲" src="images/1541687957-186409815_n.jpg" alt="糖煮榲桲"
+                      border="0"></noscript></span></a></span></p>
+          <p style="text-align: center;"> <span style="font-size: 12pt; color: #800080;">加入檸檬汁</span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><a href="https://ritachin0918.pixnet.net/album/photo/720568145"><span
+                  style="color: #800080;"><img title="糖煮榲桲" src="images/grey.gif" data-original="https://pic.pimg.tw/ritachin0918/1541687973-2668572233_wn.jpg"
+                    alt="糖煮榲桲" border="0"><noscript><img title="糖煮榲桲" src="images/1541687973-2668572233_n.jpg" alt="糖煮榲桲"
+                      border="0"></noscript></span></a></span></p>
+          <p style="text-align: center;"><span style="color: #800080; font-size: 12pt;">加入橙酒</span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><a href="https://ritachin0918.pixnet.net/album/photo/720568166"><span
+                  style="color: #800080;"><img title="糖煮榲桲" src="images/grey.gif" data-original="https://pic.pimg.tw/ritachin0918/1541687983-1730206286_wn.jpg"
+                    alt="糖煮榲桲" border="0"><noscript><img title="糖煮榲桲" src="images/1541687983-1730206286_n.jpg" alt="糖煮榲桲"
+                      border="0"></noscript></span></a></span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"> <span style="text-align: center;">小火熬煮45分鐘</span><br></span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><a href="https://ritachin0918.pixnet.net/album/photo/720568169"><span
+                  style="color: #800080;"><img title="糖煮榲桲" src="images/grey.gif" data-original="https://pic.pimg.tw/ritachin0918/1541687985-2784950197_wn.jpg"
+                    alt="糖煮榲桲" border="0"><noscript><img title="糖煮榲桲" src="images/1541687985-2784950197_n.jpg" alt="糖煮榲桲"
+                      border="0"></noscript></span></a>  </span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><span style="font-family: arial, helvetica, sans-serif; text-align: center;">聽我說做了糖煮榲桲，品穎馬上私我「妳有照阿記的方法煮嗎?」「當然,，只不過水份實在太少，別說2小時，連30分鐘都撐不過，只好一直加橙酒，也多加了不少檸檬汁XD」</span></span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><span style="font-family: arial, helvetica, sans-serif; text-align: center;">這次回國前她製作了大量的<span
+                  style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">榲桲果醬回來當拌手禮，<span
+                    style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">前兩次的成品都不滿意，一直到第三次才成功，<span
+                      style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">所以跟我分享了製作心得。</span></span></span></span></span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><span style="font-family: arial, helvetica, sans-serif; text-align: center;"><span
+                  style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;"><span
+                    style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;"><span
+                      style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">第一天先</span></span></span></span></span><span
+              style="font-size: 12pt; color: #800080;"><span style="font-family: arial, helvetica, sans-serif; text-align: center;"><span>熬煮<span>榲桲靜置一晚，隔天濾出<span>榲桲水，再用<span
+                        style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">榲桲水</span>來製作</span></span>果醬(天呀!!超搞剛)</span></span></span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><span style="font-family: arial, helvetica, sans-serif; text-align: center;"><span>再綜觀幾本食譜上學到的方法，我煮的量這麼小，應該可以運用這辦法，只要煮滾靜置、隔天再<span
+                    style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">稍微熬煮就能達到同樣的效果。</span></span></span></span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><span style="font-family: arial, helvetica, sans-serif; text-align: center;"><span>她一直說自己不是很用功的人，但這陣子相處下來，發現她的求知慾比我還高，哪幾本書裡有<span
+                    style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">榲桲食譜她<span
+                      style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">一清二楚，</span>製作流程更是研究的透澈，所以懂得靈活運用，要我去翻"</span>巴黎最老甜點舖"
+                  (噗~知識近在眼前我卻渾然不知XD)，裡面的<span style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">榲桲軟糖也是用了同樣的手法</span>，先熬煮<span
+                    style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">榲桲</span><span><span>的</span>皮與核，皮與籽都含<span
+                      style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">有豐富膠質，再取熬好的<span
+                        style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">榲桲水來熬醬，有點類似列日糖漿的做法，取其精華製作出來的成品風味深沉<span
+                          style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">濃厚，口頰留香，另人再三回味!</span></span></span></span></span></span></span></p>
+          <p style="text-align: center;"><span style="font-size: 12pt; color: #800080;"><span style="font-family: arial, helvetica, sans-serif; text-align: center;"><span><span><span
+                      style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;"><span
+                        style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;"><span
+                          style="color: #800080; font-family: arial, helvetica, sans-serif; font-size: 16px; text-align: center;">食譜來源：松露玫瑰/</span></span></span></span></span></span></span><span
+              style="font-family: verdana;"><span style="border-style: initial; border-color: initial; border-image: initial; outline-color: initial; outline-style: initial; font-stretch: normal; font-size: 16px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><strong><a
+                    title="榲桲 Quince" href="http://trufflerose.pixnet.net/blog/post/27750327">榲桲 Quince</a></strong></span></span> </p>
+          <div id="fb-root"> </div>
+          <script type="text/javascript">
+            // <![CDATA[
+            (function (d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2';
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            // ]]>
+
+          </script>
+          <div class="fb-post" data-href="https://www.facebook.com/photo.php?fbid=2435501363132592&amp;set=g.854438314618412&amp;type=1&amp;theater&amp;ifg=1"
+            data-width="500" data-show-text="true">
+            <blockquote class="fb-xfbml-parse-ignore" cite="https://www.facebook.com/photo.php?fbid=2435501363132592&amp;set=gm.2014532378608994&amp;type=3">
+              <p>【2018-269】糖煮榲桲 馬卡龍聚會當天帶了新鮮榲桲給大家試吃，生食的評價很兩極，十幾個人才吃了我原先就切開剩下的2/3顆，所以另一個最後還是跟著我回家
+                得來不易的水果，就算只有一個，也要好好運用，拿出最小的醬鍋，來熬糖漬榲桲 我只熬了...</p>
+              由 <a href="https://www.facebook.com/rita.chen.5623">Rita Chen</a> 發佈於 <a href="https://www.facebook.com/photo.php?fbid=2435501363132592&amp;set=gm.2014532378608994&amp;type=3">2018年11月9日
+                星期五</a>
+            </blockquote>
+          </div>
+
+          <script defer src="js/jquery.min.js" crossorigin="anonymous"></script>
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              jQuery.noConflict();
+
+              jQuery.ajaxSetup({
+                cache: true
+              });
+              jQuery.get(
+                "//front.pixfs.net/images/blog/post/mobile/articleheader/zoom-icon.svg?v=25c44eb8ce71fc591071667a84c66621",
+                function (data) {
+                  var div = document.createElement('div');
+                  div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
+                  document.body.insertBefore(div, document.body.childNodes[0]);
+                });
+              jQuery.ajaxSetup({
+                cache: false
+              });
+            });
+
+          </script>
+
+        </div>
+
+        <div class="octopus related-container horizontal-padding-cleaner" data-zone="1"></div>
+
+
+
+        <button class="btn--show-comments btn--toggle-comment" data-analytic-imps="generel,mobileClick,imps-comment-in-blog"
+          data-analytic-click="generel,mobileClick,click-comment-in-blog" data-analytic-once="true">
+          <span class="btn--show-comments__dialog"></span>
+          <span>留言</span>
+        </button>
+
+
+
+        <div class="quick-navs" data-analytic-imps="recommend-article,blogger-article-category,imps-blogger-article-category"
+          data-analytic-once="true">
+          <div class="quick-navs__header">
+            更多 ritachin0918 的 <a href="/blog/category/1716083">松露玫瑰在我家</a> 推薦文章
+          </div>
+          <div class="quick-navs__main">
+            <div class="quick-navs__main__slideshow" data-total="10">
+              <a class="quick-nav" href="https://ritachin0918.pixnet.net/blog/post/23990269">
+                <div class="quick-nav__cover-container">
+                  <img class="quick-nav__cover" src="images/380x228_1.jpg" alt="" onerror="this.remove()"
+                    data-ga-action="click-blogger-article" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article image">
+                </div>
+                <p class="quick-nav__text" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article headline">
+                  乃綺上菜~培根蛋直麵 </p>
+              </a>
+              <a class="quick-nav" href="https://ritachin0918.pixnet.net/blog/post/25538704">
+                <div class="quick-nav__cover-container">
+                  <img class="quick-nav__cover" src="images/380x228_9.jpg" alt="" onerror="this.remove()"
+                    data-ga-action="click-blogger-article" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article image">
+                </div>
+                <p class="quick-nav__text" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article headline">
+                  橙汁照燒雞翅 &amp; 烤薯片 </p>
+              </a>
+              <a class="quick-nav" href="https://ritachin0918.pixnet.net/blog/post/30396115">
+                <div class="quick-nav__cover-container">
+                  <img class="quick-nav__cover" src="images/380x228_3.jpg" alt="" onerror="this.remove()"
+                    data-ga-action="click-blogger-article" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article image">
+                </div>
+                <p class="quick-nav__text" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article headline">
+                  蘇格蘭蛋 </p>
+              </a>
+              <a class="quick-nav" href="https://ritachin0918.pixnet.net/blog/post/91311560">
+                <div class="quick-nav__cover-container">
+                  <img class="quick-nav__cover" src="images/380x228_8.jpg" alt="" onerror="this.remove()"
+                    data-ga-action="click-blogger-article" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article image">
+                </div>
+                <p class="quick-nav__text" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article headline">
+                  雞肉起司南瓜泥筆管麵 </p>
+              </a>
+              <a class="quick-nav" href="https://ritachin0918.pixnet.net/blog/post/96388442">
+                <div class="quick-nav__cover-container">
+                  <img class="quick-nav__cover" src="images/380x228_4.jpg" alt="" onerror="this.remove()"
+                    data-ga-action="click-blogger-article" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article image">
+                </div>
+                <p class="quick-nav__text" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article headline">
+                  微辣爆香之&quot;香料辣油&quot; </p>
+              </a>
+              <a class="quick-nav" href="https://ritachin0918.pixnet.net/blog/post/334824941">
+                <div class="quick-nav__cover-container">
+                  <img class="quick-nav__cover" src="images/380x228_2.jpg" alt="" onerror="this.remove()"
+                    data-ga-action="click-blogger-article" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article image">
+                </div>
+                <p class="quick-nav__text" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article headline">
+                  酪梨三明治 </p>
+              </a>
+              <a class="quick-nav" href="https://ritachin0918.pixnet.net/blog/post/335832722">
+                <div class="quick-nav__cover-container">
+                  <img class="quick-nav__cover" src="images/380x228.jpg" alt="" onerror="this.remove()" data-ga-action="click-blogger-article"
+                    data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article image">
+                </div>
+                <p class="quick-nav__text" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article headline">
+                  鯷魚蘑菇 </p>
+              </a>
+              <a class="quick-nav" href="https://ritachin0918.pixnet.net/blog/post/343581962">
+                <div class="quick-nav__cover-container">
+                  <img class="quick-nav__cover" src="images/380x228_7.jpg" alt="" onerror="this.remove()"
+                    data-ga-action="click-blogger-article" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article image">
+                </div>
+                <p class="quick-nav__text" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article headline">
+                  奶油堅果細扁麵 </p>
+              </a>
+              <a class="quick-nav" href="https://ritachin0918.pixnet.net/blog/post/345911683">
+                <div class="quick-nav__cover-container">
+                  <img class="quick-nav__cover" src="images/380x228_6.jpg" alt="" onerror="this.remove()"
+                    data-ga-action="click-blogger-article" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article image">
+                </div>
+                <p class="quick-nav__text" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article headline">
+                  茄汁肉末金針菇 </p>
+              </a>
+              <a class="quick-nav" href="https://ritachin0918.pixnet.net/blog/post/347363456">
+                <div class="quick-nav__cover-container">
+                  <img class="quick-nav__cover" src="images/380x228_5.jpg" alt="" onerror="this.remove()"
+                    data-ga-action="click-blogger-article" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article image">
+                </div>
+                <p class="quick-nav__text" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article,click-article headline">
+                  紫蘇梅拌金針菇 </p>
+              </a>
+            </div>
+          </div>
+          <div class="quick-navs__footer">
+            <img class="quick-nav__btn" src="fonts/quicknav-arrow-left--sm.svg" alt="看上一篇" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article-readmore,left">
+            <img class="quick-nav__btn" src="fonts/quicknav-arrow-right--sm.svg" alt="看下一篇" data-analytic-click="recommend-article,blogger-article-category,click-blogger-article-readmore,right">
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+      <div class="octopus" data-zone="2"></div>
+
+
+
+
+
+
+
+      <div class="article-footer article-ad">
+        <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="2913" data-embed="false" style="display:inline-block;"></ins></div>
+
+      <div class="article-footer article-ad1732">
+        <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="1732" data-embed="false" style="display:inline-block;"></ins></div>
+
+
+      <div class="octopus" data-zone="3"></div>
+
+      <script>
+        pix.isMobile = true;
+
+      </script>
+      <script>
+        pix.stylemeTags = [];
+
+      </script>
+
+      <section class="discover-stream">
+        <div class="discover-stream__title-wrap">
+          <img class="discover-stream__stream-icon" src="fonts/stream.svg" alt="邦邦">
+          <h2 class="discover-stream__title">發現更多有趣邦邦</h2>
+        </div>
+        <ul class="discover-stream__list"></ul>
+        <div class="discover-stream__watch-more">
+          <a href="https://streamtopic.pixnet.net/?utm_source=PIXNET&utm_medium=post-recommend">
+            <span>來看 更多邦邦</span>
+          </a>
+        </div>
+      </section>
+
+
+
+      <div class="hot-articles hot-articles-section-1">
+        <div class="hot-articles__header">
+          食譜分享 今日熱門文章
+        </div>
+        <div class="hot-articles__main">
+        </div>
+      </div>
+
+
+      <div style="text-align:center;" id="pixad1741">
+        <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="1741" data-embed="false" style="display:inline-block;"></ins></div>
+
+      <div class="hot-articles hot-articles-section-2">
+        <div class="hot-articles__header">
+        </div>
+        <div class="hot-articles__main">
+        </div>
+      </div>
+
+
+      <div style="text-align:center;" id="pixad1742">
+        <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="1742" data-embed="false" style="display:inline-block;"></ins></div>
+
+      <div class="hot-articles hot-articles-section-3">
+        <div class="hot-articles__header">
+        </div>
+        <div class="hot-articles__main">
+        </div>
+      </div>
+
+
+      <div style="text-align:center;" id="pixad2391">
+        <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="2391" data-embed="false" style="display:inline-block;"></ins></div>
+
+      <div class="hot-articles hot-articles-section-4">
+        <div class="hot-articles__header">
+        </div>
+        <div class="hot-articles__main">
+        </div>
+      </div>
+
+
+      <div style="text-align:center;" id="pixad1138">
+        <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="1138" data-embed="false" style="display:inline-block;"></ins></div>
+
+      <div class="hot-articles hot-articles-section-5">
+        <div class="hot-articles__header">
+        </div>
+        <div class="hot-articles__main">
+        </div>
+      </div>
+
+
+      <div style="text-align:center;" id="pixad2544">
+        <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="2544" data-embed="false" style="display:inline-block;"></ins></div>
+
+      <div class="hot-articles hot-articles-section-6">
+        <div class="hot-articles__header">
+        </div>
+        <div class="hot-articles__main">
+        </div>
+      </div>
+
+
+      <div style="text-align:center;" id="pixad2547">
+        <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="2547" data-embed="false" style="display:inline-block;"></ins></div>
+
+      <div class="hot-articles hot-articles-section-7">
+        <div class="hot-articles__header">
+        </div>
+        <div class="hot-articles__main">
+        </div>
+      </div>
+
+
+      <div style="text-align:center;" id="pixad2550">
+        <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="2550" data-embed="false" style="display:inline-block;"></ins></div>
+
+      <div class="hot-articles hot-articles-section-8">
+        <div class="hot-articles__header">
+        </div>
+        <div class="hot-articles__main">
+        </div>
+      </div>
+
+
+      <div style="text-align:center;" id="pixad2553">
+        <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="2553" data-embed="false" style="display:inline-block;"></ins></div>
+
+      <div class="hot-articles hot-articles-section-9">
+        <div class="hot-articles__header">
+        </div>
+        <div class="hot-articles__main">
+        </div>
+      </div>
+
+
+      <div style="text-align:center;" id="pixad2556">
+        <ins class="adsbyfalcon" data-ad-client="1" data-ad-slot="2556" data-embed="false" style="display:inline-block;"></ins></div>
+
+      <script src="js/stream.min.js" type="text/javascript" defer></script>
+
+      <script>
+        (function () {
+    var _piq = window._piq || [];
+    pix.octopusTags = null;
+    if (null === pix.octopusTags || undefined === pix.octopusTags) {
+        return;
+    }
+    for (var i = 0; i < pix.octopusTags.length; i++) {
+        if ('' === pix.octopusTags[i]) {
+            continue;
+        }
+        _piq.push(['trackEvent', 'otopusTag', '', pix.octopusTags[i]]);
+    }
+})();
+</script>
+
+      <script>
+        _oq = window._oq || [];
+_oq.push(
+    ['categoryId', document.body.dataset.blogSiteCategoryId],
+    ['octopusTags', pix.octopusTags || []],
+    ['articleTitle', document.querySelector('.header-title').innerText],
+    ['octopusDom', document.getElementsByClassName('octopus')]
+);
+</script>
+      <script src="js/octopus_modern.min.js" type="module" crossorigin="anonymous" async></script>
+      <script nomodule="" src="js/octopus_legacy.min.js" crossorigin="anonymous" async></script>
+      <script>
+        (function() {
+    window.requestAnimFrame = (function () {
+        'use strict';
+        return  window.requestAnimationFrame       ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame    ||
+                window.oRequestAnimationFrame      ||
+                window.msRequestAnimationFrame     ||
+                function (callback) {
+                    window.setTimeout(callback, 1000 / 60);
+                };
+    })();
+
+    // handle multiple browsers for cancelAnimationFrame() ref:https://msdn.microsoft.com/zh-tw/library/hh920765(v=vs.85).aspx
+    window.cancelAnimFrame = (function () {
+        return window.cancelAnimationFrame ||
+            window.webkitCancelAnimationFrame ||
+            window.mozCancelAnimationFrame ||
+            window.oCancelAnimationFrame ||
+            function (id) {
+                window.clearTimeout(id);
+            };
+    })();
+
+        document.addEventListener('DOMContentLoaded', function () {
+        var articleSiteCategoryId = jQuery('body').data('article-site-category-id'),
+            totalArticlesNum = 45;
+
+        asyncGetDailyHotArticles(articleSiteCategoryId, 1, totalArticlesNum);
+
+        function asyncGetDailyHotArticles(siteCategoryId, startArticleIndex, getArticlesNum) {
+            var hotArticlesApiUrl = 'https://emma.pixnet.cc/mainpage/blog/categories/hot';
+
+            if (siteCategoryId !== null) {
+                hotArticlesApiUrl += '/' + siteCategoryId;
+            }
+            hotArticlesApiUrl += '?per_page=' + getArticlesNum + '&thumb_width=380&thumb_height=228';
+
+            jQuery.ajax({
+                method: 'GET',
+                url: hotArticlesApiUrl,
+            })
+            .done(function (response) {
+                try {
+                    if (typeof response !== 'object' || response.error !== 0) {
+                        throw '無法取得今日熱門文章';
+                    }
+
+                    var template = jQuery('#hot-article-link-template').html(),
+                        sections = jQuery('.hot-articles .hot-articles__main'),
+                        articles = response.articles;
+
+                    articles.forEach(function (article, index) {
+                        var articleIndex = startArticleIndex + index,
+                            sectionNum = Math.floor((articleIndex - 1) / 5) + 1,
+                            appendTemplate = template.replace(/{{ article_link }}/g, article.link)
+                                                     .replace(/{{ article_index }}/g, (articleIndex < 10) ? '0' + articleIndex : articleIndex)
+                                                     .replace(/{{ article_thumb }}/g, article.thumb)
+                                                     .replace(/{{ article_title }}/g, article.title)
+                                                     .replace(/{{ article_author }}/g, article.user.display_name);
+
+                        jQuery(sections[sectionNum - 1]).append(appendTemplate);
+                    });
+
+                                        if (siteCategoryId !== null && articles.length < totalArticlesNum) {
+                        asyncGetDailyHotArticles(null, articles.length + 1, totalArticlesNum - articles.length);
+                    }
+                } catch (e) {
+                    console.error(e);
+                }
+            });
+        }
+
+    });
+
+})();
+//mobile lazyload
+document.addEventListener('DOMContentLoaded', function () {
+    jQuery.ajax({
+        url: "//s.pixfs.net/js/jquery.lazyload/1.9.7/lazyload.min.js?v=25c44eb8ce71fc591071667a84c66621",
+        dataType: "script",
+        cache: true,
+        success: function (data, textStatus) {
+            var lazyConfig = {
+                threshold: 200,
+                effect: "fadeIn",
+                placeholder: "data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+            };
+            jQuery("img.lazy").lazyload(lazyConfig);
+            jQuery(".article-content-inner img").lazyload(lazyConfig);
+        }
+    });
+});
+</script>
+
+
+      <script id="hot-article-link-template" type="text/x-custom-template">
+        <a
+        class="hot-article"
+        href="{{ article_link }}"
+        data-analytic-imps="recommend-article,mobile-今日熱門文章,imps-blog-hot-article,article{{ article_index }}"
+        data-need-analytic="true"
+        data-analytic-once="true"
+    >
+        <img
+            class="hot-article__cover"
+            src="{{ article_thumb }}"
+            alt=""
+            onerror="this.remove()"
+            data-analytic-click="recommend-article,blog-hot-article,click-image,article{{ article_index }}"
+        />
+        <div
+            class="hot-article__info"
+            data-analytic-click="recommend-article,blog-hot-article,click-headline,article{{ article_index }}"
+        >
+            <p class="hot-article__title">{{ article_title }}</p>
+            <p class="hot-article__meta">{{ article_author }}</p>
+        </div>
+    </a>
+</script>
+    </div>
+
+
+    <script>
+      var onead_pixel = onead_pixel || [];
+(function () {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol === "https:" ? "https:" : "http:") + "//ad-specs.guoshipartners.com/static/js/onead-pixel.min.js?_t=" + Math.floor((new Date).getTime() / 300000);
+    el.parentNode.insertBefore(s, el);
+
+    function isCookieExist (cookieName) {
+        return (document.cookie.indexOf(cookieName + '=') !== -1);
+    }
+
+    function getCookieValue (cookieName) {
+        if (!isCookieExist(cookieName)) {
+            return '';
+        }
+
+        var regex = new RegExp(cookieName + '=([^;]+)'),
+            result = document.cookie.match(regex);
+
+        if (result) {
+            return result[1];
+        } else {
+            return '';
+        }
+    }
+
+    onead_pixel.push({
+        uid: "1000016",
+        sessionid: getCookieValue('fingerprint'),
+        accountid: "",
+        category: ""
+    });
+})();
+</script>
+
+    <footer class="footer">
+      <button class="footer__btn footer__center" id="footer-btn" data-ga-click="generel,mobileClick,click-top">
+        <img src="images/footer-gotop.png" width="20" height="20" alt="">
+        <span>返回上方</span>
+      </button>
+      <div class="footer__content">
+        <p class="footer__center">
+          <span>Copyright © 2003 - 2018</span>
+          <img src="fonts/footer-logo.svg" alt="">
+        </p>
+        <p> 優像數位媒體科技(股)公司</p>
+      </div>
+    </footer>
+  </div> <!-- .main-content -->
+
+
+  <div class="comment-block " id="comment-block">
+    <div class="comment-block__header">
+      <img class="comment-block__header__btn btn--toggle-comment" src="images/icon-arrow--left.png" width="20" height="20"
+        alt="">
+      <div class="comment-block__header__title">留言列表</div>
+    </div>
+
+    <div class="comment-block__main comment-block__main--no-message">
+
+      <div class="comment-block__main__hero">
+        <img src="fonts/nomessage.svg" alt="">
+        <p>等你留言</p>
+      </div>
+      <button class="comment__btn comment__btn--gray btn--open-comment-card" data-pa-click="comment-list,click-at-no-comment,click-first-comment">
+        成為第一個留言的人
+      </button>
+
+    </div>
+
+
+    <div class="comment-block__card " id="comment-block__card" data-url-suffix="" data-login="未登入">
+      <div class="comment-block__card__header comment-block__header--lg">
+        <div class="comment-block__card__header__row">
+          <img class="comment-block__header__btn btn--open-comment-card" src="images/icon-cross.png" width="20" height="20"
+            alt="">
+          <div class="comment-block__header__title">留言</div>
+        </div>
+
+        <div class="comment-block__card__header__row comment-block__card__header__row--padding">
+          <img class="comment__avatar" src="images/avatar-neutral.png" alt="">
+          <div class="comment__grow">
+            <input class="comment__input" id="add-comment-name" type="text" placeholder="請輸入使用者暱稱" value="訪客">
+            <span class="comment__error">暱稱過長</span>
+          </div>
+          <a class="login-with-comment" href="//login.pixnet.cc/?theme=mobile&amp;done=https%3A%2F%2Fritachin0918.pixnet.net%2Fblog%2Fpost%2F349171300"
+            data-pa-click="comment-write,comment-write-未登入,click-login-button">
+            登入
+          </a>
+        </div>
+      </div>
+
+      <div class="comment-block__main comment-block__main--gray">
+        <textarea class="comment-block__textarea" id="add-comment-body" value="" placeholder="想說些什麼呢?"></textarea>
+
+        <div class="comment-block__private comment-block__private--gray">
+          <div class="comment-block__private__row comment-block__private__row-top comment-private__info">
+            <input id="comment-private" type="checkbox" disabled>
+            <div>
+              <p>
+                <img src="images/icon-lock--gray.png" alt="" width="12" height="12">
+                悄悄話
+              </p>
+              <p class="comment-private__notice">
+                <a class="login-with-comment" href="//login.pixnet.cc/?theme=mobile&amp;done=https%3A%2F%2Fritachin0918.pixnet.net%2Fblog%2Fpost%2F349171300"
+                  data-pa-click="comment-write,comment-write-未登入,click-login-word">
+                  登入
+                </a>
+                可留悄悄話
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment-block__authcode-container">
+          <p><input class="comment__input comment__input--authcode" id="add-comment-authcode" type="text" placeholder="請輸入驗證碼"></p>
+        </div>
+      </div>
+
+      <div class="comment-block__footer">
+        <button class="comment__btn comment__btn--blue" id="btn--add-comment" data-pa-click="comment-write,comment-write-未登入,click-leave-a-message">
+          送出留言
+        </button>
+      </div>
+
+      <div class="comment-block__success-msg">
+        <svg class="comment-block__success-msg__icon" viewbox="0 0 100 100" width="75" height="75">
+          <g>
+            <circle class="circle" cx="50" cy="50" r="48" />
+            <polyline class="check" points="28,53 42,66 74,34" />
+          </g>
+
+          <style>
+            .circle,
+            .check {
+                fill: none;
+                stroke: #006ac6;
+                stroke-width: 4;
+            }
+
+            .check {
+                stroke-dasharray: 80 100;
+                stroke-dashoffset: 80;
+            }
+
+            .circle {
+                stroke-dasharray: 400 400;
+                stroke-dashoffset: -400;
+                transform: rotate(-35deg);
+                transform-origin: center;
+            }
+
+            .showing-msg .check {
+                animation: check .5s cubic-bezier(0.5, 0, 0.6, 1) forwards 0.5s;
+            }
+
+            .showing-msg .circle {
+                animation: circle .5s ease-in-out forwards .9s;
+            }
+
+            @keyframes check {
+                from { stroke-dashoffset: 80; }
+                to { stroke-dashoffset: 00; }
+            }
+
+            @keyframes circle {
+                from { stroke-dashoffset: -300; }
+                to { stroke-dashoffset: 0; }
+            }
+        </style>
+        </svg>
+
+        <p>留言成功</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Head Modified: 1542093891 -->
+  <!-- async script -->
+  <script type="text/javascript">
+    <!--
+    document.addEventListener('DOMContentLoaded', function () {
+      jQuery.ajaxSetup({
+        cache: true
+      });
+      jQuery.getScript("https://js.pixplug.in/addon/11/production.js?v=1539597396", function (data, textStatus) {
+        jQuery.ajaxSetup({
+          cache: true
+        });
+        jQuery.pixAddonRelatedArticle({
+          "blog_relatedarticleshow": "post",
+          "blog_relatedarticle": "site",
+          "blog_relatedtemplate": "system",
+          "addon_username": "ritachin0918",
+          "addon_expired_at": 0,
+          "addon_ismobile": true,
+          "addon_isvip": false,
+          "addon_is_allow_setting": false,
+          "ab_testing_seed": 2648148486
+        });
+        jQuery.ajaxSetup({
+          cache: false
+        });
+      });
+      jQuery.ajaxSetup({
+        cache: false
+      });
+    });
+    //-->
+
+  </script>
+
+  <!-- load sync script -->
+
+  <!-- execute sync addon -->
+  <script type="text/javascript"></script>
+
+  <script defer src="js/jquery.cookie.min.js" crossorigin="anonymous"></script>
+
+  <script defer src="js/blog--mobile.min.js" type="text/javascript" crossorigin="anonymous"></script>
+
+
+  <script>
+    (function () {
+      var paragraphs = document.querySelectorAll('.article-content-inner > p'),
+        adGap = 0,
+        minInterval = 1300,
+        adLimit = 14,
+        adQuantity = 0,
+        adIndexs = [],
+        adTags = [
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"2982\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"2985\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"3038\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"1751\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"1751\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"1751\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"1751\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"1751\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"1751\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"1751\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"1751\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"1751\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"1751\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>",
+          "<ins class=\"adsbyfalcon\" data-ad-client=\"1\" data-ad-slot=\"1751\" data-embed=\"false\" style=\"display:inline-block;\"><\/ins>"
+        ];
+
+      for (var i = 0; i < (paragraphs.length - 1); i++) {
+        adGap += paragraphs[i].clientHeight;
+        if (adGap < minInterval) {
+          continue;
+        }
+        adIndexs.push(i);
+        adQuantity++;
+        adGap = 0;
+
+        if (adQuantity >= adLimit) {
+          break;
+        }
+      }
+
+      adIndexs.map(function (index) {
+        var adTag = adTags.shift();
+        if ('undefined' == typeof (adTag)) {
+          return;
+        }
+        paragraphs[index].innerHTML += '<div class="in-read-ad">' + adTag + '</div>';
+      });
+    })();
+
+  </script>
+
+  <script>
+    var pix = pix || {};
+    pix.panelsite = 'panel.pixnet.cc';
+    pix.apisite = 'api.pixnet.cc';
+    pix.login_name = '5af9e22393ff01e34d89d03bc05518b6';
+    pix.visitor = "YmQxOTVkOWZhZGQwNTExYzBiMGIyZjQwNjY2NzhkY2U=";
+    pix.openid = "YmQxOTVkOWZhZGQwNTExYzBiMGIyZjQwNjY2NzhkY2U=";
+    pix.member_uniqid = "YmQxOTVkOWZhZGQwNTExYzBiMGIyZjQwNjY2NzhkY2U=";
+    pix.owner = 'ritachin0918';
+    pix.is_owner = false;
+    pix.server_name = 'ritachin0918.pixnet.net';
+    pix.sToken = "0fef215bdf161c83efdb4b7ad2380dca";
+    pix.pixfssite = 's.pixfs.net';
+    pix.falconsite = 'falcon.pixanalytics.com';
+    pix.checklogin_version = 2;
+    pix.secureProtocol = 'https://';
+    pix.domain_append = '';
+    // timezone: null;
+
+  </script>
+  <script defer src="checklogin.php"></script>
+  <script defer src="js/checklogin.min.js"></script>
+  <script type="text/javascript">
+    <!--
+    if (typeof dataLayer === 'undefined') dataLayer = [];
+
+    dataLayer.push({
+      "blog_page_type": "post",
+      "keyword": "",
+      "page_meta": "ritachin0918\/blog\/post\/349171300-糖煮榲桲",
+      "user_cat_id": "1716083",
+      "user_cat_name": "松露玫瑰在我家",
+      "is_testing_43400": false,
+      "is_partner_program": false,
+      "is_mobile_mode": true,
+      "is_spam": "0",
+      "user_name": "ritachin0918",
+      "page_type": "blog",
+      "service_type": "blog",
+      "page_view": "\/blog\/",
+      "blog_name": "Rita的部落格",
+      "blog_cat": "28 - 生活綜合",
+      "is_loggedin": false,
+      "is_VIP": false,
+      "is_obstruct": false,
+      "viewer_type": "Regular Member",
+      "article_title": "糖煮榲桲",
+      "article_id": "349171300",
+      "article_cat": "27 - 食譜分享",
+      "is_cached": true
+    });
+
+    -->
+
+  </script>
+
+  <noscript><iframe src="ns.html" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <script type="text/javascript">
+    <!--
+
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-408650-10', 'auto', 'gaMainTracker', {
+      'allowLinker': true,
+      'legacyCookieDomain': 'none'
+    });
+    ga('gaMainTracker.require', 'linker');
+    ga('gaMainTracker.set', 'member1', 'GUEST');
+    ga('gaMainTracker.set', 'vip1', 'nonVIP');
+
+
+    ga('gaMainTracker.send', 'pageview', '/blog/');
+
+
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KGMWFG');
+
+    (function () {
+      var cookieMatchImg = new Image();
+      cookieMatchImg.src = '//cm.g.doubleclick.net/pixel?google_nid=pixnet_dmp&google_cm';
+    })();
+    //-->
+
+  </script>
+
+  <div style="display: none" id="comscorekw" data-value="comscorekw=Food"></div>
+  <!-- Facebook Pixel Code -->
+  <script>
+    ! function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window,
+      document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '510235355828933');
+    fbq('track', "PageView");
+
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="tr"></noscript>
+  <!-- End Facebook Pixel Code -->
+  <script defer src="js/c.js"></script>
+  <script>
+    var _piq = _piq || [];
+
+    _piq.push(
+      ['setCustomVar', 'venue', 'pixnet'],
+      ['setCustomVar', 'author_id', pix.owner],
+      ['setCustomVar', 'article_category_id', "27"],
+      ['setCustomVar', 'nonce', pix.login_name],
+      ['setCustomVar', 'visitor_id', pix.visitor],
+      ['setCustomVar', 'visitor_openid', pix.openid],
+      ['setCustomVar', 'member_uniqid', pix.member_uniqid],
+      ['trackPageView']
+    );
+    (function (d, t, u, f, j) {
+      f = d.getElementsByTagName(t)[0];
+      j = d.createElement(t);
+      j.async = 1;
+      j.src = u;
+      f.parentNode.insertBefore(j, f);
+    })(document, 'script', 'https://s.pixanalytics.com/js/pi.min.js?v=20181024');
+
+    (function () {
+      document.addEventListener('DOMContentLoaded', function () {
+        var viewTimeStart = new Date().getTime(),
+          _driveMode = ('none' === jQuery(document.body).data('mobileMode')) ? 'desktop' : 'mobile';
+
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) {
+            var viewTimeEnd = new Date().getTime(),
+              stayTime = viewTimeEnd - viewTimeStart;
+
+            _piq.push(['trackEvent', 'article_stay_time', '離開頁面', _driveMode, stayTime]);
+          } else {
+            viewTimeStart = new Date().getTime();
+          }
+        });
+
+        jQuery('#pixad1032').on('click', 'a', function () {
+          if ('styleme' === jQuery(this).data('source')) {
+            _piq.push(['trackEvent', 'yahoo 大聯盟導購', '金鑽版位點擊']);
+          }
+        });
+
+        var pixad1032ImpTracking = function () {
+          var container = jQuery('#pixad1032');
+
+          if (0 === container.find('a').length) {
+            setTimeout(pixad1032ImpTracking, 500);
+            return;
+          }
+
+          if ('styleme' == container.find('a').data('source')) {
+            _piq.push(['trackEvent', 'yahoo 大聯盟導購', '金鑽版位曝光']);
+          }
+        };
+        pixad1032ImpTracking();
+      });
+
+      window.addEventListener('beforeunload', function () {
+        var targetElement = document.querySelector('.article-content-inner'),
+          elementHeight = targetElement.offsetHeight,
+          totalOffsetTop = 0,
+          maxScrollDepth = window.scrollY,
+          scrollPosition = Math.max(window.scrollY, (maxScrollDepth ? maxScrollDepth : 0));
+
+        while (targetElement) {
+          totalOffsetTop += (targetElement.offsetTop - targetElement.scrollTop + targetElement.clientTop);
+          targetElement = targetElement.offsetParent;
+        }
+
+        scrollPosition = Math.min(Math.max(0, scrollPosition - totalOffsetTop), elementHeight);
+
+        _piq.push(['trackEvent', 'article_read_completion', '', elementHeight + "::" + scrollPosition, Number.parseFloat(
+          scrollPosition / elementHeight).toFixed(2)]);
+      });
+    })();
+
+  </script>
+  <script defer src="js/pixinsight.min.js"></script>
+
+  <script type="text/javascript">
+    <!--
+    document.addEventListener('DOMContentLoaded', function () {
+      window._type = 'front_blog_mobile';
+      _uCount();
+      window._type = 'front_blog';
+      _uCount();
+      window._type = 'front_blog_nonvip_mobile';
+      _uCount();
+      var location_href = document.location.toString();
+      window._type = 'front_blog_byarticlecategory:27';
+      _uCount();
+      window._type = 'front_blog_bysitecategory:28';
+      _uCount();
+      if (location_href.indexOf('/post/') !== -1) {
+        window._type = 'front_blog_post_mobile';
+        _uCount();
+        window._type = 'front_blog_post';
+        _uCount();
+        window._type = 'front_blog_post_nonvip_mobile';
+        _uCount();
+        window._type = 'front_blog_post_nonvip';
+        _uCount();
+      }
+    });
+    //-->
+
+  </script>
+
+  <!-- Modified: 1542093891 -->
+  <!-- async script -->
+  <script type="text/javascript">
+    <!--
+    document.addEventListener('DOMContentLoaded', function () {
+      jQuery.ajaxSetup({
+        cache: true
+      });
+      jQuery.ajaxSetup({
+        cache: false
+      });
+    });
+    //-->
+
+  </script>
+
+  <!-- load sync script -->
+
+  <!-- execute sync addon -->
+  <script type="text/javascript"></script>
+
+  <script>
+    (function () {
+      var adsbyfalcon = document.querySelectorAll('.adsbyfalcon'),
+        adsbyfalconNotChild = [],
+        i = 0,
+        j = 0;
+
+      for (i = 0; i < adsbyfalcon.length; i++) {
+
+        if (!adsbyfalcon[i].children.length) {
+          adsbyfalconNotChild[adsbyfalconNotChild.length] = adsbyfalcon[i];
+        }
+      }
+
+      for (j = 0; j < adsbyfalconNotChild.length; j++) {
+        adsbyfalconNotChild[j].style.display = 'inline';
+      }
+    })();
+
+  </script>
+
+  <script defer src="js/bundle-20180326.min.js" crossorigin="anonymous"></script>
+  <script defer src="js/mobile-main.min.js" crossorigin="anonymous"></script>
+
+  <script defer src="js/jquery-scroll-startstop.min.js" crossorigin="anonymous"></script>
+
+  <script defer src="js/pixlogger.min.js"></script>
+  <script defer src="js/member-subscribe.min.js" crossorigin="anonymous"></script>
+  <script defer src="js/subscribe-bar.min.js" crossorigin="anonymous"></script>
+
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var moveHouse = document.querySelector('.piliapp-mobile-move-screen');
+      if (moveHouse) {
+        _piq.push(['trackEvent', 'moveHouse', 'DOMContentLoaded', 'mobile']);
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>

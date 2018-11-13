@@ -4,9 +4,9 @@ var cheerio = require('cheerio');
 var basic_zone = {
   modifyhtml: function (path, funcname) {
 
+      //將之後要調用的function name 存入檔案中
     fs.appendFile(path + '/JAS_FuncName.txt', funcname, function (err) {
       if (err) throw err;
-      console.log('Saved!');
     });
 
     fs.readFile(path + '/index.html', 'utf8', function (err, data) {
@@ -32,3 +32,4 @@ module.exports = basic_zone;
 
 //300250 預設版位 8707
 //300600 預設版位 8708
+//320480 預設版位 8725

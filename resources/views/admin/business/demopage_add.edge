@@ -1,0 +1,105 @@
+@layout('layout/main')
+@section('content')
+
+<div class="container-fluid" id="content">
+
+
+  <div id="collapseOne" class="collapse show">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <h3>新增網站</h3>
+        </div>
+      </div>
+
+      <div class="form-group row" style="height:3vmin"></div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">網站網址:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" v-model="url" placeholder="EX: http://play.nownews.com/">
+        </div>
+      </div>
+
+      <div class="form-group row" style="height:3vmin"></div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">網站名稱:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" v-model="SiteName" placeholder="EX: 旅食樂">
+        </div>
+      </div>
+
+      <div class="form-group row" style="height:3vmin"></div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">版位大小:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" v-model="ZoneSize" placeholder="EX: 300250">
+        </div>
+      </div>
+
+      <div class="form-group row" style="height:3vmin"></div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">PC or Phone :</label>
+        <div class="col-sm-10">
+          <select class="form-control" v-model="PCorPhone">
+            <option>PC</option>
+            <option>Phone</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row" style="height:3vmin"></div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Function Name:</label>
+        <div class="col-sm-10">
+          <i style="color:red;">要對應 script function name</i>
+          <input type="text" class="form-control" v-model="FuncName" placeholder="EX: nownews_m_300250">
+        </div>
+      </div>
+
+      <div class="form-group row" style="height:3vmin"></div>
+
+      <div class="form-group row">
+        <button class="form-control" v-on:click="send1()">確定</button>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="collapse" id="collapseTwo">
+    $$getTemplate$$
+    <div class="container-fluid">
+      <div class="form-group" style="text-align:center">
+        <label>預設JS</label>
+        <textarea class="form-control" rows="10" v-model="default_func" placeholder="var b = $('#right-box > div > div.articles > div.ads-box.center');
+$(b).children().remove(); 
+$(b).append('<ins class='clickforceads' style='display:inline-block;width:300px;height:600px;' data-ad-zone='8708'></ins><script async type='text/javascript' src='//cdn.doublemax.net/js/init.js'></script>');">
+
+        </textarea>
+      </div>
+      <div class="form-group" style="text-align:center">
+        <label>自訂JS 可使用變數zone代表使用者輸入的版位ID</label>
+        <textarea class="form-control" rows="10" v-model="cus_cunc" placeholder='var b = $("#right-box > div > div.articles > div.ads-box.center");
+$(b).children().remove();
+$(b).append(zone);'>
+
+        </textarea>
+      </div>
+
+      <div class="form-group row">
+        <button class="form-control" v-on:click="send2()">確認送出</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="{{ assetsUrl('JS/DemoPage_Zone_set/admin/add.js') }}"></script>
+
+@endsection

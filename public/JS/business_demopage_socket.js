@@ -63,6 +63,11 @@
               var win = window.open(url, '_blank');
               win.focus();
               break;
+            case '320480':
+              var url = '/DemoPage/site/' + this.device + '/' + this.zonesize + '/' + this.site + '/DefaultZone.html?cfadc=8725:' + this.matiral_id;
+              var win = window.open(url, '_blank');
+              win.focus();
+              break;
           }
         } else {
           this.df_zone = zone_cus;

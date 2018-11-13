@@ -35,11 +35,8 @@ io.on('connection', function (socket) {
 
   //Client 選擇自訂版位
   socket.on('CtoS which Site', function (Site) {
-    console.log(Site);
-
 
     var src = './public/DemoPage/site/' + Site.Device + '/' + Site.ZoneSize + '/' + Site.site + '/index.html';
-    console.log(src);
     var dist = './public/DemoPage/site/' + Site.Device + '/' + Site.ZoneSize + '/' + Site.site + '/CusZone_' + socket.id + '.html';
     //複製檔案
     copyFile(src, dist);
@@ -64,45 +61,83 @@ io.on('connection', function (socket) {
 
 
 
-  socket.on('CtoS which site', function (Cdata) {
-    console.log("目錄= " + Cdata.dir + " ,版位大小= " + Cdata.zone_size + " ,手機電腦= " + Cdata.PCorPhone);
-    var connect_id = socket.id;
-    if (Cdata.PCorPhone == 'Phone') {
-      var dir = './public/DemoPage/site/' + Cdata.dir + '/phone/' + Cdata.zone_size;
-    } else {
-      var dir = './public/DemoPage/site/' + Cdata.dir + '/PC' + Cdata.zone_size;
-    }
-
-    fs.exists(dir + '/index.html', function (exists) {
-      if (exists == true) {
-        //檔案存在 就複製一份
-        copyFile(dir + '/index.html', dir + '/' + connect_id + '.html');
-        if (Cdata.PCorPhone == 'Phone') {
-          io.sockets.connected[socket.id].emit('StoC index html ok', {
-            url: 'DemoPage/site/phone/' + Cdata.zone_size + '/' + Cdata.dir + '/' + connect_id + '.html'
-          })
-        } else {
-          io.sockets.connected[socket.id].emit('StoC index html ok', {
-            url: 'DemoPage/site/PC/' + Cdata.zone_size + '/' + Cdata.dir + '/' + connect_id + '.html'
-          })
-        }
-
-      } else {
-        console.log(dir + '/index.html is not exist');
-        io.sockets.connected[socket.id].emit('StoC no index html');
+  //=========================================================================
+  //=======================ADMIN ADD=========================================
+  //=========================================================================
+  socket.on('CtoS add setoption',function(data){
+    fs.readFile('public/JS/Scrape/config.json','utf8', function(err,config){
+      if(err)throw err;
+      var obj = JSON.parse(config);
+      var arr = [];
+      arr.push(data.url);
+      arr.push(data.SiteName);
+      arr.push(data.ZoneSize);
+      if(data.PCorPhone == "PC"){
+        arr.push(false);
+      }else{
+        arr.push(true);
       }
+      arr.push(data.FuncName);
+      obj.set.push(arr);
+      var newobj = JSON.stringify(obj)
 
-    });
+      fs.writeFile('public/JS/Scrape/config.json', newobj, function(err){
+        if(err){
+          console.log(err);
+        }else{
+          //告訴client 好了，戴上定義JS的內容
+          io.sockets.connected[socket.id].emit('StoC Cus Js Temp');
+        }
+      })
+    })
+  })
 
-    function copyFile(src, dist) {
-      console.log("COPY Index.html");
+  //============================================================
+  //=================Client 給 Server 網站改版位的JS code========
+  //============================================================
+  socket.on('CtoS cus site js',function(code){
+    
+    var JS_CODE = "var cheerio = require('cheerio');var fs = require('fs');"+
+        "function SetCusZone(html,path,zone) {"+
+        "var $ = cheerio.load(html);"+
+        code.cus_cunc+
+        "fs.writeFile(path, $.html(), function () {"+
+        "});"+
+      "}"+
+      "function setDefaultZone(html,path) {"+ 
+      "var $ = cheerio.load(html);"+
+      code.default_func+
+      "fs.writeFile(path+'/DefaultZone.html', $.html(), function () {"+
+      "});"+
+      "}"+
+      "module.exports = {"+
+      "setDefaultZone: setDefaultZone,SetCusZone: SetCusZone};";
 
-      fs.writeFileSync(dist, fs.readFileSync(src));
-    }
-
+    fs.writeFile('public/JS/DemoPage_Zone_set/'+code.FuncName+'.js',JS_CODE,function(err){
+      if(err){
+        console.log(err);
+      }else{
+        console.log("新增OK");
+      }
+    })
   })
 
 
+  //======================================================
+  //==================純下載網站===========================
+  //======================================================
+
+  socket.on('CtoS download site info',function(data){
+    console.log(data);
+    var dl = require('../public/JS/Scrape/only_download_site');
+    if(data.PCorPhone == "PC"){
+      dl.only_download_site(data.url,data.SiteName,false);
+    }else{
+      dl.only_download_site(data.url,data.SiteName,true);
+    }
+  })
+
+  //===============================================
   socket.on('disconnect', (reason) => {
     console.log("Leave");
   });
