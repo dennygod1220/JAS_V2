@@ -3,6 +3,7 @@
     ["https://www.thenewslens.com/", "關鍵評論往", "300250", true, "thenewslens_m_300250"],
     ["https://www.tagsis.com/cat/1", "女生集合", "300600", false, "tagsis_pc_300600"],
     ["http://play.nownews.com/", "旅食樂", "300250", true, "nownews_m_300250"],
-    ["https://udn.com/news/story/7320/3463614", "聯合新聞", "300250", false, "nothing"]
+    ["https://udn.com/news/story/7320/3463614", "聯合新聞", "300250", false, "nothing"],
+    ["http://m.ltn.com.tw/", "自由時報", "內文全屏", true, "ltn_m_44"]
   ]
 }

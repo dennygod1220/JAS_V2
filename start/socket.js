@@ -96,7 +96,7 @@ io.on('connection', function (socket) {
   //=================Client 給 Server 網站改版位的JS code========
   //============================================================
   socket.on('CtoS cus site js',function(code){
-    
+    console.log(code);
     var JS_CODE = "var cheerio = require('cheerio');var fs = require('fs');"+
         "function SetCusZone(html,path,zone) {"+
         "var $ = cheerio.load(html);"+
@@ -105,6 +105,10 @@ io.on('connection', function (socket) {
         "});"+
       "}"+
       "function setDefaultZone(html,path) {"+ 
+      "  var img_dir = fs.readdirSync(path + '/images/');"+
+      "img_dir.forEach(element => {"+
+      "fs.renameSync(path + '/images/' + element, path+ '/images/' + decodeURIComponent(escape(element)));"+
+      "});"+
       "var $ = cheerio.load(html);"+
       code.default_func+
       "fs.writeFile(path+'/DefaultZone.html', $.html(), function () {"+
@@ -142,6 +146,51 @@ io.on('connection', function (socket) {
     console.log("Leave");
   });
 
+
+
+  //======================================================
+  //======================PREROLL=========================
+  //======================================================
+
+  socket.on('CtoS tell me PreRoll site',function(){
+    var PreRoll_Dir = './public/DemoPage/preroll/';
+    display_subdir(PreRoll_Dir, 'StoC can use PreRoll Site');
+  })
+
+    //======================================================
+  //======================內文全屏=========================
+  //======================================================
+
+  socket.on('CtoS tell me Content_zone site',function(){
+    var Content_zone = './public/DemoPage/site/phone/內文全屏/';
+    display_subdir(Content_zone, 'StoC can use Content_zone Site');
+  })
+
+    //Client 選擇自訂版位
+    socket.on('CtoS Content_zone Site', function (Site) {
+
+      var src = './public/DemoPage/site/phone/內文全屏/' + Site.site + '/index.html';
+      var dist = './public/DemoPage/site/phone/內文全屏/' + Site.site + '/CusZone_' + socket.id + '.html';
+      //複製檔案
+      copyFile(src, dist);
+  
+      var getFunName ='./public/DemoPage/site/phone/內文全屏/' + Site.site + '/JAS_FuncName.txt';
+      //讀取 此網站所使用的function Name 將他require進來
+      fs.readFile(getFunName, 'utf8', function (err, funcName) {
+        if (err) throw err;
+        var df = require('../public/JS/DemoPage_Zone_set/' + funcName);
+        fs.readFile(dist, 'utf8', function (err, html) {
+          df.SetCusZone(html, dist, Site.zone_code);
+        })
+  
+        //告訴 Client 自訂版位OK
+        io.sockets.connected[socket.id].emit('StoC cus content zone ok', {
+          CusZoneUrl: '/DemoPage/site/phone/內文全屏/' + Site.site + '/CusZone_' + socket.id + '.html',
+        });
+      })
+  
+      // display_subdir(path,'StoC site dir');
+    })
   //======================================================
   //======================================================
   //======================================================

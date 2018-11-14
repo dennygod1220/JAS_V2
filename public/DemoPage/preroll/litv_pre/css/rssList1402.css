@@ -1,0 +1,58 @@
+[data-fansyesrss]{
+    display: none;
+}
+
+.fansyes_rss{
+    display: block;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.fansyes_rss_header{
+    width: 100%;
+    border-bottom: solid 1px #cccccc;
+}
+
+.fansyes_rss_title{
+    font-size: 24px;
+    color: #6d0088;
+    font-weight: bold;
+    line-height: 25px;
+    vertical-align: middle;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+.fansyes_rss_link{
+    float: right;
+    display: inline-block;
+}
+
+.fansyes_rss_link:hover{
+    color: #f90;
+}
+
+.fansyes_rss_list {
+    list-style-image: url("../fonts/triangle.svg");
+    margin: 1em 0 1em 0.5em;
+    line-height: 2em;
+}
+
+.fansyes_rss_list li{
+    list-style-position: inside;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fansyes_rss_list a{
+    color: #666;
+    text-decoration: none;
+    transition: all 180ms ease-in;
+    -webkit-transition: all 180ms ease-in;
+}
+
+.fansyes_rss_list a:hover{
+    color: #fb8a08;
+}

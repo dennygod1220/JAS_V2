@@ -1,0 +1,107 @@
+.marquee-bottom-head{
+	position: fixed;
+	z-index: 3500;
+	background-color: #ffbb31;
+}
+
+.marquee-bottom{ text-align:center;
+	bottom: 0px;
+	width: 100%;
+	height: 50px;
+	max-width: 600px;
+}
+.marquee-bottom-space{
+	float: left;
+	background-color: transparent;
+}
+
+.marqueeTab{
+	width:530px;
+	float:right;
+	/*max-width:600px;*/
+	overflow:hidden;
+	height:50px;
+	z-index:1000;
+	position: relative;
+}
+
+.marqueeBox {
+	width:35000px;
+	display:inline-block;
+	position:absolute;
+	left: 0;
+	cursor: pointer;
+}
+.marqueeBox a{
+	color:#222;
+	font-size:0.9em;
+	font-weight:normal;
+	}
+
+.marqueeBox div {
+	float:left;
+	/*margin-left: 5px;
+	margin-right: 8px;
+	padding-left:70px;*/
+	padding:0px 10px 0px 15px;
+}
+
+.marqueeBox div span {
+	margin: 2px 0px;
+	padding: 8px 5px 13px 0px;
+	list-style-type: none;
+	font-size: 1.4em;
+	height:20px;
+	display:block;
+	text-align:center;
+}
+
+.marqueeBox div span img{
+	vertical-align: middle;
+}
+
+.marqueeBox div span b{
+	width: 36px;
+	display: inline-block;
+}
+
+.marqueeBox{
+	position:relative;
+	display:block;
+}
+
+.marqueeBox div {
+	position: absolute;
+	float: none;
+}
+
+.marqueeTit{
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:50px;
+	padding:0px 17px 0px 15px;
+	line-height:50px;
+	/*font-weight:bold;*/
+	color:#fff;
+	font-size:1.1em;
+	background:url(../images/marqueebg02.png) no-repeat right center;
+	background-size: 100px 150%;
+	z-index:1000;
+	}
+	
+/*熱門新聞跑馬燈*/
+.t_tag{
+	color:#0e2a59;
+	font-size:12px;
+	background:#feedb3;
+	padding:2px 4px 2px;
+	position:relative;
+	top:-2px;
+	}
+.mt_ios .t_tag{
+	font-weight:bold;
+	}
+.mt_else .t_tag{
+	font-weight:normal;
+	}

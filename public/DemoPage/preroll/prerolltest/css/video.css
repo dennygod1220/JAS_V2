@@ -1,0 +1,92 @@
+/* player common start */
+.player-page-content
+{
+	width: 100%;
+}
+#playerplaceholder .flash-install
+{
+	color: #000000;
+}
+.player-detail-info
+{
+	width: 100%;
+	background-color: #f5f5f5;
+}
+.player-detail-info .container
+{
+	position: relative;
+}
+.player-detail-info .title
+{
+	padding-top: 40px;
+	font-size: 24px;
+	color: #10253d;
+	width: calc(100% - 105px);
+	overflow: hidden;
+}
+.player-detail-info .date
+{
+	font-size: 17px;
+	color: #10253d;
+	font-family: "RBNo21b-Bold";
+	width: calc(100% - 105px);
+}
+.player-detail-info .description
+{
+	font-size: 18px;
+	overflow: hidden;
+	padding-bottom: 40px;
+}
+.player-detail-info .sns
+{
+	position: absolute;
+	right: 0px;
+	top: 50px;
+}
+.sns .sns-item
+{
+	display: inline-block;
+	float: left;
+	height: 20px;
+	margin-left: 18px;
+	width: 20px;
+}
+.sns .sns-item.facebook
+{
+	background: url(../images/share_fb.png) no-repeat center center;
+}
+.sns .sns-item.facebook:hover
+{
+	background: url(../images/share_fb_hov.png) no-repeat center center;
+}
+.sns .sns-item.twitter
+{
+	background: url(../images/share_tw.png) no-repeat center center;
+}
+.sns .sns-item.twitter:hover
+{
+	background: url(../images/share_tw_hov.png) no-repeat center center;
+}
+@media (max-width: 767px)
+{
+	.player-detail-info .date
+	{
+		width: 100%;
+		margin-top: 3px;
+	}
+	.player-detail-info .title
+	{
+		width: 100%;
+		line-height: 24px;
+	}
+	.player-detail-info .description
+	{
+		padding-bottom: 55px;
+	}
+	.player-detail-info .sns
+	{
+		left: 0px;
+		bottom: 20px;
+		top: auto;
+	}
+}

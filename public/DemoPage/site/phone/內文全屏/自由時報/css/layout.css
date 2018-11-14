@@ -1,0 +1,23 @@
+﻿/* 7,12,20 內頁 */
+.sp li{
+	padding:15px 0px;
+	overflow:auto;
+	font-size: 1.4em;
+	line-height: 1.3em;
+	overflow: auto;
+	color: #222 !important;
+	}
+.sp li a{color: #222;}
+
+/* L35, L22 */
+.evt_h1 {display:block; overflow:hidden !important;}
+.evt_h1 li img {height:120px; width:120px; margin:0px 18px 0px 5px;}
+.fb_like {
+	min-height: 40px;
+}
+
+/* L3 直播 */
+.player{
+	background-color: #fff; 
+	padding-top: 15px;
+}

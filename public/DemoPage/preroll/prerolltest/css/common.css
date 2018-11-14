@@ -1,0 +1,267 @@
+.clearfix:after
+{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix
+{
+	zoom: 1;
+}
+/* faq and tos page */
+.content-wrapper
+{
+	padding: 12px 25px 30px;
+	text-align: left;
+}
+.content-wrapper h2
+{
+	padding: 25px 0 0;
+	margin: 0;
+	margin-bottom: 5px;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-family: 'RBNo21b-Bold';
+	font-weight: normal;
+}
+.content-wrapper h2.title
+{
+	text-align: center;
+}
+.content-wrapper p
+{
+	font-size: 12px;
+	line-height: 30px;
+	font-family: 'Arial';
+}
+.content-wrapper h3
+{
+	border: 1px solid;
+	padding: 10px;
+}
+.content-title
+{
+	text-transform: uppercase;
+}
+/*playerContainer start*/
+.playerMode1
+{
+	width: 960px!important;
+	height: 540px;
+	margin: 0 auto;
+	position: relative!important;
+}
+@media (max-width: 991px)
+{
+	.playerMode1
+	{
+		width: 640px!important;
+		height: 360px;
+		margin: 0 auto;
+		position: relative!important;
+	}
+}
+@media (max-width: 767px)
+{
+	.playerMode1
+	{
+		width: 300px!important;
+		height: 169px;
+		margin: 0 auto;
+		position: relative!important;
+	}
+}
+#playerContainer
+{
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.95);
+}
+#playerContainer.noaccess-wrap
+{
+	background: #10253d;
+	text-align: center;
+	height: 540px;
+}
+#playerContainer .player-blackout
+{
+	color: #FFFFFF;
+	font-weight: bold;
+	height: 300px;
+	background: #10253d;
+	text-align: center;
+	font-size: 48px;
+  color: #ef222c;
+  letter-spacing: 2px;
+	padding-top: 100px;
+}
+#playerplaceholder .flash-install,#nlplayerplaceholder .flash-install
+{
+	padding-top: 100px;
+	padding-bottom: 10px;
+	color: #FFFFFF;
+}
+#nlplayerplaceholder
+{
+	text-align: center;
+}
+/*playerContainer end*/
+.stepsContainer
+{
+	background: #f3f4f5;
+}
+.stepsList li
+{
+	color: #10253d;
+}
+.stepsList .past, .stepsList .sel
+{
+	color: #10253d;
+	font-weight: bold;
+}
+.stepsList .past img
+{
+	margin-left: 5px;
+}
+/*playerContainer no access start*/
+.noAccess
+{
+	color: #FFFFFF;
+}
+.noAccessDesc a
+{
+	color: #FFFFFF;
+	background-color: #ef222c;
+}
+.noAccess
+{
+	font-weight: normal;
+	width: 100%;
+	height: 100%;
+	padding-top: 135px;
+}
+.noAccessTitle div.channelName
+{
+	font-size: 48px;
+	color: #ef222c;
+	letter-spacing: 2px;
+}
+.noAccessTitle div.desc
+{
+	font-family: 'RBNo21b-Book';
+	font-size: 30px;
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 760px;
+	line-height: 38px;
+}
+.noAccessTitle.msg
+{
+	font-size: 16px;
+}
+.noAccessDesc
+{
+	margin-top: 64px;
+}
+.noAccessDesc a
+{
+	width: 174px;
+	height: 48px;
+	line-height: 48px;
+	display: inline-block;
+	font-size: 22px;
+	text-decoration: none;
+	margin: 0 30px;
+	letter-spacing: 2px;
+	transition: 0.5s;
+}
+.noAccessDesc a:hover
+{
+	background-color: #ff363f;
+}
+.noAccessDesc a.btn-signin
+{
+	background-color: transparent;
+	border: 1px solid #fff;
+}
+.noAccessDesc a.btn-signin:hover
+{
+	background-color: transparent;
+	opacity: 0.75;
+}
+.player-wrap
+{
+	width: 940px;
+	margin: 0 auto;
+	position: relative;
+}
+@media (max-width: 991px)
+{
+	.player-wrap
+	{
+		width: 710px;
+	}
+}
+@media (max-width: 767px)
+{
+	.player-wrap
+	{
+		width: 100%;
+		margin: 15px auto;
+		padding: 0 5px;
+		margin-bottom: 0px;
+	}
+}
+
+@media (max-width: 768px)
+{
+	#playerContainer.noaccess-wrap
+	{
+		height: auto;
+		overflow: hidden;
+	}
+	#playerplaceholder .flash-install, #nlplayerplaceholder .flash-install
+	{
+		padding-top: 50px;
+	}
+	.noAccess
+	{
+		padding: 50px 10px;
+	}
+	.noAccessTitle div.desc
+	{
+		width: 100%;
+	}
+	.noAccessDesc
+	{
+		margin-top: 40px;
+	}
+	.noAccessDesc a
+	{
+		margin: 0 10px;
+		width: 110px;
+	}
+	.noAccessDesc a.watch-app
+	{
+		width: 150px;
+	}
+	.noAccessTitle div.channelName
+	{
+		font-size: 36px;
+	}
+	.noAccessTitle div.desc
+	{
+		font-size: 20px;
+		margin-top: 35px;
+	}
+	.content-wrapper
+	{
+		padding: 12px 5px;
+	}
+	#playerContainer .player-blackout
+	{
+		padding-top: 50px;
+	}
+}
+/*playerContainer no access end*/

@@ -1,0 +1,752 @@
+* {
+    font-family: "黑體", Verdana, "微軟正黑體", "新細明體", Arial, Geneva, sans-serif, helvetica;
+}
+
+/* 外框 */
+#main {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    background: #444444;
+}
+
+/* 右邊內容 */
+.rightmain_o { /*左邊選單展開*/
+    width: 100%;
+    float: left;
+    position: relative;
+    z-index: 10;
+}
+
+.rightmain_c { /* 左邊選單關閉 */
+    width: 100%;
+    float: left;
+    position: relative;
+    z-index: 10;
+}
+
+#rightmain {
+    padding-top: 90px;
+    background: #fff;
+}
+
+/* 選單bt、logo、返回bt */
+h1 {
+    text-align: center;
+    padding: 0px 0px;
+    position: fixed;
+    top: 0px;
+    z-index: 3000;
+    background: #fff;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    height: 84px;
+}
+
+/*電腦版*/
+h1 .back {
+    width: 40px;
+    height: 40px;
+    float: right;
+    cursor: pointer;
+    background: url(../images/bt-pc.png) no-repeat center;
+    background-size: 20px;
+}
+
+h1 .back:active {
+    width: 40px;
+    height: 40px;
+    float: right;
+    cursor: pointer;
+    background: url(../images/bt-pc.png) no-repeat center, #eee;
+    background-size: 20px, 100%;
+}
+
+.h1box {
+    position: absolute;
+    top: 0px;
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    z-index: 3000;
+}
+
+h1 .logo {
+    width: 118px;
+    height: 40px;
+    display: block;
+    margin: 0px auto;
+}
+
+.rightmain_c h1 .logo {
+    margin-left: 0px;
+}
+
+.rightmain_o h1 .logo {
+    margin-left: -15px;
+}
+
+.lineTab {
+    overflow: hidden;
+    height: 40px;
+    line-height: 35px;
+    background: #f5f5f5;
+    padding: 10px 0px 5px;
+    color: #fff;
+}
+
+/*Tab Bar*/
+.tabbar {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    margin: 0px;
+    overflow: hidden;
+    width: 100%;
+    z-index: 3000;
+}
+
+.blackbg {
+    position: relative;
+    background: #eee;
+    padding: 0px;
+    color: #fff;
+    display: block;
+    padding: 0px;
+    height: 44px;
+    text-align: left;
+}
+
+.homelogo {
+    width: 80px;
+    background: #ddd;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+a.listit {
+    color: #ddd;
+    display: inline-block;
+    position: relative;
+    top: -14px;
+    left: -5px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+a.listit span {
+    color: #999;
+    margin-right: 10px;
+}
+
+/*-- h1 menu按鈕設定 --*/
+h1 .menu,
+#menu {
+    width: 40px;
+    height: 40px;
+    float: left;
+    cursor: pointer;
+}
+
+.showmenu {
+    background: url(../images/bt-menu.png) no-repeat center;
+    background-size: 20px;
+}
+
+.showmenu:active {
+    background: url(../images/bt-menu.png) no-repeat center, #eee;
+    background-size: 20px, 100%;
+}
+
+.hidemenu {
+    background: url(../images/bt-menu02_1.png) no-repeat center, #bbb;
+    background-size: 20px;
+}
+
+/*-------------- 左邊選單 開始 -----------------*/
+#leftmenu {
+    display: none;
+    font-weight: normal;
+    letter-spacing: 2px;
+    padding: 2px 0px 60px 0px;
+}
+
+.leftmenu_c { /*選單關*/
+    width: 250px;
+    float: left;
+    position: absolute;
+    z-index: 5;
+}
+
+.leftmenu_o { /*選單開*/
+    width: 250px;
+    float: left;
+    position: absolute;
+    z-index: 5;
+}
+
+.leftmenu_o a,
+.full {
+    vertical-align: middle;
+    height: 53px;
+    line-height: 52px;
+    display: block;
+    overflow: hidden;
+    margin: 0px;
+    padding: 2px 0px 0px;
+    list-style-type: none;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border-bottom: 1px solid #333;
+    color: #fff;
+    position: relative;
+}
+
+.newslist_main a,
+.newslist a {
+    border-bottom: 1px solid #000;
+}
+
+.full {
+    width: 100%;
+    cursor: pointer;
+}
+
+.full:before,
+.newslist_main .right_all:before {
+    content: " ";
+    width: 40px;
+    display: inline-block;
+}
+
+/*.newslist_main .right_all{border-top:3px solid #000; top:-1px;} 台北車展-活動前舊檔*/
+/*台北車展-活動期間*/
+.newslist_main .right_all {
+    border-top: 0px solid #000;
+    top: -1px;
+}
+
+.newslist .right_all {
+    border-top: none;
+    top: 0px;
+}
+
+.newslist .right_all:before {
+    content: " ";
+    width: 25px;
+    display: inline-block;
+}
+
+.leftmenu_o .sort {
+    padding: 4px 15px;
+    background-color: #666;
+    color: #eee;
+    text-align: left;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    clear: left;
+}
+
+.newslist .sort {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #aaa;
+    position: relative;
+    top: -1px;
+}
+
+.newslist_main .sort {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #aaa;
+}
+
+.newslist .sortline {
+    background-color: #000;
+    height: 2px;
+    color: #ccc;
+    text-align: left;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    clear: left;
+}
+
+.newslist_main .sortline {
+    display: none;
+}
+
+#leftmenu .close {
+    float: left;
+    width: 100%;
+    display: block;
+    padding: 0px 5px 0px 0px;
+    margin-bottom: 76px;
+    list-style-type: none;
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: #fff;
+}
+
+.m13, .m14, .m15, .m16, .m17, .m18, .m19 {
+    width: 18px;
+    height: 20px;
+    float: left;
+    margin: 15px 15px;
+    position: absolute;
+    left: 0px;
+    top: 2px;
+}
+
+.m13 { /*即時*/
+    background: url(../images/m13.png) no-repeat center 1px;
+    background-size: 18px;
+}
+
+.m14 { /*總覽*/
+    background: url(../images/m14.png) no-repeat center 1px;
+    background-size: 18px;
+}
+
+.m15 { /*首頁*/
+    background: url(../images/m15.png) no-repeat center 1px;
+    background-size: 18px;
+}
+
+.m17 { /*分類*/
+    background: url(../images/m17.png) no-repeat center 1px;
+    background-size: 18px;
+}
+
+.m18 { /*FB-一排*/
+    background: url(../images/m18.png) no-repeat center 1px;
+    background-size: 18px;
+}
+
+.m19 { /*電腦版*/
+    background: url(../images/m19.png) no-repeat center 1px;
+    background-size: 18px;
+    width: 18px;
+    height: 20px;
+    float: left;
+    margin: 3px 15px;
+}
+
+.m20.shownewslist { /*分類箭頭*/
+    width: 14px;
+    height: 18px;
+    float: right;
+    margin: 3px 15px;
+    background: url(../images/m21.png) no-repeat center 1px;
+    background-size: 18px;
+    margin: 16px 15px;
+}
+
+.m20.hidenewslist { /*分類箭頭*/
+    width: 14px;
+    height: 18px;
+    float: right;
+    margin: 3px 15px;
+    background: url(../images/m20.png) no-repeat center 1px;
+    background-size: 18px;
+    margin: 16px 15px;
+}
+
+.m21 { /*子分類下拉-FB*/
+    background: url(../images/m18.png) no-repeat center 1px;
+    background-size: 18px !important;
+    width: 18px !important;
+    height: 20px !important;
+    float: left !important;
+    margin: 15px 10px 15px 15px !important;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+}
+
+.newslist_main .m21,
+.newslist_main .m24 {
+    top: 1px;
+}
+
+.newslist .m21,
+.newslist .m24 {
+    top: 3px;
+}
+
+.m22 {
+    background: url(../images/m22.png) no-repeat center 1px;
+    background-size: 18px !important;
+    width: 18px !important;
+    height: 20px !important;
+    float: left !important;
+    margin: 15px 10px 15px 15px !important;
+    position: absolute;
+    left: 0px;
+    top: 3px;
+}
+
+.m23 { /*2016台北車展-活動期間*/
+    background: url(../images/m23.png) no-repeat center 1px;
+    background-size: 18px !important;
+    width: 18px !important;
+    height: 20px !important;
+    float: left !important;
+    margin: 15px 10px 15px 15px !important;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+}
+
+.newslist_main .m23 {
+    top: 1px;
+}
+
+.newslist .m23 {
+    top: 3px;
+}
+
+.m24 { /*自由電子報app*/
+    background: url(../images/m24.png) no-repeat center 1px;
+    background-size: 18px !important;
+    width: 18px !important;
+    height: 20px !important;
+    float: left !important;
+    margin: 15px 10px 15px 15px !important;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+}
+
+.newslist .right_all span {
+    display: none;
+}
+
+.liston {
+    background: rgba(230, 230, 230, 0.4); /*5.13*/
+    cursor: pointer;
+}
+
+#leftmenu a:active {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#leftmenu a {
+    float: left;
+    color: #fff;
+}
+
+#leftmenu a.full {
+    float: left;
+    width: 100%;
+    display: block;
+    color: #fff;
+}
+
+.newslist_main a:nth-child(odd),
+.newslist a:nth-child(odd),
+.newslist_main a:nth-child(even),
+.newslist a:nth-child(even) {
+    float: left;
+    border-right: 1px solid #111;
+    padding-left: 15px;
+}
+
+.newslist_main a:nth-child(odd),
+.newslist a:nth-child(odd) {
+    width: 109px; /*124-15*/
+}
+
+.newslist_main a:nth-child(even),
+.newslist a:nth-child(even) {
+    width: 108px; /*123-15*/
+}
+
+.newslist_main a.right_all {
+    width: 100%;
+    padding: 0px;
+}
+
+a.left_all {
+    float: left !important;
+    width: 100% !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.6) !important;
+}
+
+.newslist {
+    /*display:none;*/
+    clear: both;
+    padding: 0px;
+    overflow: auto;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /*5.13*/
+    overflow-x: hidden;
+}
+
+.newslist_main { /*5.13*/
+    display: block;
+    clear: both;
+    padding: 0px;
+    overflow: auto;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+}
+
+.c0, .c0, .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12, .c13, .c14, .c15{
+    width: 14px !important;
+    height: 14px !important;
+    -webkit-border-radius: 7px;
+    -o-border-radius: 7px;
+    -ms-border-radius: 7px;
+    border-radius: 7px;
+    margin: 18px 15px !important;
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+}
+
+/* 新聞 */
+.c0 {
+    background-color: #ac9b5e;
+}
+/* 3c */
+.c1 {
+    background-color: #06b8ea;
+}
+/* auto */
+.c2 {
+    background-color: #91b015;
+}
+/* 食譜 */
+.c3 {
+    background-color: #fecb00;
+}
+/* 娛樂 */
+.c4 {
+    background-color: #cc0050;
+}
+/* 評論 */
+.c5 {
+    background-color: #ff7352;
+}
+/* 時尚 */
+.c6 {
+    background-color: #bc70d2;
+}
+/* sport */
+.c7 {
+    background-color: #095ffc;
+}
+/* 市場 */
+.c8 {
+    background-color: #0076c8;
+}
+/* 地產 */
+.c9 {
+    background-color: #8e0202;
+}
+/* 國會 */
+.c10 {
+    background-color: #00c0a3;
+}
+/* playing */
+.c11 {
+    background-color: #49a1a2;
+}
+/* video */
+.c12 {
+    background-color: #c70903;
+}
+/* 健康醫療 */
+.c13 {
+    background-color: #318a24;
+}
+/* 關於我們(服務) */
+.c14 {
+    background-color: #afb5ba;
+}
+/* 財經ec */
+.c15{background-color: #cc6600;}
+.listsmall {
+    font-size: 1.1rem !important;
+    letter-spacing: 0px;
+}
+
+/**/
+.leftmask {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 10000px;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 3000;
+    display: none;
+    box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.leftmask_down {
+    display: block;
+    top: 0px;
+    left: 250px;
+    width: 100%;
+    max-width: 600px;
+    height: 10000px;
+    background: rgba(255, 255, 255, 1);
+    z-index: 6 !important;
+    position: fixed;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+/*調整順序*/
+#leftmenu {
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.flex_home,
+.flex_focus,
+.flex_news,
+.flex_sport,
+.flex_ent,
+.flex_talk,
+.flex_live,
+.flex_style,
+.flex_3c,
+.flex_auto,
+.flex_fun,
+.flex_market,
+.flex_est,
+.flex_food,
+.flex_ch,
+.flex_playing,
+.flex_health,
+.flex_video,
+.flex_service,
+.flex_space,
+.flex_ec {
+    width: 250px; /* For old syntax, otherwise collapses. */
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1; /* OLD - Firefox 19- */
+    -webkit-flex: 1; /* Chrome */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -ms-flex-positive: 0;
+    -ms-flex-negative: 1;
+    -ms-flex-preferred-size: auto;
+}
+
+.flex_home { /*首頁*/
+    -webkit-box-ordinal-group: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-ordinal-group: 1; /* OLD - Firefox 19- */
+    -ms-flex-order: 1; /* TWEENER - IE 10 */
+    -webkit-order: 1; /* NEW - Chrome */
+    order: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flex_focus { /*主要頻道*/
+    -webkit-box-ordinal-group: 2; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-ordinal-group: 2; /* OLD - Firefox 19- */
+    -ms-flex-order: 2; /* TWEENER - IE 10 */
+    -webkit-order: 2; /* NEW - Chrome */
+    order: 2; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flex_ch { /*次要頻道*/
+    -webkit-box-ordinal-group: 3; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-ordinal-group: 3; /* OLD - Firefox 19- */
+    -ms-flex-order: 3; /* TWEENER - IE 10 */
+    -webkit-order: 3; /* NEW - Chrome */
+    order: 3; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flex_focus02 { /*主要頻道*/
+    -webkit-box-ordinal-group: 4; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-ordinal-group: 4; /* OLD - Firefox 19- */
+    -ms-flex-order: 4; /* TWEENER - IE 10 */
+    -webkit-order: 4; /* NEW - Chrome */
+    order: 4; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flex_news,
+.flex_sport,
+.flex_ent,
+.flex_talk,
+.flex_live,
+.flex_style,
+.flex_3c,
+.flex_auto,
+.flex_fun,
+.flex_market,
+.flex_est,
+.flex_food,
+.flex_playing,
+.flex_video,
+.flex_health,
+.flex_service,
+.flex_ec { /*次要頻道*/
+    -webkit-box-ordinal-group: 5; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-ordinal-group: 5; /* OLD - Firefox 19- */
+    -ms-flex-order: 5; /* TWEENER - IE 10 */
+    -webkit-order: 5; /* NEW - Chrome */
+    order: 5; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flex_space { /*次要頻道*/
+    -webkit-box-ordinal-group: 6; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-ordinal-group: 6; /* OLD - Firefox 19- */
+    -ms-flex-order: 6; /* TWEENER - IE 10 */
+    -webkit-order: 6; /* NEW - Chrome */
+    order: 6; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+/*主要頻道設定*/
+.flex_focus .c_icon,
+.flex_focus .m20,
+.flex_focus02 .m20 {
+    display: none;
+}
+
+.flex_focus .newsmain_main,
+.flex_focus02 .newsmain_main {
+    padding: 4px 15px;
+    background-color: #666;
+    color: #eee;
+    text-align: left;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    clear: left;
+    height: auto;
+    line-height: 1.4rem;
+    box-sizing: content-box;
+}
+
+.flex_focus .newsmain_main.full:before,
+.flex_focus02 .newsmain_main.full:before {
+    content: " ";
+    width: 0px;
+    display: inline-block;
+}
+/*2018 車展焦點
+.newslist_main > .event{
+    width: 100%!important;
+}
+*/
+
+

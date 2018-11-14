@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<title>null</title>
+	<meta name="description" content="null">
+	<meta name="keywords" content="">
+
+
+
+
+	<meta property="fb:app_id" content="283463378777596">
+
+	<meta name="application-name" content="Eleven Sports Taiwan">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="https://neulionms-a.akamaihd.net/mt3/v1/elevensportstw/site/images/wintile.png">
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/grid.css">
+	<link rel="stylesheet" type="text/css" href="css/master.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/master.js"></script>
+	<script type="text/javascript" src="js/util.js"></script>
+
+
+
+
+
+
+	<script>
+		function init() {}
+	</script>
+
+
+	<script>
+		var _util = new Util();
+		var LOC_SERVER = "https://www.elevensports.tw/";
+		var LOC_SERVER_SECURE = "https://www.elevensports.tw/";
+		var LOC_CONTENT = "https://neulionsmbnyc-a.akamaihd.net/u/mt1/elevensportstw/thumbs/";
+	</script>
+
+	<script>
+		function showSignInOptions() {
+			showSignIn();
+		}
+
+		function hideSignIn() {
+			hideModal("SignIn");
+		}
+	</script>
+
+
+
+	<!-- Live-Chat-taiwan -->
+</head>
+
+<body onload="init()" class="video-page">
+	<img class="dareoffice_header" style="display:none;" src="" width="800" height="79" alt="">
+	<span id="phplive_btn_1468718633" onclick="phplive_launch_chat_4(0)" style="color: #0000FF; text-decoration: underline; cursor: pointer; position:fixed;right:0;bottom:0;z-index:2;"></span>
+	<script type="text/javascript">
+		var fc_CSS = document.createElement('link');
+		fc_CSS.setAttribute('rel', 'stylesheet');
+		var fc_isSecured = (window.location && window.location.protocol == 'https:');
+		var fc_lang = document.getElementsByTagName('html')[0].getAttribute('lang');
+		var fc_rtlLanguages = ['ar', 'he'];
+		var fc_rtlSuffix = (fc_rtlLanguages.indexOf(fc_lang) >= 0) ? '-rtl' : '';
+		fc_CSS.setAttribute('type', 'text/css');
+		fc_CSS.setAttribute('href', ((fc_isSecured) ? 'https://d36mpcpuzc4ztk.cloudfront.net' :
+			'http://assets1.chat.freshdesk.com') + '/css/visitor' + fc_rtlSuffix + '.css');
+		document.getElementsByTagName('head')[0].appendChild(fc_CSS);
+		var fc_JS = document.createElement('script');
+		fc_JS.type = 'text/javascript';
+		fc_JS.defer = true;
+		fc_JS.src = ((fc_isSecured) ? 'https://d36mpcpuzc4ztk.cloudfront.net' : 'http://assets.chat.freshdesk.com') +
+			'/js/visitor.js';
+		(document.body ? document.body : document.getElementsByTagName('head')[0]).appendChild(fc_JS);
+		window.livechat_setting =
+			'eyJ3aWRnZXRfc2l0ZV91cmwiOiJzdXBwb3J0LmVsZXZlbnNwb3J0cy50dyIsInByb2R1Y3RfaWQiOjE5MDAwMDAxNDE4LCJuYW1lIjoiRWxldmVuIFNwb3J0cyBUYWl3YW4iLCJ3aWRnZXRfZXh0ZXJuYWxfaWQiOjE5MDAwMDAxNDE4LCJ3aWRnZXRfaWQiOiI2YWVlODQxYy01YWNkLTQ3ODEtOGRiYy1mMDM0NTFkYjhmOGQiLCJzaG93X29uX3BvcnRhbCI6ZmFsc2UsInBvcnRhbF9sb2dpbl9yZXF1aXJlZCI6ZmFsc2UsImxhbmd1YWdlIjoiZW4iLCJ0aW1lem9uZSI6IkVhc3Rlcm4gVGltZSAoVVMgJiBDYW5hZGEpIiwiaWQiOjE5MDAwMDQ3NjY0LCJtYWluX3dpZGdldCI6MCwiZmNfaWQiOiIwMmY0YWJhNmJiNzljNTE4NzY0OWY3MDNmMmJhYjFhMSIsInNob3ciOjEsInJlcXVpcmVkIjoyLCJoZWxwZGVza25hbWUiOiJFbGV2ZW4gU3BvcnRzIE5ldHdvcmsiLCJuYW1lX2xhYmVsIjoiTmFtZSIsIm1lc3NhZ2VfbGFiZWwiOiJNZXNzYWdlIiwicGhvbmVfbGFiZWwiOiJQaG9uZSIsInRleHRmaWVsZF9sYWJlbCI6IlRleHRmaWVsZCIsImRyb3Bkb3duX2xhYmVsIjoiRHJvcGRvd24iLCJ3ZWJ1cmwiOiJlbGV2ZW5zcG9ydHNzZy5mcmVzaGRlc2suY29tIiwibm9kZXVybCI6ImNoYXQuZnJlc2hkZXNrLmNvbSIsImRlYnVnIjoxLCJtZSI6Ik1lIiwiZXhwaXJ5IjowLCJlbnZpcm9ubWVudCI6InByb2R1Y3Rpb24iLCJlbmRfY2hhdF90aGFua19tc2ciOiJUaGFuayB5b3UhISEiLCJlbmRfY2hhdF9lbmRfdGl0bGUiOiJFbmQiLCJlbmRfY2hhdF9jYW5jZWxfdGl0bGUiOiJDYW5jZWwiLCJzaXRlX2lkIjoiMDJmNGFiYTZiYjc5YzUxODc2NDlmNzAzZjJiYWIxYTEiLCJhY3RpdmUiOjEsInJvdXRpbmciOm51bGwsInByZWNoYXRfZm9ybSI6MSwiYnVzaW5lc3NfY2FsZW5kYXIiOm51bGwsInByb2FjdGl2ZV9jaGF0IjowLCJwcm9hY3RpdmVfdGltZSI6bnVsbCwic2l0ZV91cmwiOiJzdXBwb3J0LmVsZXZlbnNwb3J0cy50dyIsImV4dGVybmFsX2lkIjoxOTAwMDAwMTQxOCwiZGVsZXRlZCI6MCwibW9iaWxlIjoxLCJhY2NvdW50X2lkIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAxNi0xMi0yOVQwMDoxMToyNy4wMDBaIiwidXBkYXRlZF9hdCI6IjIwMTYtMTItMjlUMDA6MTE6MjcuMDAwWiIsImNiRGVmYXVsdE1lc3NhZ2VzIjp7ImNvYnJvd3Npbmdfc3RhcnRfbXNnIjoiWW91ciBzY3JlZW5zaGFyZSBzZXNzaW9uIGhhcyBzdGFydGVkIiwiY29icm93c2luZ19zdG9wX21zZyI6IllvdXIgc2NyZWVuc2hhcmluZyBzZXNzaW9uIGhhcyBlbmRlZCIsImNvYnJvd3NpbmdfZGVueV9tc2ciOiJZb3VyIHJlcXVlc3Qgd2FzIGRlY2xpbmVkIiwiY29icm93c2luZ19hZ2VudF9idXN5IjoiQWdlbnQgaXMgaW4gc2NyZWVuIHNoYXJlIHNlc3Npb24gd2l0aCBjdXN0b21lciIsImNvYnJvd3Npbmdfdmlld2luZ19zY3JlZW4iOiJZb3UgYXJlIHZpZXdpbmcgdGhlIHZpc2l0b3LigJlzIHNjcmVlbiIsImNvYnJvd3NpbmdfY29udHJvbGxpbmdfc2NyZWVuIjoiWW91IGhhdmUgYWNjZXNzIHRvIHZpc2l0b3LigJlzIHNjcmVlbi4iLCJjb2Jyb3dzaW5nX3JlcXVlc3RfY29udHJvbCI6IlJlcXVlc3QgdmlzaXRvciBmb3Igc2NyZWVuIGFjY2VzcyAiLCJjb2Jyb3dzaW5nX2dpdmVfdmlzaXRvcl9jb250cm9sIjoiR2l2ZSBhY2Nlc3MgYmFjayB0byB2aXNpdG9yICIsImNvYnJvd3Npbmdfc3RvcF9yZXF1ZXN0IjoiRW5kIHlvdXIgc2NyZWVuc2hhcmluZyBzZXNzaW9uICIsImNvYnJvd3NpbmdfcmVxdWVzdF9jb250cm9sX3JlamVjdGVkIjoiWW91ciByZXF1ZXN0IHdhcyBkZWNsaW5lZCAiLCJjb2Jyb3dzaW5nX2NhbmNlbF92aXNpdG9yX21zZyI6IlNjcmVlbnNoYXJpbmcgaXMgY3VycmVudGx5IHVuYXZhaWxhYmxlICIsImNvYnJvd3NpbmdfYWdlbnRfcmVxdWVzdF9jb250cm9sIjoiQWdlbnQgaXMgcmVxdWVzdGluZyBhY2Nlc3MgdG8geW91ciBzY3JlZW4gIiwiY2Jfdmlld2luZ19zY3JlZW5fdmkiOiJBZ2VudCBjYW4gdmlldyB5b3VyIHNjcmVlbiAiLCJjYl9jb250cm9sbGluZ19zY3JlZW5fdmkiOiJBZ2VudCBoYXMgYWNjZXNzIHRvIHlvdXIgc2NyZWVuICIsImNiX3ZpZXdfbW9kZV9zdWJ0ZXh0IjoiWW91ciBhY2Nlc3MgdG8gdGhlIHNjcmVlbiBoYXMgYmVlbiB3aXRoZHJhd24gIiwiY2JfZ2l2ZV9jb250cm9sX3ZpIjoiQWxsb3cgYWdlbnQgdG8gYWNjZXNzIHlvdXIgc2NyZWVuICIsImNiX3Zpc2l0b3Jfc2Vzc2lvbl9yZXF1ZXN0IjoiQWdlbnQgc2Vla3MgYWNjZXNzIHRvIHlvdXIgc2NyZWVuICJ9fQ==';
+	</script>
+
+
+	<!-- End Live-Chat-taiwan -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<meta name="apple-itunes-app" content="app-id=1111207302">
+	<link rel="canonical" href="http://www.elevensports.tw/video/cpbl-49">
+	<link rel="image_src" href="https://neulionsmbnyc-a.akamaihd.net/u/mt1/elevensportstw/thumbs/2018/08/09/71859_es.jpg">
+	<link rel="media:image" href="https://neulionsmbnyc-a.akamaihd.net/u/mt1/elevensportstw/thumbs/2018/08/09/71859_es.jpg">
+	<meta name="medium" content="video">
+	<meta property="og:type" content="video.other">
+	<meta property="og:url" content="http://www.elevensports.tw/video/cpbl-49">
+	<meta property="og:title" content="null">
+	<meta property="og:description" content="null">
+	<meta property="og:video" content="index.html">
+	<meta property="og:video:type" content="text/html">
+	<meta property="og:image" content="images/71859_es.jpg">
+	<meta property="og:site_name" content="Eleven Sports Taiwan">
+	<meta name="twitter:url" content="http://www.elevensports.tw/video/cpbl-49">
+	<meta name="twitter:title" content="null">
+	<meta name="twitter:description" content="null">
+	<meta name="twitter:image:src" content="https://neulionsmbnyc-a.akamaihd.net/u/mt1/elevensportstw/thumbs/2018/08/09/71859_es.jpg">
+
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="css/video.css">
+	<link rel="stylesheet" type="text/css" href="css/category.css">
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/swfobject.js"></script>
+	<script type="text/javascript" src="js/nlplayer.js"></script>
+	<script type="text/javascript" src="js/nlplayer2.js"></script>
+	<script type="text/javascript" src="js/nltracker.js"></script>
+
+
+	<script>
+		NLTracker.initialize({
+			locResource: "https://neulionms-a.akamaihd.net/mt3/v1/base/site/",
+			locQos: "//nlqoseu2.neulion.com/receiver-3.0/ProxyBean",
+			site: "elevensportstw",
+			gaa: "UA-77351895-9"
+		});
+		NLTracker.trackPage("/channel/cpbl-49");
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			if ($("#relatedByCategorySlider").size() > 0) {
+				initRelatedSlider("relatedByCategorySlider");
+			}
+		});
+
+		function initRelatedSlider(id) {
+			var obj = {
+				loop: false,
+				nav: true,
+				navText: ['', ''],
+				dots: true,
+				responsive: {
+					0: {
+						items: 1,
+						margin: 0
+					},
+					768: {
+						items: 2,
+						margin: 30
+					},
+					992: {
+						items: 4,
+						margin: 30
+					}
+				}
+			};
+			$('#' + id + " .owl-carousel").owlCarousel(obj);
+		}
+
+		function socialShare(type, path, name) {
+			var url = null;
+			if (path == '' || path == undefined)
+				path = window.location.href;
+			switch (type) {
+				case "facebook":
+					url = "http://www.facebook.com/sharer.php?u=" + encodeURIComponent(path);
+					if (window.NLTracker != null)
+						NLTracker.trackPage("/share/facebook");
+					else
+						nlTrackSubPage("share", {
+							type: type,
+							name: name
+						});
+					break;
+				case "twitter":
+					path = path.replace(/\*/g, "%2A");
+					url = "http://twitter.com/share?url=" + encodeURIComponent(path);
+					if (name) {
+						url += "&text=" + encodeURIComponent(document.getElementById("msg_share_text").innerHTML.replace(/\{0\}/, name));
+					}
+					if (window.NLTracker != null)
+						NLTracker.trackPage("/share/twitter");
+					else
+						nlTrackSubPage("share", {
+							type: type,
+							name: name
+						});
+					break;
+				default:
+					break;
+			}
+			if (url != null) {
+				var newwin = window.open(url, "_blank");
+				if (type == "mail" && newwin != null)
+					newwin.close();
+			}
+		}
+
+		function __iptvSendShareGetVideoUrl(seoName) {
+			return LOC_SERVER + "video/" + seoName;
+		}
+	</script>
+
+
+
+
+
+	<script type="text/javascript">
+		var siteId = "elevensportstw";
+		var LOC_SERVER = "https://www.elevensports.tw/";
+		var LOC_RESOURCE = "https://neulionms-a.akamaihd.net/mt3/v1/";
+		var ANALYTICS_1 = "UA-77351895-9";
+		var LOC_QOS = "//nlqoseu2.neulion.com/receiver-3.0/ProxyBean";
+		var LICENSE_PROXY = "";
+		var PERSONALIZATION_SERVER = "";
+		var PCM_SERVER = "";
+		var enablePs = false;
+		var username = null;
+		var firstname = null;
+		var trackUsername = null;
+		if (false) {
+			username = "";
+			firstname = "";
+			trackUsername = "";
+		}
+		var locale = "en_US";
+	</script>
+
+
+
+
+
+
+	<div class="header-up clearfix">
+
+		<div class="language">
+			<span class="language-current">English
+				<del></del>
+			</span>
+			<ul class="language-list">
+
+
+
+
+				<li class="language-items">
+					<a href="javascript:invokeSyncCall(&apos;/service/prefupdate/&apos;,&apos;localeupdate&apos;,&apos;locale=zh_TW&apos;,invokeSyncCallbackChangeLocale)">&#x4E2D;&#x6587;</a>
+				</li>
+
+
+
+
+
+
+				<li class="language-items">
+					<span class="selected">English</span>
+				</li>
+
+
+
+
+
+			</ul>
+		</div>
+
+	</div>
+
+
+
+	<div class="header clearfix">
+
+		<div class="headerBtn fr">
+			<ul class="hambuger fl">
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+
+
+		<div class="log fr">
+
+
+
+
+
+			<a href="https://www.elevensports.tw/packages?type=0" class="signup">SUBSCRIBE NOW</a>
+
+
+
+
+
+
+			<a href="javascript:showSignIn();">SIGN IN</a>
+
+
+
+
+		</div>
+		<script type="text/javascript">
+			function showRegistration() {
+				var url = location.href;
+				if (url.indexOf("?") != -1)
+					url = url.substr(0, url.indexOf("?"));
+				url = LOC_SERVER_SECURE + "secure/registration?top=" + encodeURIComponent(url);
+				document.getElementById("registrationFrame").src = url;
+				showModal("Registration");
+			}
+		</script>
+
+		<div class="header-left">
+			<div class="logo-content fl">
+				<a href="/" class="logo">
+					<img src="images/headerlogo.png">
+				</a>
+			</div>
+			<div class="menuBox">
+				<ul class="menu clearfix">
+
+
+					<li>
+						<a href="https://www.elevensports.tw/home" class="menuLink">FEATURED</a>
+					</li>
+
+
+
+
+
+					<li>
+						<a href="http://press.elevensports.tw" class="menuLink">PRESS</a>
+					</li>
+
+
+
+					<li>
+						<a href="https://www.elevensports.tw/channel/eleven-zh" class="menuLink">WATCH LIVE</a>
+					</li>
+
+
+
+
+					<li>
+						<a href="https://www.elevensports.tw/category/whats-new" class="menuLink">VIDEOS</a>
+					</li>
+
+
+
+
+					<li>
+						<a href="https://www.elevensports.tw/guide" class="menuLink">WHAT&apos;S ON</a>
+					</li>
+
+
+
+				</ul>
+			</div>
+		</div>
+		<ul class="spNav">
+
+
+			<li>
+				<a href="https://www.elevensports.tw/home" class="menuLink">FEATURED</a>
+			</li>
+
+
+
+
+
+			<li>
+				<a href="http://press.elevensports.tw" class="menuLink">PRESS</a>
+			</li>
+
+
+
+			<li>
+				<a href="https://www.elevensports.tw/channel/eleven-zh" class="menuLink">WATCH LIVE</a>
+			</li>
+
+
+
+
+			<li>
+				<a href="https://www.elevensports.tw/category/whats-new" class="menuLink">VIDEOS</a>
+			</li>
+
+
+
+
+			<li>
+				<a href="https://www.elevensports.tw/guide" class="menuLink">WHAT&apos;S ON</a>
+			</li>
+
+
+
+
+
+
+			<li>
+				<a href="javascript:showSignIn();">SIGN IN</a>
+			</li>
+
+
+
+
+
+
+
+
+
+
+			<li>
+				<a href="https://www.elevensports.tw/packages?type=0">SUBSCRIBE NOW</a>
+			</li>
+
+
+		</ul>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		var program = {
+			id: "71859",
+			name: "",
+			"seoName": "cpbl-49",
+			description: "",
+			image: "https://neulionsmbnyc-a.akamaihd.net/u/mt1/elevensportstw/thumbs/2018/08/09/71859_es.jpg"
+
+				,
+			type: "video"
+
+
+
+
+
+
+
+				,
+			"releaseDate": "2018-08-09T00:02:00.000"
+
+
+
+
+
+
+		};
+		var nlCustomPlayerConfig = {
+			locale: "en_US",
+			containerId: "playerContainer",
+			useCustomControls: true,
+			brand: 'elevensports',
+			customScripts: [window.LOC_RESOURCE + 'elevensports' + "/site_4/player/scripts/channelcontrols.js", window.LOC_RESOURCE +
+				'elevensports' + "/site_4/player/scripts/nlplayerstrings.js"
+			],
+			customStyles: [window.LOC_RESOURCE + 'elevensports' + "/site_4/player/styles/escontrols.css"],
+		};
+	</script>
+
+	<script>
+		playNLProgram(program, nlCustomPlayerConfig);
+	</script>
+
+	<div class="player-page-content">
+		<div id="playerContainer" style="text-align: center;">
+
+
+
+
+			<script>
+				function afterClickforceVad() {
+					alert("Hello")
+				}
+			</script>
+			<div style="width:960px;height:540px;display:inline-block;vertical-align:baseline;">
+				<ins class="clickforcepreroll" data-ad-zone="8251" data-ad-width="100%" data-ad-height="100%"></ins>
+				<script type="text/javascript" src="//cdn.doublemax.net/js/cfvast.js"></script>
+			</div>
+		</div>
+		<div class="player-detail-info">
+			<div class="player-wrap">
+				<div class="title"></div>
+				<div class="date">August 09, 2018
+					<span class="duration">(4:45&#xA0;mins)</span>
+				</div>
+				<div class="description"></div>
+				<div class="sns">
+					<a href="javascript:void(0);" onclick="socialShare(" facebook ","https:="" www.elevensports.tw="" video="" cpbl-49 ","
+					    ");"="" class="sns-item facebook"></a>
+					<a href="javascript:void(0);" onclick="socialShare(" twitter ","https:="" www.elevensports.tw="" video="" cpbl-49 ","
+					    ");"="" class="sns-item twitter"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="programs-content">
+
+		<div id="relatedByCategorySlider" class="program-list">
+			<div class="container">
+				<div class="programs-title">YOU MAY ALSO LIKE</div>
+				<div class="owl-carousel owl-theme programList row">
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-48">
+							<img class="img-responsive" border="0" src="images/71846_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">2:54&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-48" title="" class="name"></a>
+							<div class="date">07/08/2018</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-47">
+							<img class="img-responsive" border="0" src="images/71770_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">4:57&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-47" title="" class="name"></a>
+							<div class="date">02/08/2018</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-45">
+							<img class="img-responsive" border="0" src="images/71676_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">4:16&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-45" title="" class="name"></a>
+							<div class="date">26/07/2018</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-46">
+							<img class="img-responsive" border="0" src="images/71677_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">3:55&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-46" title="" class="name"></a>
+							<div class="date">26/07/2018</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-44">
+							<img class="img-responsive" border="0" src="images/71357_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">5:02&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-44" title="" class="name"></a>
+							<div class="date">19/07/2018</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-43">
+							<img class="img-responsive" border="0" src="images/71321_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">4:49&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-43" title="" class="name"></a>
+							<div class="date">18/07/2018</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-42">
+							<img class="img-responsive" border="0" src="images/70919_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">4:46&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-42" title="" class="name"></a>
+							<div class="date">13/07/2018</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-40">
+							<img class="img-responsive" border="0" src="images/70801_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">4:15&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-40" title="" class="name"></a>
+							<div class="date">10/07/2018</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-41">
+							<img class="img-responsive" border="0" src="images/70802_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">1:47&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-41" title="" class="name"></a>
+							<div class="date">10/07/2018</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-38">
+							<img class="img-responsive" border="0" src="images/70081_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">3:09&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-38" title="" class="name"></a>
+							<div class="date">28/06/2018</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-39">
+							<img class="img-responsive" border="0" src="images/70082_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">3:41&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-39" title="" class="name"></a>
+							<div class="date">28/06/2018</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="grid-item program-item ">
+						<a class="program-img" href="/video/cpbl-37">
+							<img class="img-responsive" border="0" src="images/69615_es.jpg" alt="">
+							<div class="program-bg"></div>
+							<span class="duration">3:36&#xA0;mins</span>
+						</a>
+						<div class="program-info">
+							<a href="/video/cpbl-37" title="" class="name"></a>
+							<div class="date">21/06/2018</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+	<div class="footer">
+		<div class="container">
+			<div class="social clearfix">
+				<ul class="applink fl">
+					<li>
+						<a href="https://itunes.apple.com/tw/app/eleven/id1111207302" target="blank"></a>
+					</li>
+					<li>
+						<a href="https://play.google.com/store/apps/details?id=com.elevensportsnetwork.eleventaiwan" target="blank"></a>
+					</li>
+				</ul>
+				<div class="footer-logo fl">
+					<a href="https://www.elevensports.tw" target="blank"></a>
+				</div>
+				<ul class="sociallink fr">
+					<li>
+						<a class="footer-facebook" href="https://www.facebook.com/ElevenSportsTaiwan/" target="_blank"></a>
+					</li>
+					<li>
+						<a class="footer-twitter" href="https://twitter.com/ElevenSportsTW" target="_blank"></a>
+					</li>
+					<li>
+						<a class="footer-ins" href="https://www.instagram.com/elevensportstw/?hl=en" target="_blank"></a>
+					</li>
+				</ul>
+			</div>
+			<div class="footerMenuWrap clearfix">
+				<div class="footerMenuDoubleItems clearfix">
+					<ul class="footerMenu clearfix">
+						<li>&#xA9; 2018 ALL RIGHTS RESERVED</li>
+					</ul>
+					<ul class="footerMenu clearfix">
+						<li>
+							<a onclick="popup()">CONTACT US</a>
+						</li>
+						<li>
+							<a href="https://www.elevensports.tw/faq">FAQ</a>
+						</li>
+						<li>
+							<a href="https://www.elevensports.tw/tos" target="_blank">END-USER LICENSE AGREEMENT</a>
+						</li>
+					</ul>
+				</div>
+				<ul class="footerMenu clearfix">
+					<li>
+						<a href="https://elevensportsnetwork.com/terms-conditions/" target="_blank">TERMS &amp; CONDITIONS</a>
+					</li>
+					<li>
+						<a class="neulion" href="http://www.neulion.com" target="blank"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		$(".cookieNotice p").click(function () {
+			$(this).parent().hide();
+		})
+	</script>
+
+	<div class="contactUs">
+		<p class="contactUsClose">X</p>
+		<p class="contactUsLogo">
+			<img src="images/pop_logo.png">
+		</p>
+		<ul class="clearfix">
+			<li class="contactMail">
+				<a href="mailto:info@elevensportsnetwork.tw">info@elevensportsnetwork.tw</a>
+			</li>
+			<li>
+				<a>+886 2 7711 0015</a>
+				<p>Mon-Fri 1000-1900</p>
+			</li>
+			<li>
+				<a href="https://www.facebook.com/ElevenSportsTaiwan/" target="_blank">ElevenSportsTaiwan</a>
+			</li>
+		</ul>
+	</div>
+	<div id="mask"></div>
+	<script type="text/javascript">
+		function popup() {
+			$("#mask").show();
+			$(".contactUs").show();
+			$('html, body').animate({
+				scrollTop: 0
+			}, 'slow');
+			$(".contactUsClose").click(function () {
+				$("#mask").hide();
+				$(".contactUs").hide();
+			})
+
+			function popStyle() {
+				var winW = $(window).width();
+				var contW = $(".contactUs").width();
+				marL = (winW - contW) / 2;
+				$(".contactUs").css("left", marL);
+			}
+			popStyle();
+			$(window).resize(function () {
+				popStyle();
+			})
+		}
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+	<div style="display:none">
+		<span id="msg_unsupported">This video is not supported on your device.</span>
+		<span id="msg_share_text">I&apos;m watching {0} on ELEVEN SPORTS</span>
+	</div>
+
+
+
+	<script type="text/javascript">
+		$(".hambuger").click(function () {
+			if ($(this).hasClass("hambuger-close")) {
+				$(this).removeClass("hambuger-close").addClass("hambuger-normal");
+				$(".spNav").hide();
+			} else {
+				$(this).removeClass("hambuger-normal").addClass("hambuger-close");
+				$(".spNav").show();
+			}
+		})
+		$(window).resize(function () {
+			$(".spNav").hide();
+			$(".hambuger").removeClass("hambuger-close").addClass("hambuger-normal");
+		})
+	</script>
+	<div id="modalUnder" class="modalUnder" style="display: none;"></div>
+	<div id="modalSignin" class="modalOver" style="display: none;">
+		<div style="position:relative;width:100%;height:100%">
+			<iframe id="signInFrame" frameborder="0" border="0" width="100%" height="100%"></iframe>
+			<a href="javascript:hideModal(&apos;Signin&apos;)" class="modelClose">
+				<img src="images/close.png" border="0" alt="Close">
+			</a>
+		</div>
+	</div>
+	<div id="modalRegistration" class="modalOver fbModalReg" style="display:none">
+		<iframe id="registrationFrame" frameborder="0" border="0" width="100%" height="100%"></iframe>
+	</div>
+
+
+</body>
+
+</html>

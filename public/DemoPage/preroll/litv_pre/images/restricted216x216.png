@@ -1,0 +1,13 @@
+
+
+
+<div class="dnd_container">
+	<div class="contract_container bgcolor" style="margin-top:15px;margin-bottom:15px;padding:60px 0;height:520px;text-align:center;">
+		<div>
+			<div style="font-size:24px;color:#000;margin-bottom:20px;">抱歉，這個頁面無法取得</div>
+			<div style="font-size:20px;color:#808080;margin-bottom:50px;">你點擊進來的連結可能發生故障，或該頁面已被移除了！</div>
+			<div style="background-image:url(error.png);width:324px;height:199px;margin:0 auto;"></div>
+			<div><input type="button" style="background-color: #408ed6;color:#fff;font-size:20px;margin-top:30px;cursor:pointer;" onclick="location.href='/';" value="回首頁"></div>
+		</div>
+	</div>
+</div>

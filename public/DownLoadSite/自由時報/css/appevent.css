@@ -1,0 +1,20 @@
+.appevent > * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.appevent{width:100%; height:70px; border-top:3px solid #c00000;
+background: -webkit-linear-gradient(top,#000 30%,rgba(0,0,0,0.7) 100%), url(../images/adbg.png) repeat;
+background: linear-gradient(#000 30%,rgba(0,0,0,0.7) 100%), url(../images/adbg.png) repeat;
+display:none;
+}
+.appevent img{width:70px;padding:7px 10px 8px;float:left;}
+.appevent p{float:left;color:#fff;padding:11px 5px;font-size:0.9rem;margin:0px;text-align:left;line-height:normal;}
+.appevent p span{font-size:1.2rem;font-style: italic;margin-left:-5px;}
+.appevent a.close{display:inline-block;float:left;width:20px;height:20px;line-height:20px; color:#fff;font-size:15px; border-radius:100%;margin:5px 0px 10px 10px;background-color:#555;opacity:1;}
+.appevent a.load{display:inline-block; float:right; padding:4px 16px 5px; margin:20px 20px 0px 0px;color:#fff;background-color:#c00000;border-radius:10px;border-bottom:4px solid #900;font-weight:700;font-size:1rem;line-height:normal;}
+@media screen and (min-width:300px) and (max-width: 359px){
+	.appevent img{width:65px;padding:10px;float:left;}
+	.appevent p{float:left;color:#fff;padding:7px 0;margin:5px 0;line-height:1.4rem;}
+	.appevent a.load{padding:4px 6px 5px;margin:20px 7px 0px 0px;font-size:0.9rem;border-bottom:2px solid #900;}
+}
+@media screen and (min-width:360px) and (max-width: 380px){
+	.appevent p{float:left;color:#fff;padding:11px 0;}
+	.appevent a.load{padding:4px 10px 5px;margin:20px 10px 0px 0px;border-bottom:2px solid #900;}
+}

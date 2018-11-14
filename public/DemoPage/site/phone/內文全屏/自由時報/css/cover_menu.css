@@ -1,0 +1,45 @@
+
+#rightmain{
+	padding-top:96px;/*52*/
+	background:#ddd;
+	}
+h1{
+	height:auto;
+	}
+h1 .back{
+	width:48px;
+	height:48px;
+	background-size:25px;
+	}
+h1 .back:active{
+	width:48px;
+	height:48px;
+	background-size:25px,100%;
+	}
+.h1box{
+	position: relative;
+	}
+h1 .logo{
+	width:118px;
+    height:48px;
+    background:url(../images/logo_foot.png) no-repeat center 12px;
+    background-size:104px;
+	}
+h1 .menu,
+#menu{
+	width:48px;
+	height:48px;
+	}
+.showmenu{
+	background-size:25px;
+	}
+.showmenu:active{
+	background-size:25px,100%;
+	}
+.hidemenu{
+	background-size:25px;
+	}
+.lineTab{height:30px;}
+.marqueeBox4 b{
+	display:none;
+	}
