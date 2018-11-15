@@ -17,11 +17,11 @@
 	height:48px;
 	float:right;
 	cursor: pointer;
-	background:url(../images/bt-menu02_1.png) no-repeat center,#ddd;
+	background:url(../images/bt-menu02.png) no-repeat center,#ddd;
 	background-size:25px}
 	
 #search_btn.hidesearch:active{
-	background:url(../images/bt-menu02_1.png) no-repeat center,#eee;
+	background:url(../images/bt-menu02.png) no-repeat center,#eee;
 	background-size:25px,100%;
 	}
 	
